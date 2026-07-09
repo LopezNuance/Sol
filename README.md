@@ -1,3 +1,8 @@
+# Repository Information
+
+This repository includes both the Sol RFC (Sol_RFC_v1.md) as well as a prototype validator explained below.
+
+
 # Sol Validator Prototype (v0.1.0-draft)
 
 This is an initial reference validator and pathology corpus for RFC-SOL-0001 v0.1.0-draft.
