@@ -1,0 +1,17 @@
+{
+  "concordance": {
+    "type": "divergent"
+  },
+  "created_at": "2026-01-01T00:11:00Z",
+  "method": "sol:verify/reexecution",
+  "performed_by": "tool:sol_executor",
+  "record_id": "verification_bad",
+  "record_type": "sol:record/verification",
+  "result": "failed",
+  "status": {
+    "lifecycle": "active",
+    "staleness": "current",
+    "verification": "unverified"
+  },
+  "target": "record:claim_007"
+}

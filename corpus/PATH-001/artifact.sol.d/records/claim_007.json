@@ -1,0 +1,18 @@
+{
+  "claim_type": "empirical_result",
+  "confidence": 0.82,
+  "confidence_basis": "computed from metric delta",
+  "created_by": "agent:eval_reviewer_001",
+  "record_id": "claim_007",
+  "record_type": "sol:record/claim",
+  "statement": "Checkpoint M200 has lower EOS hazard than M0 on open-ended prompts.",
+  "status": {
+    "lifecycle": "active",
+    "staleness": "current",
+    "verification": "verified"
+  },
+  "summary": "M200 has lower EOS hazard than M0 on open-ended prompts.",
+  "supporting_evidence": [
+    "record:evidence_011"
+  ]
+}

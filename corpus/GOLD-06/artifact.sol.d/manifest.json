@@ -1,0 +1,64 @@
+{
+  "artifact_id": "art_01j9x7k9k5m2c8v6h3p4q2r1s0",
+  "artifact_type": "sol_notebook",
+  "authorization": {
+    "permit_self_application": false,
+    "protected_branches": [
+      {
+        "allowed_committers": [
+          "human:alice"
+        ],
+        "branch": "main",
+        "protected": true,
+        "required_capabilities": [
+          "approve"
+        ]
+      }
+    ]
+  },
+  "current_commit": "commit_042",
+  "environment": {
+    "environment_id": "env_001",
+    "package_manifest": "digest:sha256:72a91c0a09f8745155c0d22f2e2845b00ef105a5abf31d0a5a388c02da94d862",
+    "sbom_ref": "object:sha256:ac1b5e1c2c9c09328bd49a3df5ae835be947501d5c9b81976fca0ef56da52208"
+  },
+  "execution": {
+    "deterministic": false,
+    "partial_execution_policy": "invalidate_downstream",
+    "random_seed": 1234,
+    "structure": "linear"
+  },
+  "imported_from": "ipynb",
+  "optional_features": [
+    "sol:feature/signatures"
+  ],
+  "provenance_status": "incomplete",
+  "rendering": {
+    "allowed_views": [
+      "html",
+      "markdown",
+      "audit",
+      "machine_summary"
+    ],
+    "default_view": "html"
+  },
+  "reproducibility_status": "unknown",
+  "required_features": [
+    "sol:feature/linear_execution",
+    "sol:feature/internal_object_store",
+    "sol:feature/machine_summary",
+    "sol:feature/external_evidence"
+  ],
+  "runtime": {
+    "kernel_adapter": "sol-kernel-python",
+    "language_version": "3.12",
+    "primary_language": "python"
+  },
+  "security": {
+    "execution_requires_confirmation": true,
+    "network_access": false,
+    "sandbox_profile": "sandbox_minimal"
+  },
+  "sol_version": "0.1",
+  "title": "Model Evaluation Report"
+}

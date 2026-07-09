@@ -1,0 +1,12 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sol:schemas/actor/v0.1",
+  "type": "object",
+  "required": ["actor_id", "actor_type"],
+  "properties": {
+    "actor_id": {"type": "string"},
+    "actor_type": {"enum": ["human", "agent", "tool", "service", "system"]},
+    "capabilities": {"type": "array", "items": {"type": "string"}},
+    "autonomy_level": {"enum": ["read_only", "propose_only", "review_required", "autonomous_commit"]}
+  }
+}

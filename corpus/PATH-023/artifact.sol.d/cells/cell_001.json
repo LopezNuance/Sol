@@ -1,0 +1,9 @@
+{
+  "actor_id": "human:alice",
+  "cell_id": "cell_001",
+  "cell_type": "sol:cell/prose",
+  "source": "Compare checkpoints.",
+  "source_hash": "digest:sha256:47a14f799924310c67c05d3a80ced11db90d23c0855593fef1063cf4a273c033",
+  "summary": "Introduces the checkpoint comparison task.",
+  "title": "Task"
+}

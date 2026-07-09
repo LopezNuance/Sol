@@ -1,0 +1,9 @@
+{
+  "includes_records": [
+    "record:claim_007"
+  ],
+  "render_id": "report",
+  "source_commit": "commit:commit_042",
+  "stale_disclosures": [],
+  "target": "html"
+}

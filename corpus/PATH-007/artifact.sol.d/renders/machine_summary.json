@@ -1,0 +1,109 @@
+{
+  "actors": [
+    "agent:eval_reviewer_001",
+    "human:alice",
+    "tool:sol_executor"
+  ],
+  "artifact_id": "art_01j9x7k9k5m2c8v6h3p4q2r1s0",
+  "cells": [
+    {
+      "cell_id": "cell_001",
+      "cell_type": "sol:cell/prose",
+      "summary": "Introduces the checkpoint comparison task."
+    },
+    {
+      "cell_id": "cell_010",
+      "cell_type": "sol:cell/config",
+      "summary": "Defines evaluation thresholds."
+    },
+    {
+      "cell_id": "cell_011",
+      "cell_type": "sol:cell/data",
+      "summary": "Binds the evaluation dataset."
+    },
+    {
+      "cell_id": "cell_014",
+      "cell_type": "sol:cell/code",
+      "summary": "Computes loss, accuracy, and EOS rate for each checkpoint."
+    },
+    {
+      "cell_id": "cell_015",
+      "cell_type": "sol:cell/display",
+      "summary": "Displays the current metrics table."
+    }
+  ],
+  "execution_structure": {
+    "cells": [
+      "cell:cell_001",
+      "cell:cell_010",
+      "cell:cell_011",
+      "cell:cell_014",
+      "cell:cell_015"
+    ],
+    "type": "linear"
+  },
+  "records": [
+    {
+      "record_id": "claim_007",
+      "record_type": "sol:record/claim",
+      "status": {
+        "lifecycle": "active",
+        "staleness": "stale",
+        "verification": "needs_reverification"
+      },
+      "summary": "M200 has lower EOS hazard than M0 on open-ended prompts."
+    },
+    {
+      "record_id": "decision_002",
+      "record_type": "sol:record/decision",
+      "status": {
+        "lifecycle": "active",
+        "staleness": "current",
+        "verification": "unverified"
+      },
+      "summary": "Promote M200 for next-stage testing."
+    },
+    {
+      "record_id": "evidence_011",
+      "record_type": "sol:record/evidence",
+      "status": {
+        "lifecycle": "active",
+        "staleness": "current",
+        "verification": "unverified"
+      },
+      "summary": "Metrics table showing M200 has lower EOS rate."
+    },
+    {
+      "record_id": "task_001",
+      "record_type": "sol:record/task",
+      "status": {
+        "lifecycle": "active",
+        "staleness": "current",
+        "verification": "unverified"
+      },
+      "summary": "Compare checkpoints M0, M200, and M2000."
+    },
+    {
+      "record_id": "verification_005",
+      "record_type": "sol:record/verification",
+      "status": {
+        "lifecycle": "active",
+        "staleness": "current",
+        "verification": "unverified"
+      },
+      "summary": null
+    }
+  ],
+  "render_id": "machine_summary",
+  "runs": [
+    {
+      "result_commit": "commit:commit_042",
+      "run_id": "run_008",
+      "source_commit": "commit:commit_041",
+      "status": "success"
+    }
+  ],
+  "sol_version": "0.1",
+  "source_commit": "commit_042",
+  "target": "machine_summary"
+}

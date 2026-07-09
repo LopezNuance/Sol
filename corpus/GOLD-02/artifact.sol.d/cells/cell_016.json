@@ -1,0 +1,12 @@
+{
+  "actor_id": "human:alice",
+  "cell_id": "cell_016",
+  "cell_type": "sol:cell/code",
+  "depends_on": [
+    "cell:cell_015"
+  ],
+  "source": "raise RuntimeError()",
+  "source_hash": "digest:sha256:bc7382046e4eb746576ff87da3d656ecc9b10fcbb4cc8addfdd70012c8f1bb5e",
+  "summary": "Cell that fails after valid prefix.",
+  "title": "Failing follow-up"
+}

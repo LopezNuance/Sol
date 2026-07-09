@@ -1,0 +1,12 @@
+{
+  "actor_id": "human:alice",
+  "cell_id": "cell_011",
+  "cell_type": "sol:cell/data",
+  "depends_on": [
+    "cell:cell_010"
+  ],
+  "source": "eval_dataset = frozen_dataset_v1",
+  "source_hash": "digest:sha256:271fde8e93f900b20404993e0688732a0db3f712a291d911f0df7426f1a7b74f",
+  "summary": "Binds the evaluation dataset.",
+  "title": "Dataset"
+}

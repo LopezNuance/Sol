@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sol:schemas/manifest/v0.1",
+  "type": "object",
+  "required": ["sol_version", "artifact_type", "artifact_id", "required_features", "runtime", "execution", "security"],
+  "properties": {
+    "sol_version": {"type": "string"},
+    "artifact_type": {"const": "sol_notebook"},
+    "artifact_id": {"type": "string"},
+    "required_features": {"type": "array", "items": {"type": "string"}},
+    "optional_features": {"type": "array", "items": {"type": "string"}},
+    "runtime": {"type": "object"},
+    "environment": {"type": "object"},
+    "execution": {"type": "object"},
+    "security": {"type": "object"},
+    "rendering": {"type": "object"},
+    "authorization": {"type": "object"}
+  }
+}

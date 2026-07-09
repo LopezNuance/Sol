@@ -1,0 +1,31 @@
+{
+  "actor_id": "tool:sol_executor",
+  "cells_executed": [
+    "cell:cell_001",
+    "cell:cell_010",
+    "cell:cell_011",
+    "cell:cell_014",
+    "cell:cell_015"
+  ],
+  "completed_at": "2026-01-01T00:00:12Z",
+  "entry_point": "cell:cell_001",
+  "environment_id": "env_001",
+  "output_bindings": [
+    {
+      "mime_type": "application/x-parquet",
+      "named_output": "cell:cell_014#metrics_table",
+      "object_ref": "object:sha256:d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31"
+    },
+    {
+      "mime_type": "image/png",
+      "named_output": "cell:cell_015#eos_plot",
+      "object_ref": "object:sha256:c2e93ae90fa365e59bace5a370714589ef35a16f7a419c30037bff6cffc40bd2"
+    }
+  ],
+  "result_commit": "commit:commit_042",
+  "run_id": "run_008",
+  "source_commit": "commit:commit_041",
+  "started_at": "2026-01-01T00:00:00Z",
+  "status": "partial_success",
+  "task_ref": "record:task_001"
+}

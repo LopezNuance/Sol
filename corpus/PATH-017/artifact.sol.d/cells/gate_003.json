@@ -1,0 +1,7 @@
+{
+  "cell_id": "gate_003",
+  "cell_type": "sol:cell/gate",
+  "decision_ref": "record:decision_missing",
+  "source_hash": "digest:sha256:c974e17b8e7321ce8c12983de3d0ed4a289821f579bbe0925b0181a4bc8e8d80",
+  "summary": "Bad gate"
+}
