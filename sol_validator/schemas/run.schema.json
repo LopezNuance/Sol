@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sol:schemas/run/v0.1",
+  "type": "object",
+  "required": ["run_id", "source_commit", "actor_id", "status", "cells_executed"],
+  "properties": {
+    "run_id": {"type": "string"},
+    "source_commit": {"type": "string"},
+    "result_commit": {"type": "string"},
+    "actor_id": {"type": "string"},
+    "task_ref": {"type": "string"},
+    "entry_point": {"type": "string"},
+    "status": {"enum": ["success", "partial_success", "failure", "cancelled"]},
+    "cells_executed": {"type": "array", "items": {"type": "string"}},
+    "output_bindings": {"type": "array", "items": {"type": "object"}}
+  }
+}

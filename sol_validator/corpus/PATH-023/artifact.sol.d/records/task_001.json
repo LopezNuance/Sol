@@ -1,0 +1,13 @@
+{
+  "created_by": "human:alice",
+  "instruction_ref": "object:sha256:3e14be743a8190e87586cca696b176955d21074988888643a4f22b01c50a6810",
+  "record_id": "task_001",
+  "record_type": "sol:record/task",
+  "status": {
+    "lifecycle": "active",
+    "staleness": "current",
+    "verification": "unverified"
+  },
+  "summary": "Compare checkpoints M0, M200, and M2000.",
+  "task_type": "human_instruction"
+}

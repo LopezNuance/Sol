@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sol:schemas/cell/v0.1",
+  "type": "object",
+  "required": ["cell_id", "cell_type", "summary", "source_hash"],
+  "properties": {
+    "cell_id": {"type": "string"},
+    "cell_type": {"type": "string"},
+    "title": {"type": "string"},
+    "summary": {"type": "string"},
+    "language": {"type": "string"},
+    "source": {},
+    "source_hash": {"type": "string"},
+    "contract_hash": {"type": "string"},
+    "depends_on": {"type": "array", "items": {"type": "string"}},
+    "produces": {"type": "array", "items": {"type": "object"}},
+    "actor_id": {"type": "string"}
+  }
+}

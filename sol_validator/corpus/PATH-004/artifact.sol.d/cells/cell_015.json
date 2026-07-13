@@ -1,0 +1,12 @@
+{
+  "actor_id": "human:alice",
+  "cell_id": "cell_015",
+  "cell_type": "sol:cell/display",
+  "depends_on": [
+    "cell:cell_014"
+  ],
+  "display_ref": "cell:cell_014#metrics_table",
+  "source_hash": "digest:sha256:243b0fa16668491c81c719bd699655120943d57eb3f624903efc26ee9d1698f1",
+  "summary": "Displays the current metrics table.",
+  "title": "Metrics Table"
+}

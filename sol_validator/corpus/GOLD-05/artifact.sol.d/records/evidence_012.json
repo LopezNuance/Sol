@@ -1,0 +1,21 @@
+{
+  "created_by": "human:alice",
+  "evidence_type": "external_source",
+  "external_ref": {
+    "availability": "archived",
+    "retrieved_at": "2026-01-01T00:00:00Z",
+    "snapshot_object": "object:sha256:324e796b1fea71895be4d23c53df7aabbd5e392e738b6e216b1e39220ef7eff6",
+    "uri": "https://example.org/paper.pdf"
+  },
+  "record_id": "evidence_012",
+  "record_type": "sol:record/evidence",
+  "status": {
+    "lifecycle": "active",
+    "staleness": "current",
+    "verification": "unverified"
+  },
+  "summary": "Archived external source.",
+  "supports": [
+    "record:claim_007"
+  ]
+}

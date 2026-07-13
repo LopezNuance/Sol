@@ -1,0 +1,21 @@
+{
+  "created_by": "tool:sol_executor",
+  "derived_from": [
+    "cell:cell_014",
+    "run:run_008"
+  ],
+  "evidence_type": "metric_table",
+  "record_id": "evidence_011",
+  "record_type": "sol:record/evidence",
+  "source_object": "object:sha256:d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31",
+  "source_ref": "cell:cell_014#metrics_table",
+  "status": {
+    "lifecycle": "active",
+    "staleness": "current",
+    "verification": "unverified"
+  },
+  "summary": "Metrics table showing M200 has lower EOS rate.",
+  "supports": [
+    "record:claim_007"
+  ]
+}

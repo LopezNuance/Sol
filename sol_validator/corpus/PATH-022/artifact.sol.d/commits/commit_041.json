@@ -1,0 +1,13 @@
+{
+  "author": "human:alice",
+  "branch": "main",
+  "changes": [
+    {
+      "op": "init"
+    }
+  ],
+  "commit_id": "commit_041",
+  "created_at": "2026-01-01T00:00:00Z",
+  "message": "Initial artifact",
+  "parents": []
+}

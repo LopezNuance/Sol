@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sol:schemas/record/v0.1",
+  "type": "object",
+  "required": ["record_id", "record_type", "summary", "status"],
+  "properties": {
+    "record_id": {"type": "string"},
+    "record_type": {"type": "string"},
+    "summary": {"type": "string"},
+    "created_by": {"type": "string"},
+    "created_at": {"type": "string"},
+    "depends_on": {"type": "array", "items": {"type": "string"}},
+    "status": {
+      "type": "object",
+      "properties": {
+        "lifecycle": {"type": "string"},
+        "staleness": {"enum": ["current", "stale", "unknown"]},
+        "verification": {"enum": ["unverified", "verified", "failed_verification", "needs_reverification"]}
+      }
+    }
+  }
+}

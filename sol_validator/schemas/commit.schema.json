@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sol:schemas/commit/v0.1",
+  "type": "object",
+  "required": ["commit_id", "parents", "branch", "author", "changes"],
+  "properties": {
+    "commit_id": {"type": "string"},
+    "parents": {"type": "array", "items": {"type": "string"}},
+    "branch": {"type": "string"},
+    "author": {"type": "string"},
+    "message": {"type": "string"},
+    "applied_proposals": {"type": "array", "items": {"type": "object"}},
+    "changes": {"type": "array", "items": {"type": "object"}},
+    "created_at": {"type": "string"}
+  }
+}

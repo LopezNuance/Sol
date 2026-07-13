@@ -1,0 +1,13 @@
+{
+  "actor_id": "tool:sol_executor",
+  "created_at": "2026-01-01T00:02:00Z",
+  "environment_id": "env_001",
+  "error_type": "ExampleError",
+  "failed_cell": "cell:cell_016",
+  "message": "example failure",
+  "record_id": "failure_002",
+  "record_type": "sol:record/failure",
+  "retryable": true,
+  "run_id": "run:run_008",
+  "source_commit": "commit:commit_042"
+}

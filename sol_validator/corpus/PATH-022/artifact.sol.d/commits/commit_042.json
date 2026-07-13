@@ -1,0 +1,40 @@
+{
+  "applied_proposals": [
+    {
+      "accepted_by": [
+        "record:review_004"
+      ],
+      "proposal": "record:proposal_003"
+    }
+  ],
+  "author": "human:alice",
+  "branch": "main",
+  "changes": [
+    {
+      "op": "apply_proposal",
+      "proposal": "record:proposal_003"
+    },
+    {
+      "named_output": "cell:cell_014#metrics_table",
+      "object_id": "object:sha256:d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31",
+      "op": "bind_output"
+    },
+    {
+      "named_output": "cell:cell_015#eos_plot",
+      "object_id": "object:sha256:c2e93ae90fa365e59bace5a370714589ef35a16f7a419c30037bff6cffc40bd2",
+      "op": "bind_output"
+    },
+    {
+      "op": "modify_cell",
+      "path": "/source",
+      "target": "cell:cell_010",
+      "value_ref": "object:sha256:5ddf69ab0df806ccf9c1dd250cda7f427a4b0c33eee0d26f28ea241858dff8b5"
+    }
+  ],
+  "commit_id": "commit_042",
+  "created_at": "2026-01-01T00:00:12Z",
+  "message": "Run evaluation",
+  "parents": [
+    "commit:commit_041"
+  ]
+}

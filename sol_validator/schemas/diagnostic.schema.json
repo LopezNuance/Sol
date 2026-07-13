@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sol:schemas/diagnostic/v0.1",
+  "type": "object",
+  "required": ["rule_id", "category", "severity", "target", "message"],
+  "properties": {
+    "rule_id": {"type": "string"},
+    "category": {"type": "string"},
+    "severity": {"enum": ["error", "warning", "info"]},
+    "target": {"type": "string"},
+    "message": {"type": "string"}
+  }
+}

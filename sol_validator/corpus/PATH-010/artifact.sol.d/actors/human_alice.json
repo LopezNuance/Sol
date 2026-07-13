@@ -1,0 +1,20 @@
+{
+  "actor_id": "human:alice",
+  "actor_type": "human",
+  "capabilities": [
+    "read",
+    "write_cell",
+    "write_record",
+    "execute",
+    "commit",
+    "create_branch",
+    "apply_proposal",
+    "review",
+    "approve",
+    "render",
+    "sign",
+    "redact",
+    "export"
+  ],
+  "display_name": "Alice"
+}

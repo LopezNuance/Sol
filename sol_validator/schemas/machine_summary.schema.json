@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sol:schemas/machine_summary/v0.1",
+  "type": "object",
+  "required": ["render_id", "target", "source_commit", "artifact_id", "sol_version", "execution_structure", "cells", "actors", "records", "runs"],
+  "properties": {
+    "render_id": {"const": "machine_summary"},
+    "target": {"const": "machine_summary"},
+    "source_commit": {"type": ["string", "null"]},
+    "artifact_id": {"type": "string"},
+    "sol_version": {"type": "string"},
+    "execution_structure": {"type": "object"},
+    "cells": {"type": "array"},
+    "actors": {"type": "array"},
+    "records": {"type": "array"},
+    "runs": {"type": "array"}
+  }
+}
