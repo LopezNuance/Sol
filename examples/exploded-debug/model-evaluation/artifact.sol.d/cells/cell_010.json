@@ -1,0 +1,13 @@
+{
+  "actor_id": "human:alice",
+  "cell_id": "cell_010",
+  "cell_type": "sol:cell/config",
+  "depends_on": [
+    "cell:cell_001"
+  ],
+  "metadata": {},
+  "source": "eos_material_delta = 0.02",
+  "source_hash": "digest:sha256:3625c9d6b3ed31cd65d384871bc3e99ba0b5b38b2ab13799e222715009ac8a9d",
+  "summary": "Defines the threshold used to treat EOS-rate differences as material.",
+  "title": "Evaluation thresholds"
+}

@@ -1,0 +1,19 @@
+{
+  "created_at": "2026-01-01T00:00:14Z",
+  "evidence": [
+    "run:run_008",
+    "object:sha256:99127af9061e47cd302c3381a4248bd2e06032e3840a4b2be03c585cce1c9ed6"
+  ],
+  "method": "sol:verify/review",
+  "performed_by": "human:alice",
+  "record_id": "verification_005",
+  "record_type": "sol:record/verification",
+  "result": "passed",
+  "status": {
+    "lifecycle": "active",
+    "staleness": "current",
+    "verification": "unverified"
+  },
+  "summary": "Human review confirmed that claim_007 is supported by the committed metrics.",
+  "target": "record:claim_007"
+}

@@ -1,0 +1,33 @@
+{
+  "actor_id": "tool:sol_executor",
+  "cells_executed": [
+    "cell:cell_001",
+    "cell:cell_010",
+    "cell:cell_011",
+    "cell:cell_014",
+    "cell:cell_015",
+    "cell:cell_claim_anchor_007"
+  ],
+  "completed_at": "2026-01-01T00:00:12Z",
+  "entry_point": "cell:cell_001",
+  "environment_id": "env_001",
+  "output_bindings": [
+    {
+      "mime_type": "text/csv",
+      "named_output": "cell:cell_014#metrics_table",
+      "object_ref": "object:sha256:99127af9061e47cd302c3381a4248bd2e06032e3840a4b2be03c585cce1c9ed6",
+      "status": "valid"
+    }
+  ],
+  "resource_usage": {
+    "cpu_time_ms": 8400,
+    "peak_memory_bytes": 104857600,
+    "wall_time_ms": 12000
+  },
+  "result_commit": "commit:commit_042",
+  "run_id": "run_008",
+  "source_commit": "commit:commit_041",
+  "started_at": "2026-01-01T00:00:00Z",
+  "status": "success",
+  "task_ref": "record:task_001"
+}

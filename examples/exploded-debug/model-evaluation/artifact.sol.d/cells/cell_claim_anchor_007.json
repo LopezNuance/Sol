@@ -1,0 +1,15 @@
+{
+  "actor_id": "human:alice",
+  "anchors_record": "record:claim_007",
+  "cell_id": "cell_claim_anchor_007",
+  "cell_type": "sol:cell/anchor",
+  "depends_on": [
+    "cell:cell_014"
+  ],
+  "render_hint": {
+    "style": "callout"
+  },
+  "source_hash": "digest:sha256:ca4f92295a6024a404035892a65057500d2847691ba3d940cbfb22da1edacf0b",
+  "summary": "Places claim_007 into the report without duplicating its canonical content.",
+  "title": "Verified EOS-hazard claim"
+}

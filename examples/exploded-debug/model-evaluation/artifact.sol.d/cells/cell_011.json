@@ -1,0 +1,16 @@
+{
+  "actor_id": "human:alice",
+  "cell_id": "cell_011",
+  "cell_type": "sol:cell/data",
+  "data_object": "object:sha256:045f1ef5fed3295d0660ee445d6f2c185d3138c99de533d33e44ad1ddb59e890",
+  "depends_on": [
+    "cell:cell_010"
+  ],
+  "metadata": {
+    "row_count": 3
+  },
+  "source": "eval_dataset = object_store.get(dataset_object)",
+  "source_hash": "digest:sha256:4d720f8d8fac483132bb376ee42944263108e1fe46eca27b79ffd33d0547ce70",
+  "summary": "Binds the frozen checkpoint evaluation dataset.",
+  "title": "Evaluation dataset"
+}

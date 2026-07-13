@@ -1,0 +1,115 @@
+{
+  "actors": [
+    "agent:eval_reviewer_001",
+    "human:alice",
+    "tool:sol_executor"
+  ],
+  "artifact_id": "art_example_model_evaluation",
+  "cells": [
+    {
+      "cell_id": "cell_001",
+      "cell_type": "sol:cell/prose",
+      "summary": "Introduces the checkpoint comparison task."
+    },
+    {
+      "cell_id": "cell_010",
+      "cell_type": "sol:cell/config",
+      "summary": "Defines the threshold used to treat EOS-rate differences as material."
+    },
+    {
+      "cell_id": "cell_011",
+      "cell_type": "sol:cell/data",
+      "summary": "Binds the frozen checkpoint evaluation dataset."
+    },
+    {
+      "cell_id": "cell_014",
+      "cell_type": "sol:cell/code",
+      "summary": "Computes loss, accuracy, and EOS rate for each checkpoint."
+    },
+    {
+      "cell_id": "cell_015",
+      "cell_type": "sol:cell/display",
+      "summary": "Places the current metrics output into the narrative flow."
+    },
+    {
+      "cell_id": "cell_claim_anchor_007",
+      "cell_type": "sol:cell/anchor",
+      "summary": "Places claim_007 into the report without duplicating its canonical content."
+    }
+  ],
+  "execution_structure": {
+    "cells": [
+      "cell:cell_001",
+      "cell:cell_010",
+      "cell:cell_011",
+      "cell:cell_014",
+      "cell:cell_015",
+      "cell:cell_claim_anchor_007"
+    ],
+    "type": "linear"
+  },
+  "records": [
+    {
+      "record_id": "claim_007",
+      "record_type": "sol:record/claim",
+      "status": {
+        "lifecycle": "active",
+        "staleness": "current",
+        "verification": "verified"
+      },
+      "summary": "M200 has lower EOS hazard than M0 on open-ended prompts."
+    },
+    {
+      "record_id": "decision_002",
+      "record_type": "sol:record/decision",
+      "status": {
+        "lifecycle": "active",
+        "staleness": "current",
+        "verification": "unverified"
+      },
+      "summary": "Promote M200 for next-stage testing."
+    },
+    {
+      "record_id": "evidence_011",
+      "record_type": "sol:record/evidence",
+      "status": {
+        "lifecycle": "active",
+        "staleness": "current",
+        "verification": "unverified"
+      },
+      "summary": "Metrics table showing M200 has a lower EOS rate than M0."
+    },
+    {
+      "record_id": "task_001",
+      "record_type": "sol:record/task",
+      "status": {
+        "lifecycle": "active",
+        "staleness": "current",
+        "verification": "unverified"
+      },
+      "summary": "Compare checkpoints M0, M200, and M2000."
+    },
+    {
+      "record_id": "verification_005",
+      "record_type": "sol:record/verification",
+      "status": {
+        "lifecycle": "active",
+        "staleness": "current",
+        "verification": "unverified"
+      },
+      "summary": "Human review confirmed that claim_007 is supported by the committed metrics."
+    }
+  ],
+  "render_id": "machine_summary",
+  "runs": [
+    {
+      "result_commit": "commit:commit_042",
+      "run_id": "run_008",
+      "source_commit": "commit:commit_041",
+      "status": "success"
+    }
+  ],
+  "sol_version": "0.1",
+  "source_commit": "commit_042",
+  "target": "machine_summary"
+}

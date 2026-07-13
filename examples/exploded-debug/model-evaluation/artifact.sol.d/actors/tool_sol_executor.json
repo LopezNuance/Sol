@@ -1,0 +1,12 @@
+{
+  "actor_id": "tool:sol_executor",
+  "actor_type": "tool",
+  "capabilities": [
+    "read",
+    "execute",
+    "render"
+  ],
+  "environment_id": "env_001",
+  "tool_name": "sol-executor",
+  "tool_version": "0.1.0-draft"
+}

@@ -1,0 +1,11 @@
+{
+  "actor_id": "agent:eval_reviewer_001",
+  "actor_type": "agent",
+  "autonomy_level": "review_required",
+  "configuration_digest": "digest:sha256:6aac5fdae2b477c93ab2c56f7f63df69f38575e2b792792be8ea313e23ac3c1a",
+  "delegated_by": "human:alice",
+  "model_id": "provider/model-name",
+  "model_version": "2026-01-01",
+  "prompt_template_digest": "digest:sha256:02060241e6278c8dec9f0d02c6dd7b7cc64615aa649f8a2298d93dfc3e3c777b",
+  "tool_policy_digest": "digest:sha256:132295d40a0ebf7a2b1b19fd5ba9723c793dbffdc07d8bed3c450bceabede571"
+}

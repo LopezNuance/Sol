@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Model Evaluation Report</title>
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 920px; margin: 2rem auto; padding: 0 1rem; line-height: 1.5; }
+    table { border-collapse: collapse; width: 100%; }
+    th, td { border: 1px solid #999; padding: .45rem; text-align: right; }
+    th:first-child, td:first-child { text-align: left; }
+    .meta, .status { padding: .75rem; border: 1px solid #999; margin: 1rem 0; }
+    code { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <h1>Model Evaluation Report</h1>
+  <div class="meta">
+    <strong>Derived view.</strong> Source commit: <code>commit:commit_042</code>.<br>
+    Artifact: <code>art_example_model_evaluation</code>. Reproducibility status: <strong>unknown</strong> (not re-executed in this minimal example).
+  </div>
+  <h2>Task</h2>
+  <p>Compare checkpoints M0, M200, and M2000 and recommend one for next-stage testing.</p>
+  <h2>Metrics</h2>
+  <table>
+    <thead><tr><th>Checkpoint</th><th>Loss</th><th>EOS rate</th><th>Accuracy</th></tr></thead>
+    <tbody>
+      <tr><td>M0</td><td>3.42</td><td>0.71</td><td>0.48</td></tr>
+      <tr><td>M200</td><td>2.98</td><td>0.43</td><td>0.61</td></tr>
+      <tr><td>M2000</td><td>2.87</td><td>0.46</td><td>0.60</td></tr>
+    </tbody>
+  </table>
+  <h2>Verified claim</h2>
+  <p>Checkpoint M200 has lower EOS hazard than M0 on open-ended prompts.</p>
+  <div class="status">Status: current; verification: verified by independent human review of the committed evidence.</div>
+  <h2>Decision</h2>
+  <p>Promote M200 for next-stage testing under the rule “highest accuracy subject to a materially lower EOS rate than M0.”</p>
+  <p>No stale records, invalidated outputs, or failed verifications are present in this rendered view.</p>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "actor_id": "human:alice",
+  "cell_id": "cell_001",
+  "cell_type": "sol:cell/prose",
+  "metadata": {
+    "task_ref": "record:task_001"
+  },
+  "source": "Compare checkpoints M0, M200, and M2000 and recommend one for next-stage testing.",
+  "source_hash": "digest:sha256:c82f260367252d97d379262b20903c9adbb2bdc1053044f4106df4714388bf6f",
+  "summary": "Introduces the checkpoint comparison task.",
+  "title": "Task"
+}

@@ -1,0 +1,15 @@
+{
+  "created_at": "2026-01-01T00:10:02Z",
+  "includes_records": [
+    "record:evidence_011",
+    "record:claim_007",
+    "record:decision_002",
+    "record:verification_005"
+  ],
+  "output_object": "object:sha256:0e6e46239d8eb4f25d8ef056c5c5ea80b4258a6bada6e04ac46b5fdb7bf79e5d",
+  "render_id": "report",
+  "script_policy": "disabled",
+  "source_commit": "commit:commit_042",
+  "stale_disclosures": [],
+  "target": "html"
+}

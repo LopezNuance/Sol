@@ -1,0 +1,1 @@
+{"columns":[{"name":"checkpoint","type":"string"},{"name":"loss","type":"number"},{"name":"eos_rate","type":"number"},{"name":"accuracy","type":"number"}],"primary_key":["checkpoint"],"type":"table"}

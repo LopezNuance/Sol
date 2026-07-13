@@ -1,0 +1,4 @@
+checkpoint,loss,eos_rate,accuracy
+M0,3.42,0.71,0.48
+M200,2.98,0.43,0.61
+M2000,2.87,0.46,0.60

@@ -1,0 +1,4 @@
+checkpoint,total_prompts,eos_events,correct_predictions,total_loss
+M0,100,71,48,342
+M200,100,43,61,298
+M2000,100,46,60,287

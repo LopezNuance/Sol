@@ -1,0 +1,69 @@
+{
+  "artifact_id": "art_example_model_evaluation",
+  "artifact_type": "sol_notebook",
+  "authorization": {
+    "permit_self_application": false,
+    "protected_branches": [
+      {
+        "allowed_committers": [
+          "human:alice"
+        ],
+        "branch": "main",
+        "protected": true,
+        "required_capabilities": [
+          "approve"
+        ]
+      }
+    ]
+  },
+  "current_commit": "commit_042",
+  "environment": {
+    "container_ref": "registry.example/sol-runner@sha256:2222222222222222222222222222222222222222222222222222222222222222",
+    "environment_id": "env_001",
+    "package_manifest": "digest:sha256:3f20b8a78cf1f8ac86e304b0a04387d977f3d2096edf78a820540ddee8a06098",
+    "sbom_ref": "object:sha256:41cb3f2b8388d5a1121f410a267e346116dca61cd746d42a6569affc2d7a23eb"
+  },
+  "execution": {
+    "deterministic": false,
+    "partial_execution_policy": "invalidate_downstream",
+    "random_seed": 1234,
+    "structure": "linear"
+  },
+  "optional_features": [
+    "sol:feature/signatures",
+    "sol:feature/external_evidence"
+  ],
+  "rendering": {
+    "allowed_views": [
+      "html",
+      "markdown",
+      "audit",
+      "machine_summary"
+    ],
+    "default_view": "html"
+  },
+  "reproducibility_status": "unknown",
+  "required_features": [
+    "sol:feature/linear_execution",
+    "sol:feature/internal_object_store",
+    "sol:feature/machine_summary"
+  ],
+  "runtime": {
+    "allowed_languages": [
+      {
+        "kernel_adapter": "sol-kernel-python",
+        "language": "python"
+      }
+    ],
+    "kernel_adapter": "sol-kernel-python",
+    "language_version": "3.12",
+    "primary_language": "python"
+  },
+  "security": {
+    "execution_requires_confirmation": true,
+    "network_access": false,
+    "sandbox_profile": "sandbox_minimal"
+  },
+  "sol_version": "0.1",
+  "title": "Model Evaluation Report"
+}

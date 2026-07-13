@@ -1,0 +1,15 @@
+{
+  "actor_id": "human:alice",
+  "cell_id": "cell_015",
+  "cell_type": "sol:cell/display",
+  "depends_on": [
+    "cell:cell_014"
+  ],
+  "display_ref": "cell:cell_014#metrics_table",
+  "render_hint": {
+    "style": "table"
+  },
+  "source_hash": "digest:sha256:9801225ffee7b12be812b807f93b4dab4a9b584593f7079cc181ed02d708889b",
+  "summary": "Places the current metrics output into the narrative flow.",
+  "title": "Metrics table"
+}
