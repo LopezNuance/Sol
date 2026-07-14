@@ -1,11 +1,55 @@
-# Repository Information
+# Sol
 
-This repository includes both the Sol RFC (Sol_RFC_v1.md) as well as a prototype validator explained below.
+Sol is a proposed self-contained, versioned computational work artifact for humans, software tools, and autonomous or semi-autonomous agents.
 
+It preserves execution structure, source cells, outputs, provenance, actors, semantic records, failures, verification, history, and rendered views as parts of a canonical computational artifact rather than requiring the next reader to reconstruct that information from HTML, Markdown, or another terminal rendering.
 
-# Sol Validator Prototype (v0.1.0-draft)
+> **This repository contains an executable Python validator and a corpus generator that produces 31 conformance cases—6 golden cases and 25 pathological cases—in addition to the frozen RFC.**
 
-This is an initial reference validator and pathology corpus for RFC-SOL-0001 v0.1.0-draft.
+## Run it
+
+Python 3.10 or later is required.
+
+From the repository root:
+
+```bash
+python -m solval.make_corpus corpus
+python -m solval.validate corpus/GOLD-01/artifact.sol.d
+python -m solval.validate --profile strict corpus/PATH-003/artifact.sol.d
+python -m solval.validate_corpus corpus
+```
+
+The first command regenerates the `corpus/` directory from scratch. Permanent examples and manually maintained artifacts belong under `examples/`, not under the generated corpus directory.
+
+The final command should report that all generated cases satisfy their expected diagnostics.
+
+## Authorship and publication identity
+
+This repository is maintained under the GitHub handle **LopezNuance**.
+
+The same author publishes explanatory articles on Medium under the name **Jamweba**. The Medium articles and this repository describe the same Sol project and were written by the same person.
+
+Related articles:
+
+- [Markdown Isn’t Enough. HTML Isn’t Either.](https://medium.com/codetodeploy/markdown-isnt-enough-html-isn-t-either-6336e9612462?source=friends_link&sk=265fa67996de8a899defba38e4ca3510)
+- [The Sol System](https://jam2we5b3a.medium.com/the-sol-system-c05e5436e028?sk=05163c59ae16d07e7745edb4f0d34aeb)
+
+The articles explain the motivation and architecture. The frozen RFC, executable validator, and conformance corpus in this repository are the technical reference and implementation materials.
+
+## Repository information
+
+This repository includes:
+
+- the frozen [RFC-SOL-0001 v0.1.0 draft](docs/RFC-SOL-0001-v0.1.0-draft-freeze.md);
+- the `solval` prototype validator;
+- a deterministic golden and pathology corpus generator;
+- machine-summary generation and validation;
+- an exploded debug artifact example under `examples/exploded-debug/`;
+- deterministic diagnostics for the frozen V0–V5 validation catalog.
+
+## Sol Validator Prototype
+
+This is the initial reference validator and pathology corpus for RFC-SOL-0001 v0.1.0-draft.
 
 It uses the non-normative exploded debug representation:
 
@@ -21,15 +65,6 @@ artifact.sol.d/
   objects/sha256/<digest>
   renders/machine_summary.json
   expected_diagnostics.json
-```
-
-## Quick start
-
-```bash
-python -m solval.make_corpus corpus
-python -m solval.validate corpus/GOLD-01/artifact.sol.d
-python -m solval.validate --profile strict corpus/PATH-003/artifact.sol.d
-python -m solval.validate_corpus corpus
 ```
 
 The validator is intentionally conservative and schema-light. It implements the frozen RFC validation catalog V0-V5 as executable checks where possible, and emits deterministic JSON diagnostics.
