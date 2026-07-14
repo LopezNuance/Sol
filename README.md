@@ -6,6 +6,18 @@ It preserves execution structure, source cells, outputs, provenance, actors, sem
 
 > **This repository contains an executable Python validator and a corpus generator that produces 31 conformance cases—6 golden cases and 25 pathological cases—in addition to the frozen RFC.**
 
+## Naming note
+
+Sol was independently named and publicly released as a computational
+artifact project before OpenAI’s general public announcement of its
+GPT-5.6 model names.
+
+This project is unrelated to OpenAI and is not affiliated with, endorsed
+by, or derived from OpenAI or its products.
+
+“Sol” remains a provisional project name and is subject to namespace,
+trademark, and ecosystem review.
+
 ## Run it
 
 Python 3.10 or later is required.
