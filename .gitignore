@@ -123,6 +123,9 @@ dmypy.json
 # pyright
 pyrightconfig.json
 
+# PDFs
+*.pdf
+
 # dotenv
 .env
 .env.*
