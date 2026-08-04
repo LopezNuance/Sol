@@ -1,0 +1,337 @@
+{
+  "authoritative_feedback_source": "executable bound-algebra implementation and validators",
+  "conditions": [
+    {
+      "evidence": {
+        "coverage": {
+          "Annotate": true,
+          "Difference": true,
+          "Distinct": true,
+          "Evaluate": true,
+          "Group": true,
+          "Intersect": true,
+          "Join": true,
+          "LeastFixpoint": true,
+          "Limit": true,
+          "Order": true,
+          "Project": true,
+          "Relation": true,
+          "Rename": true,
+          "Select": true,
+          "TemporalSlice": true,
+          "Union": true
+        }
+      },
+      "number": 1,
+      "passed": true,
+      "title": "Bound-transfer rules cover every core logical operator"
+    },
+    {
+      "evidence": {
+        "limit_guarantee": "heuristic",
+        "unknown_aggregate_rejected": true
+      },
+      "number": 2,
+      "passed": true,
+      "title": "Unsupported guarantee compositions reject or downgrade deterministically"
+    },
+    {
+      "evidence": {
+        "query_digest": "sha256:adfd2597bc8f0856d55111bdd862283551d9aadc2743298830f95884d47f3125",
+        "schemas": [
+          "schemas/query.schema.json",
+          "schemas/execution.schema.json",
+          "schemas/bound.schema.json"
+        ]
+      },
+      "number": 3,
+      "passed": true,
+      "title": "Canonical typed AST and canonicalization schemas are published"
+    },
+    {
+      "evidence": {
+        "mapping_digest": "sha256:56c688147a1e703785f094ae3fc3c84243a9340794dea080f50dc42a8cc53fa4",
+        "profile_document": "docs/substrait-profile.md"
+      },
+      "number": 4,
+      "passed": true,
+      "title": "A Substrait mapping profile is documented"
+    },
+    {
+      "evidence": {
+        "mandatory_rules": [
+          "sol:rewrite/associate_exact_join/v1",
+          "sol:rewrite/normalize_union/v1",
+          "sol:rewrite/prune_exact_projection/v1",
+          "sol:rewrite/push_exact_selection_through_join/v1",
+          "sol:rewrite/substitute_exact_machine_summary/v1"
+        ],
+        "registered": [
+          "sol:rewrite/associate_exact_join/v1",
+          "sol:rewrite/normalize_union/v1",
+          "sol:rewrite/prune_exact_projection/v1",
+          "sol:rewrite/push_exact_selection_through_join/v1",
+          "sol:rewrite/push_filter_across_policy_with_disclosure_proof/v1",
+          "sol:rewrite/substitute_exact_machine_summary/v1"
+        ]
+      },
+      "number": 5,
+      "passed": true,
+      "title": "Rewrite registration, proof evidence, and assurance obligations are implemented"
+    },
+    {
+      "evidence": {
+        "bucketed_cardinality": "bucket:10-19",
+        "validator_rules": [
+          "QV9-03"
+        ]
+      },
+      "number": 6,
+      "passed": true,
+      "title": "Logical-disclosure baseline and validators are implemented"
+    },
+    {
+      "evidence": {
+        "evaluation_key": "sha256:27eb26207809f359fd64e2bf2745e5c310ac6a39f5c283c297bc48a1ca46473c",
+        "object_ref": "object:sha256:eff2a4f86ca9db4a2a5344c1a866f37fd46e6b2809571db7931f53106c594942"
+      },
+      "number": 7,
+      "passed": true,
+      "title": "Semantic evaluator materialization and evaluation keys are implemented"
+    },
+    {
+      "evidence": {
+        "blocker": "no authoritative RFC-SOL-0001 exploded representation profile was supplied",
+        "reference_profile": "solqry-reference-exploded/v1",
+        "reference_profile_scan_passed": true
+      },
+      "number": 8,
+      "passed": false,
+      "title": "Exact evaluator runs over the authoritative exploded RFC-SOL-0001 representation"
+    },
+    {
+      "evidence": {
+        "covering_applied": true,
+        "lossy_diagnostics": [
+          "QV7-02"
+        ],
+        "lossy_rejected": true
+      },
+      "number": 9,
+      "passed": true,
+      "title": "Machine-summary substitution requires a proven covering query"
+    },
+    {
+      "evidence": {
+        "passed_cases": 69,
+        "report_digest": "sha256:b135e1d0c56804bd0ff579ddec9ac6102ee7582b66e8eb11973431736ff6f846",
+        "total": 69
+      },
+      "number": 10,
+      "passed": true,
+      "title": "Mandatory golden and pathological corpus passes deterministically"
+    },
+    {
+      "evidence": {
+        "execution_status": "complete",
+        "query_digest": "sha256:adfd2597bc8f0856d55111bdd862283551d9aadc2743298830f95884d47f3125"
+      },
+      "number": 11,
+      "passed": true,
+      "title": "Query and execution records validate against schemas"
+    },
+    {
+      "evidence": {
+        "final_rows": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ]
+        ],
+        "guarantees": [
+          "bounded",
+          "bounded",
+          "exact"
+        ],
+        "statuses": [
+          "incomplete_with_continuation",
+          "incomplete_with_continuation",
+          "complete"
+        ]
+      },
+      "number": 12,
+      "passed": true,
+      "title": "End-to-end bounded query demonstrates honest budget degradation"
+    },
+    {
+      "evidence": {
+        "cases": {
+          "QGOLD-013": true,
+          "QGOLD-014": true,
+          "QGOLD-015": true,
+          "QGOLD-016": true
+        }
+      },
+      "number": 13,
+      "passed": true,
+      "title": "Structural one-sided bounds pass QGOLD-013 through QGOLD-016"
+    },
+    {
+      "evidence": {
+        "golden": true,
+        "pathologies": {
+          "QPATH-037": true,
+          "QPATH-038": true
+        },
+        "upper_only": [
+          [
+            2
+          ]
+        ]
+      },
+      "number": 14,
+      "passed": true,
+      "title": "Bound provenance distinguishes lower membership and upper derivation"
+    },
+    {
+      "evidence": {
+        "declared": "validated",
+        "effective": "unknown"
+      },
+      "number": 15,
+      "passed": true,
+      "title": "Stale assurance evaluates effectively as unknown"
+    },
+    {
+      "evidence": {
+        "evaluator_diagnostics": [
+          "QV6-05",
+          "QV7-02"
+        ],
+        "policy_diagnostics": [
+          "QV7-07"
+        ]
+      },
+      "number": 16,
+      "passed": true,
+      "title": "Policy and evaluator boundary rewrites default to non-preserving"
+    },
+    {
+      "evidence": {
+        "QGOLD-020": true,
+        "QPATH-042": true,
+        "interval": {
+          "aggregate": "AVG",
+          "always_undefined": false,
+          "exact": false,
+          "lower": {
+            "denominator": 1,
+            "numerator": 5
+          },
+          "may_be_empty": false,
+          "notes": [
+            "extrema checked over sorted optional prefixes"
+          ],
+          "rule_id": "sol:bound/avg_optional_prefix/v1",
+          "upper": {
+            "denominator": 2,
+            "numerator": 21
+          },
+          "witness": {
+            "max_optional_prefix_length": 1,
+            "min_optional_prefix_length": 1
+          }
+        }
+      },
+      "number": 17,
+      "passed": true,
+      "title": "avg_optional_prefix/v1 passes golden and pathological cases"
+    },
+    {
+      "evidence": {
+        "adversarial_cases": {
+          "sol:rewrite/associate_exact_join/v1": [
+            "QPATH-045"
+          ],
+          "sol:rewrite/normalize_union/v1": [
+            "QPATH-046"
+          ],
+          "sol:rewrite/prune_exact_projection/v1": [
+            "QPATH-044"
+          ],
+          "sol:rewrite/push_exact_selection_through_join/v1": [
+            "QPATH-022"
+          ],
+          "sol:rewrite/substitute_exact_machine_summary/v1": [
+            "QPATH-034"
+          ]
+        },
+        "certificates": [
+          {
+            "cases": 4096,
+            "path": "/mnt/data/solqry-bound-algebra-ref/proofs/certificates/join-associativity.json",
+            "rule_slug": "join-associativity",
+            "transcript_digest": "sha256:9a25d229d28f6350712d600e98b4be67aa63c1fd4cbd51b78379a0c4d4b9d751",
+            "verified": true
+          },
+          {
+            "cases": 256,
+            "path": "/mnt/data/solqry-bound-algebra-ref/proofs/certificates/machine-summary-substitution.json",
+            "rule_slug": "machine-summary-substitution",
+            "transcript_digest": "sha256:3958ad2559ddbef8029506e35a04dffcce54721f77c7d4f452bb527c540bfa20",
+            "verified": true
+          },
+          {
+            "cases": 256,
+            "path": "/mnt/data/solqry-bound-algebra-ref/proofs/certificates/projection-pruning.json",
+            "rule_slug": "projection-pruning",
+            "transcript_digest": "sha256:c927428279040dcdd925ca397ef91008485a4974389cfb2fedb56922f8e3a922",
+            "verified": true
+          },
+          {
+            "cases": 256,
+            "path": "/mnt/data/solqry-bound-algebra-ref/proofs/certificates/selection-pushdown.json",
+            "rule_slug": "selection-pushdown",
+            "transcript_digest": "sha256:85151790f8791ff3bb151c50c5d8a57bea7b0d7419011c1ea68833e0921a8e9e",
+            "verified": true
+          },
+          {
+            "cases": 512,
+            "path": "/mnt/data/solqry-bound-algebra-ref/proofs/certificates/union-normalization.json",
+            "rule_slug": "union-normalization",
+            "transcript_digest": "sha256:4c448cb3d5ec47c8b972cefc1022cf6ba497b18b9cd1d79137a7a9f41850303e",
+            "verified": true
+          }
+        ]
+      },
+      "number": 18,
+      "passed": true,
+      "title": "Mandatory rewrite kernel has checked artifacts and adversarial cases"
+    },
+    {
+      "evidence": {
+        "logical_claims": {
+          "tuple_existence": "preserved",
+          "value": "preserved"
+        },
+        "physical_claims": {
+          "evaluator_invocation_count": "not_claimed",
+          "timing": "not_claimed"
+        }
+      },
+      "number": 19,
+      "passed": true,
+      "title": "Logical and physical leakage claims remain separated"
+    }
+  ],
+  "failed": 1,
+  "format": "solqry-freeze-gate-report/v1",
+  "passed": 18,
+  "report_digest": "sha256:5c712a46f824a149d1d41dba491b8c1f06eaeb2ad119e3efeebf1eaa146e45cb",
+  "status": "NOT_FROZEN"
+}
