@@ -82,6 +82,9 @@ ignore = [
 ]
 
 [tool.pytest.ini_options]
+# The qryref package lives in qry_reference_impl/; make it importable for
+# root-level pytest runs (the pre-push quality gate).
+pythonpath = ["qry_reference_impl"]
 addopts = [
   "-ra",
   "--strict-markers",
