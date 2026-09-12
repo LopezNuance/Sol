@@ -1,0 +1,36 @@
+{
+  "description": "The bag-set confusion: projection under bag semantics is treated as duplicate-eliminating without an explicit Distinct.",
+  "nodes": [
+    {
+      "id": "rv",
+      "op": "read",
+      "source": "vals"
+    }
+  ],
+  "query_id": "QPATH-015",
+  "root": "rv",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "vals": {
+      "bag": true,
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    }
+  }
+}

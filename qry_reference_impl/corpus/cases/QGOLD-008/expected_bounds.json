@@ -1,0 +1,123 @@
+{
+  "query_id": "QGOLD-008",
+  "root": "ag",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "sol:bound/count_set/v1",
+        "source:vals"
+      ],
+      "evidence": [
+        "source:vals"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/count_set/v1",
+    "guarantee": "bounded",
+    "intervals": [
+      {
+        "field": "c",
+        "group": [
+          1
+        ],
+        "lower": 1,
+        "may_be_empty": false,
+        "upper": 1
+      },
+      {
+        "field": "c",
+        "group": [
+          2
+        ],
+        "lower": 1,
+        "may_be_empty": false,
+        "upper": 1
+      },
+      {
+        "field": "c",
+        "group": [
+          3
+        ],
+        "lower": 0,
+        "may_be_empty": false,
+        "upper": 1
+      }
+    ],
+    "lower": {
+      "fields": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    "lower_object": "object:sha256:8669487ab94ffc52cbf93a69fdd71b438407bcef37daced07a7b7fd4576b3412",
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            1
+          ]
+        },
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            2
+          ]
+        }
+      ],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [
+          "object:sha256:8669487ab94ffc52cbf93a69fdd71b438407bcef37daced07a7b7fd4576b3412",
+          "object:sha256:ec5a721b7c2273e57afd06faf854b19cd325b44595279f927f121e7b3b31a512"
+        ],
+        "rewrites": [],
+        "rule_id": "sol:bound/count_set/v1",
+        "sources": [
+          "source:vals"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": null,
+    "upper": {
+      "fields": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ]
+    },
+    "upper_object": "object:sha256:ec5a721b7c2273e57afd06faf854b19cd325b44595279f927f121e7b3b31a512"
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

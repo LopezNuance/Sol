@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-033",
+  "description": "The hidden heuristic view: a materialized view was produced heuristically but substituted into an exact query.",
+  "expected_diagnostics": [
+    "QV8-02"
+  ]
+}

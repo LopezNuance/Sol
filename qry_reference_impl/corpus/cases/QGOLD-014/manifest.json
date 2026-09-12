@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-014",
+  "description": "Semantic filter with certified positive classifications: lower = positives, upper = input (13.7.1).",
+  "expected_diagnostics": []
+}

@@ -1,0 +1,36 @@
+{
+  "description": "The false exact result: approximate nearest-neighbor retrieval returns top-k rows labeled exact.",
+  "nodes": [
+    {
+      "id": "rv",
+      "op": "read",
+      "source": "vals"
+    }
+  ],
+  "query_id": "QPATH-003",
+  "root": "rv",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "vals": {
+      "approximate": true,
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ]
+    }
+  }
+}

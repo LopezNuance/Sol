@@ -1,0 +1,73 @@
+{
+  "applied": true,
+  "record": {
+    "assurance": "proven",
+    "location": "node:pb",
+    "rule_id": "sol:rewrite/push_filter_across_policy_with_disclosure_proof/v1"
+  },
+  "rewritten_query": {
+    "extensions": [
+      "urn:qry:v0.3:policy-boundary"
+    ],
+    "nodes": [
+      {
+        "id": "ra",
+        "op": "read",
+        "source": "a"
+      },
+      {
+        "id": "f",
+        "input": "ra",
+        "op": "filter",
+        "predicate": {
+          "terms": [
+            {
+              "field": "tag",
+              "op": "eq",
+              "value": "y"
+            }
+          ]
+        }
+      },
+      {
+        "id": "pb",
+        "input": "f",
+        "op": "policy_boundary",
+        "policy": "policy:authorization_restricted"
+      }
+    ],
+    "query_id": "QGOLD-021",
+    "root": "pb",
+    "schema_version": "qry.query.v0.3",
+    "sources": {
+      "a": {
+        "schema": [
+          {
+            "name": "id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "tag",
+            "nullable": false,
+            "type": "string"
+          }
+        ],
+        "tuples": [
+          [
+            1,
+            "x"
+          ],
+          [
+            2,
+            "y"
+          ],
+          [
+            3,
+            "z"
+          ]
+        ]
+      }
+    }
+  }
+}

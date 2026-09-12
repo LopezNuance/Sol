@@ -1,0 +1,7 @@
+{
+  "case_id": "QGOLD-012",
+  "description": "Incomplete execution with continuation and honest bounded result.",
+  "expected_diagnostics": [],
+  "expected_guarantee": "bounded",
+  "expected_status": "incomplete_with_continuation"
+}

@@ -1,0 +1,116 @@
+profile: qry-substrait-mapping-v0.3
+substrait_target: logical-relations
+status: normative-baseline
+summary: >
+  QRY v0.3 maps standard relational nodes to Substrait relation concepts.
+  Sol-specific semantics are represented by declared extensions rather than
+  by changing the meaning of standard relational nodes (spec 29.2). The
+  profile is the documented mapping for gate condition 4; its content digest
+  is recorded in mapping_digest.json.
+
+supported_relations:
+  read:
+    substrait: ReadRel
+    notes: Source schema, row metadata, and pinned-instance data (tuples / certified lower/upper) are QRY extensions used by bound inference.
+  filter:
+    substrait: FilterRel
+    notes: Exact deterministic predicate terms map to Substrait expressions; selectivity annotations are QRY bound metadata.
+  project:
+    substrait: ProjectRel
+    notes: Field references, literals, and exact deterministic computed columns.
+  rename:
+    substrait: ProjectRel
+    notes: Field-name mapping only; row set unchanged.
+  sort:
+    substrait: SortRel
+  limit:
+    substrait: FetchRel
+    notes: Position certainty requires an exact, deterministically ordered input (13.15); otherwise the result is labeled heuristic.
+  distinct:
+    substrait: AggregateRel
+    notes: Logical uniqueness operator over declared keys.
+  aggregate:
+    substrait: AggregateRel
+    notes: Group keys and aggregate functions; certified numeric intervals are QRY bound annotations (13.11-13.14).
+  join:
+    substrait: JoinRel
+    notes: Inner joins over exact deterministic conditions map directly; non-inner joins leave certified sides unavailable in the v0.3 baseline.
+  union_all:
+    substrait: SetRel
+    set_op: UNION
+    notes: Bag union (11.2).
+  union_distinct:
+    substrait: SetRel
+    set_op: UNION_DISTINCT
+    notes: Set union (default set semantics, QINV-03).
+  intersect:
+    substrait: SetRel
+    set_op: INTERSECT
+  difference:
+    substrait: SetRel
+    set_op: MINUS
+  annotate:
+    substrait: ProjectRel
+    notes: Exact deterministic column computation; row set unchanged.
+  evaluate:
+    substrait: ExtensionRel
+    notes: Tuple-preserving semantic evaluator (barrier); certified positive sets and structural containment are QRY extensions (13.7.1).
+  least_fixpoint:
+    substrait: ExtensionRel
+    notes: Positive recursive program; separate lower/upper least fixed points (13.10).
+  temporal_slice:
+    substrait: FilterRel
+    notes: Valid-time predicate over an explicit time field (17).
+  policy_boundary:
+    substrait: ExtensionRel
+    notes: Explicit policy-boundary marker; identity transfer; rewrites spanning it default to non-preserving (gate 16).
+
+unsupported_in_v0_3:
+  - window functions
+  - correlated subqueries
+  - arbitrary scalar functions
+  - user-defined relations
+  - embedded functions
+  - physical relation variants
+
+extension_urns:
+  - urn:qry:v0.3:commit-pinned-sources
+  - urn:qry:v0.3:commit-ancestry
+  - urn:qry:v0.3:world-assumptions
+  - urn:qry:v0.3:certified-answer-bounds
+  - urn:qry:v0.3:structural-one-sided-bounds
+  - urn:qry:v0.3:assurance-evidence
+  - urn:qry:v0.3:bound-provenance
+  - urn:qry:v0.3:visibility-authorization
+  - urn:qry:v0.3:logical-disclosure
+  - urn:qry:v0.3:physical-side-channel
+  - urn:qry:v0.3:valid-time
+  - urn:qry:v0.3:semantic-evaluator-barrier
+  - urn:qry:v0.3:materialized-assessment
+  - urn:qry:v0.3:positive-recursion
+  - urn:qry:v0.3:policy-boundary
+
+extension_areas:
+  commit-pinned-sources: Commit-pinned sources
+  commit-ancestry: Commit ancestry
+  world-assumptions: World assumptions
+  certified-answer-bounds: Certified answer bounds
+  structural-one-sided-bounds: Structural one-sided bound rules
+  assurance-evidence: Assurance evidence and dependencies
+  bound-provenance: Lower-membership and upper-bound provenance contracts
+  visibility-authorization: Visibility and authorization policy
+  logical-disclosure: Logical-disclosure policy
+  physical-side-channel: Physical side-channel policy
+  valid-time: Valid time
+  semantic-evaluator-barrier: Semantic evaluator barriers
+  materialized-assessment: Materialized assessment relations
+  positive-recursion: Positive recursive programs (least fixed point)
+  policy-boundary: Explicit policy-boundary nodes
+
+bound_annotations:
+  guarantee: canonical guarantee kind (exact, lower_bound, upper_bound, bounded, heuristic)
+  lower: certified lower relation (content-addressed object reference)
+  upper: certified upper relation (content-addressed object reference)
+  intervals: certified numeric intervals for aggregate results (13.11-13.14)
+  assurance: assurance record with evidence and dependencies (13.3)
+  provenance: lower-membership and upper-bound derivation provenance (12.5-12.9)

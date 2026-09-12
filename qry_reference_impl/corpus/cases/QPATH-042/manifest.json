@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-042",
+  "description": "The invalid AVG prefix: the AVG interval omits an extremal optional prefix and excludes a feasible mean.",
+  "expected_diagnostics": [
+    "QV5-12"
+  ]
+}

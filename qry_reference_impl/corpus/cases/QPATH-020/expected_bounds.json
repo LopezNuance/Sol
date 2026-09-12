@@ -1,0 +1,132 @@
+{
+  "query_id": "QPATH-020",
+  "root": "j",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "source:users",
+        "source:orders",
+        "sol:bound/join/v1"
+      ],
+      "evidence": [
+        "source:users",
+        "source:orders"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/join/v1",
+    "guarantee": "exact",
+    "lower": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "amount",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a",
+          1,
+          10
+        ],
+        [
+          1,
+          "a",
+          1,
+          40
+        ],
+        [
+          2,
+          "b",
+          2,
+          20
+        ]
+      ]
+    },
+    "lower_object": null,
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [],
+      "upper_derivation": {
+        "evaluators": [
+          "sol:evaluator/positive_classifier/v1"
+        ],
+        "input_relations": [],
+        "rewrites": [],
+        "rule_id": "sol:bound/join/v1",
+        "sources": [
+          "source:users",
+          "source:orders"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": null,
+    "upper": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "amount",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a",
+          1,
+          10
+        ],
+        [
+          1,
+          "a",
+          1,
+          40
+        ],
+        [
+          2,
+          "b",
+          2,
+          20
+        ]
+      ]
+    },
+    "upper_object": null
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

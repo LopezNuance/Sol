@@ -1,0 +1,73 @@
+{
+  "description": "sol:bound/avg_optional_prefix/v1 returns a certified interval and records possible emptiness when lower is empty (13.14).",
+  "nodes": [
+    {
+      "id": "a",
+      "op": "read",
+      "source": "amounts"
+    },
+    {
+      "aggregates": [
+        {
+          "field": "amount",
+          "func": "avg",
+          "name": "avg_amount",
+          "type": "decimal"
+        }
+      ],
+      "group_by": [
+        "user_id"
+      ],
+      "id": "g1",
+      "input": "a",
+      "op": "aggregate"
+    }
+  ],
+  "query_id": "QGOLD-020",
+  "root": "g1",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "amounts": {
+      "lower": {
+        "tuples": [
+          [
+            1,
+            5
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "amount",
+          "nullable": false,
+          "type": "decimal"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            7
+          ]
+        ]
+      }
+    }
+  }
+}

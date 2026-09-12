@@ -1,0 +1,7 @@
+{
+  "case_id": "QRY-058",
+  "description": "invalid join type",
+  "expected_diagnostics": [
+    "QRY-SEM-012"
+  ]
+}

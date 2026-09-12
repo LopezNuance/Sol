@@ -1,0 +1,8 @@
+{
+  "anchors_record": "record:claim_007",
+  "cell_id": "anchor_bad",
+  "cell_type": "sol:cell/anchor",
+  "source_hash": "digest:sha256:79bfb0e2ba76b9d447606ddbcc494834f05a4c11deb052e74b49ea307a3c5bcd",
+  "statement": "Checkpoint M200 has lower EOS hazard than M0 on open-ended prompts.",
+  "summary": "Echo"
+}

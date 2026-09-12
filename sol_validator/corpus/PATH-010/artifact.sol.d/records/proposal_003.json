@@ -10,7 +10,9 @@
   ],
   "created_by": "agent:eval_reviewer_001",
   "predicted_invalidations": [
-    "record:claim_007"
+    "cell:cell_015#eos_plot",
+    "record:claim_007",
+    "record:decision_002"
   ],
   "rationale": "Break EOS rate out by prompt category.",
   "record_id": "proposal_003",
@@ -19,5 +21,6 @@
     "lifecycle": "applied",
     "staleness": "current",
     "verification": "unverified"
-  }
+  },
+  "summary": "Proposes breaking EOS rate out by prompt category."
 }

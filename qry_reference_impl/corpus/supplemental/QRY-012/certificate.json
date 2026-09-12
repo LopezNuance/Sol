@@ -1,0 +1,153 @@
+{
+  "case_id": "QRY-012",
+  "final_bound": {
+    "fields": [
+      {
+        "name": "id",
+        "nullable": false,
+        "type": "i64"
+      },
+      {
+        "name": "country",
+        "nullable": true,
+        "type": "string"
+      }
+    ],
+    "order": [],
+    "rows": {
+      "max": 2000,
+      "min": 0
+    },
+    "unique_keys": []
+  },
+  "query_id": "QRY-012",
+  "root": "ua",
+  "schema_version": "qry.certificate.v0.1",
+  "steps": [
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "name",
+            "nullable": false,
+            "type": "string"
+          },
+          {
+            "name": "country",
+            "nullable": true,
+            "type": "string"
+          },
+          {
+            "name": "active",
+            "nullable": false,
+            "type": "bool"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 1000,
+          "min": 0
+        },
+        "unique_keys": [
+          [
+            "id"
+          ]
+        ]
+      },
+      "input_nodes": [],
+      "node_id": "u",
+      "op": "read",
+      "rule": "qry.bound.read.v0"
+    },
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "country",
+            "nullable": true,
+            "type": "string"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 1000,
+          "min": 0
+        },
+        "unique_keys": []
+      },
+      "input_nodes": [
+        "u"
+      ],
+      "node_id": "p1",
+      "op": "project",
+      "rule": "qry.bound.project.v0"
+    },
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "country",
+            "nullable": true,
+            "type": "string"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 1000,
+          "min": 0
+        },
+        "unique_keys": []
+      },
+      "input_nodes": [
+        "u"
+      ],
+      "node_id": "p2",
+      "op": "project",
+      "rule": "qry.bound.project.v0"
+    },
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "country",
+            "nullable": true,
+            "type": "string"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 2000,
+          "min": 0
+        },
+        "unique_keys": []
+      },
+      "input_nodes": [
+        "p1",
+        "p2"
+      ],
+      "node_id": "ua",
+      "op": "union_all",
+      "rule": "qry.bound.union_all.v0"
+    }
+  ]
+}

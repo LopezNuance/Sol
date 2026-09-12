@@ -1,0 +1,73 @@
+{
+  "description": "The invalid AVG prefix: the AVG interval omits an extremal optional prefix and excludes a feasible mean.",
+  "nodes": [
+    {
+      "id": "a",
+      "op": "read",
+      "source": "amounts"
+    },
+    {
+      "aggregates": [
+        {
+          "field": "amount",
+          "func": "avg",
+          "name": "avg_amount",
+          "type": "decimal"
+        }
+      ],
+      "group_by": [
+        "user_id"
+      ],
+      "id": "g1",
+      "input": "a",
+      "op": "aggregate"
+    }
+  ],
+  "query_id": "QPATH-042",
+  "root": "g1",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "amounts": {
+      "lower": {
+        "tuples": [
+          [
+            1,
+            5
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "amount",
+          "nullable": false,
+          "type": "decimal"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            1,
+            5
+          ],
+          [
+            1,
+            16
+          ],
+          [
+            1,
+            6
+          ],
+          [
+            2,
+            7
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "description": "The semantic equality forgery: vector similarity is substituted for exact `=`.",
+  "extensions": [
+    "urn:qry:v0.3:semantic-evaluator-barrier"
+  ],
+  "nodes": [
+    {
+      "id": "ru",
+      "op": "read",
+      "source": "users"
+    },
+    {
+      "id": "f",
+      "input": "ru",
+      "op": "filter",
+      "predicate": {
+        "terms": [
+          {
+            "evaluator": "sol:evaluator/vector_similarity/v1",
+            "field": "name",
+            "op": "eq",
+            "value": "alice"
+          }
+        ]
+      }
+    }
+  ],
+  "query_id": "QPATH-002",
+  "root": "f",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "users": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ],
+        [
+          3,
+          "c"
+        ]
+      ]
+    }
+  }
+}

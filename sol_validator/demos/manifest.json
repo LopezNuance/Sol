@@ -1,0 +1,127 @@
+{
+  "checks": {
+    "container.direct_solnb": true,
+    "container.integrity": true,
+    "container.moved_unpacked": true,
+    "executor.partial_failure_same_run": true,
+    "executor.partial_status": true,
+    "executor.partial_validates": true,
+    "executor.success_validates": true,
+    "import.provenance_incomplete": true,
+    "import.validates": true,
+    "render.no_script_tags": true,
+    "render.source_commit_identified": true,
+    "render.stale_disclosed": true
+  },
+  "container": {
+    "bounded_reads": {
+      "REQ-014.1_manifest": {
+        "bytes_read": 5511,
+        "container_bytes": 33160,
+        "member_bytes": 1660,
+        "opens": 1
+      },
+      "REQ-014.2_skeleton": {
+        "bytes_read": 6275,
+        "container_bytes": 33160,
+        "member_bytes": 2370,
+        "opens": 1
+      },
+      "REQ-014.3_object": {
+        "bytes_read": 3940,
+        "container_bytes": 33160,
+        "member_bytes": 23,
+        "opens": 1
+      },
+      "REQ-014.4_integrity_problems": [],
+      "media_type": "application/vnd.sol.notebook",
+      "objects": 8
+    },
+    "container": "demos/container/gold01.solnb",
+    "container_bytes": 33160,
+    "direct_solnb_validation": [],
+    "moved_and_unpacked_valid": true
+  },
+  "deterministic": true,
+  "executor": {
+    "partial": {
+      "artifact": "demos/executor/partial/artifact.sol.d",
+      "bindings": [
+        {
+          "mime_type": "application/x-parquet",
+          "named_output": "cell:cell_014#metrics_table",
+          "object_ref": "object:sha256:d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31"
+        },
+        {
+          "mime_type": "image/png",
+          "named_output": "cell:cell_015#eos_plot",
+          "object_ref": "object:sha256:c2e93ae90fa365e59bace5a370714589ef35a16f7a419c30037bff6cffc40bd2"
+        }
+      ],
+      "cells_executed": [
+        "cell:cell_001",
+        "cell:cell_010",
+        "cell:cell_011",
+        "cell:cell_014",
+        "cell:cell_015",
+        "cell:cell_claim_anchor_007"
+      ],
+      "commit_id": "commit_100",
+      "failure_record": {
+        "error_type": "UnregisteredSource",
+        "failed_cell": "cell:cell_016",
+        "record_id": "failure_100",
+        "run_id": "run:run_100"
+      },
+      "run_id": "run_100",
+      "status": "partial_success",
+      "validates": true
+    },
+    "success": {
+      "artifact": "demos/executor/success/artifact.sol.d",
+      "bindings": [
+        {
+          "mime_type": "application/x-parquet",
+          "named_output": "cell:cell_014#metrics_table",
+          "object_ref": "object:sha256:d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31"
+        },
+        {
+          "mime_type": "image/png",
+          "named_output": "cell:cell_015#eos_plot",
+          "object_ref": "object:sha256:c2e93ae90fa365e59bace5a370714589ef35a16f7a419c30037bff6cffc40bd2"
+        }
+      ],
+      "cells_executed": [
+        "cell:cell_001",
+        "cell:cell_010",
+        "cell:cell_011",
+        "cell:cell_014",
+        "cell:cell_015",
+        "cell:cell_claim_anchor_007"
+      ],
+      "commit_id": "commit_100",
+      "run_id": "run_100",
+      "status": "success",
+      "validates": true
+    }
+  },
+  "generated_by": "solval.mvp_demo (RFC-SOL-0001 Phase 4 MVP demonstration)",
+  "import": {
+    "artifact": "demos/import_demo/imported/artifact.sol.d",
+    "artifact_id": "art_0c9a48208778d814008bfc",
+    "cells": 3,
+    "diagnostics": [],
+    "imported_outputs": 2,
+    "objects": 3,
+    "provenance_status": "incomplete"
+  },
+  "render": {
+    "gold01_html": "demos/render/gold01_commit_042.html",
+    "gold01_markdown": "demos/render/gold01_commit_042.md",
+    "no_script_tags": true,
+    "source_commit_identified": true,
+    "stale_disclosed": true,
+    "stale_disclosure_html": "demos/render/stale_disclosure.html"
+  },
+  "spec": "RFC-SOL-0001 v0.1.0-draft (frozen)"
+}

@@ -1,0 +1,93 @@
+{
+  "description": "Exact join with tuple provenance.",
+  "nodes": [
+    {
+      "id": "ru",
+      "op": "read",
+      "source": "users"
+    },
+    {
+      "id": "ro",
+      "op": "read",
+      "source": "orders"
+    },
+    {
+      "id": "j",
+      "join_type": "inner",
+      "left": "ru",
+      "on": [
+        {
+          "left": "id",
+          "right": "user_id"
+        }
+      ],
+      "op": "join",
+      "right": "ro"
+    }
+  ],
+  "query_id": "QGOLD-002",
+  "root": "j",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "orders": {
+      "schema": [
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "amount",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          20
+        ],
+        [
+          3,
+          30
+        ],
+        [
+          1,
+          40
+        ]
+      ]
+    },
+    "users": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ],
+        [
+          3,
+          "c"
+        ]
+      ]
+    }
+  }
+}

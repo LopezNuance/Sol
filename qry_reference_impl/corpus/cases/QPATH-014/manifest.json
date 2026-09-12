@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-014",
+  "description": "The timestamp time traveler: the latest commit is selected by wall-clock timestamp across divergent branches, with no ancestry relation or tie rule.",
+  "expected_diagnostics": [
+    "QV1-02"
+  ]
+}

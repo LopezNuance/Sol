@@ -1,0 +1,11 @@
+[project]
+name = "qryref"
+version = "0.1.0"
+description = "QRY bound-algebra reference implementation and validation corpus"
+requires-python = ">=3.10"
+dependencies = ["jsonschema>=4", "PyYAML>=6"]
+
+[project.scripts]
+qry-validate = "qryref.validate:main"
+qry-validate-corpus = "qryref.validate_corpus:main"
+qry-make-corpus = "qryref.make_corpus:main"

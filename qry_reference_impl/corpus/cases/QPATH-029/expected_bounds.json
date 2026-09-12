@@ -1,0 +1,72 @@
+{
+  "non_inference_claim": true,
+  "query_id": "QPATH-029",
+  "root": "r",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "source:r"
+      ],
+      "evidence": [
+        "source:r"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/relation/v1",
+    "guarantee": "exact",
+    "intervals": [],
+    "lower": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    "lower_object": "object:sha256:44374d21396cb8c2727776dd7fda204dd0caa22b9684b2dd5ad25d1a0c559c52",
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "none",
+      "lower_memberships": [],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [],
+        "rewrites": [],
+        "rule_id": "sol:bound/relation/v1",
+        "sources": [],
+        "view_substitutions": []
+      }
+    },
+    "result_object": "object:sha256:44374d21396cb8c2727776dd7fda204dd0caa22b9684b2dd5ad25d1a0c559c52",
+    "upper": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    "upper_object": "object:sha256:44374d21396cb8c2727776dd7fda204dd0caa22b9684b2dd5ad25d1a0c559c52"
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

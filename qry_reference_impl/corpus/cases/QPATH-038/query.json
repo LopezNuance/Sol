@@ -1,0 +1,49 @@
+{
+  "description": "The missing upper derivation: a bounded result has an upper object but no transfer rule or source-bound provenance.",
+  "nodes": [
+    {
+      "id": "u",
+      "op": "read",
+      "source": "users"
+    }
+  ],
+  "query_id": "QPATH-038",
+  "root": "u",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "users": {
+      "lower": {
+        "tuples": [
+          [
+            1,
+            "a"
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            1,
+            "a"
+          ],
+          [
+            2,
+            "b"
+          ]
+        ]
+      }
+    }
+  }
+}

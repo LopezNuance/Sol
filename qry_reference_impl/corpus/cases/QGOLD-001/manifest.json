@@ -1,0 +1,7 @@
+{
+  "case_id": "QGOLD-001",
+  "description": "Exact snapshot query over one artifact.",
+  "expected_diagnostics": [],
+  "expected_guarantee": "exact",
+  "expected_status": "complete"
+}

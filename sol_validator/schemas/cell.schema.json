@@ -1,19 +1,65 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "sol:schemas/cell/v0.1",
+  "$id": "sol:schemas/cell/v0.2",
+  "title": "Sol cell (RFC-SOL-0001, published v0.2)",
+  "description": "Normative cell schema. Encodes decision Q7 (cell-summary strictness, 2026-09-07): summary is required, non-empty, at most 500 characters. cell_type is restricted to the registered vocabulary (RFC section 19).",
   "type": "object",
   "required": ["cell_id", "cell_type", "summary", "source_hash"],
   "properties": {
     "cell_id": {"type": "string"},
-    "cell_type": {"type": "string"},
+    "cell_type": {
+      "enum": [
+        "sol:cell/prose",
+        "sol:cell/code",
+        "sol:cell/data",
+        "sol:cell/config",
+        "sol:cell/anchor",
+        "sol:cell/display",
+        "sol:cell/render",
+        "sol:cell/gate",
+        "sol:cell/branch",
+        "sol:cell/merge"
+      ]
+    },
     "title": {"type": "string"},
-    "summary": {"type": "string"},
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "description": "Bounded-read summary (RFC section 11 Level 2). Must not duplicate source."
+    },
     "language": {"type": "string"},
     "source": {},
-    "source_hash": {"type": "string"},
-    "contract_hash": {"type": "string"},
+    "source_hash": {
+      "type": "string",
+      "pattern": "^digest:sha256:[a-f0-9]{64}$"
+    },
+    "contract_hash": {
+      "type": "string",
+      "pattern": "^digest:sha256:[a-f0-9]{64}$"
+    },
     "depends_on": {"type": "array", "items": {"type": "string"}},
-    "produces": {"type": "array", "items": {"type": "object"}},
-    "actor_id": {"type": "string"}
+    "produces": {
+      "type": "array",
+      "description": "Output contract (RFC section 18); not a concrete run binding.",
+      "items": {
+        "type": "object",
+        "required": ["name", "mime_type"],
+        "properties": {
+          "name": {"type": "string"},
+          "mime_type": {"type": "string"},
+          "schema_ref": {"type": "string"},
+          "object_ref": {
+            "type": "string",
+            "description": "Non-authoritative cached binding (RFC section 18); excluded from hashes."
+          }
+        }
+      }
+    },
+    "actor_id": {"type": "string"},
+    "display_ref": {"type": "string"},
+    "decision_ref": {"type": "string"},
+    "anchors_record": {"type": "string"},
+    "metadata": {}
   }
 }

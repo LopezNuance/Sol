@@ -1,0 +1,38 @@
+{
+  "actor_id": "tool:sol_query_engine",
+  "assurance": {
+    "depends_on": [
+      "records"
+    ],
+    "effective_status": "validated",
+    "evidence": [
+      "object:sha256:bc5f87d5ba081797b1a621d9b7574e252444727aed3d225efa140b7a203dd255"
+    ],
+    "status": "validated"
+  },
+  "continuation": {
+    "partial_result_object": "object:sha256:ee6fb760e9b2ef6f5cc8766bb56d7a23729fbf026d6e8c07f547ba20e3787525",
+    "query_digest": "digest:sha256:0e973dc5d6e6ecab38e656aa23bfabccbd6aaeaf19fe91d56dae30fc6ac5da4b",
+    "source_manifest": "object:sha256:bc5f87d5ba081797b1a621d9b7574e252444727aed3d225efa140b7a203dd255",
+    "token": "cont:sha256:9fcc580d2e46ae264e6ca4f70f1203f7682b9a6dcdfb4d39d4bdf58157a65024"
+  },
+  "guarantee": {
+    "kind": "exact",
+    "result_object": "object:sha256:54d1d5845783f8219b3dc9e796aa1b356ceeef99c5d961286fec08885caa4d3f"
+  },
+  "logical_rewrites": [],
+  "provenance_mode": "tuple",
+  "query_digest": "digest:sha256:0e973dc5d6e6ecab38e656aa23bfabccbd6aaeaf19fe91d56dae30fc6ac5da4b",
+  "query_ref": "record:query_QPATH-012",
+  "query_run_id": "qrun:corpus:QPATH-012",
+  "resource_usage": {
+    "object_bytes_read": 0,
+    "records_read": 5,
+    "semantic_evaluations": 0,
+    "wall_time_ms": 0
+  },
+  "rows_returned": 2,
+  "schema_version": "qry.execution.v0.3",
+  "source_manifest": "object:sha256:bc5f87d5ba081797b1a621d9b7574e252444727aed3d225efa140b7a203dd255",
+  "status": "incomplete_with_continuation"
+}

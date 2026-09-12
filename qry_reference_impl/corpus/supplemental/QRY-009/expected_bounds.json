@@ -1,0 +1,71 @@
+{
+  "node_bounds": {
+    "a": {
+      "fields": [
+        {
+          "name": "n",
+          "nullable": true,
+          "type": "i64"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1,
+        "min": 1
+      },
+      "unique_keys": []
+    },
+    "u": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "active",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "id"
+        ]
+      ]
+    }
+  },
+  "query_id": "QRY-009",
+  "root": "a",
+  "root_bound": {
+    "fields": [
+      {
+        "name": "n",
+        "nullable": true,
+        "type": "i64"
+      }
+    ],
+    "order": [],
+    "rows": {
+      "max": 1,
+      "min": 1
+    },
+    "unique_keys": []
+  },
+  "schema_version": "qry.bounds.v0.1"
+}

@@ -1,0 +1,9 @@
+{
+  "case_id": "QPATH-012",
+  "description": "The incomplete exact count: the budget stops before the scan is exhausted but the result is labeled exact.",
+  "expected_diagnostics": [
+    "QV5-07"
+  ],
+  "expected_guarantee": "exact",
+  "expected_status": "incomplete_with_continuation"
+}

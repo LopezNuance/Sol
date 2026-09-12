@@ -1,0 +1,4 @@
+{
+  "location": "node:j",
+  "rule_id": "sol:rewrite/unregistered_transform/v1"
+}

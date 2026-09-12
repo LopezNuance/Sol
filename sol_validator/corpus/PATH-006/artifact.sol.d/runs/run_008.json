@@ -22,6 +22,11 @@
       "object_ref": "object:sha256:c2e93ae90fa365e59bace5a370714589ef35a16f7a419c30037bff6cffc40bd2"
     }
   ],
+  "resource_usage": {
+    "cpu_time_ms": 8400,
+    "peak_memory_bytes": 104857600,
+    "wall_time_ms": 12000
+  },
   "result_commit": "commit:commit_042",
   "run_id": "run_008",
   "source_commit": "commit:commit_041",

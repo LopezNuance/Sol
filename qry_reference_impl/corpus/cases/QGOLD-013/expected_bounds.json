@@ -1,0 +1,87 @@
+{
+  "query_id": "QGOLD-013",
+  "root": "e1",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "sol:bound/structural_containment/v1",
+        "source:users"
+      ],
+      "evidence": [
+        "source:users"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/structural_containment/v1",
+    "guarantee": "bounded",
+    "intervals": [],
+    "lower": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": []
+    },
+    "lower_object": "object:sha256:82506bb199ed6d872490fab27a67aac19b41107954c6e795ad7f87c7915f6b38",
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [],
+      "upper_derivation": {
+        "evaluators": [
+          "sol:evaluator/positive_classifier/v1"
+        ],
+        "input_relations": [
+          "object:sha256:9fbe511977a778ee39d74fedf17ed1e6070bd19b322856493b9e2fe3bb757772"
+        ],
+        "rewrites": [],
+        "rule_id": "sol:bound/structural_containment/v1",
+        "sources": [
+          "source:users"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": null,
+    "upper": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ],
+        [
+          3,
+          "c"
+        ]
+      ]
+    },
+    "upper_object": "object:sha256:9fbe511977a778ee39d74fedf17ed1e6070bd19b322856493b9e2fe3bb757772"
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

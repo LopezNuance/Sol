@@ -1,0 +1,2162 @@
+{
+  "cases": [
+    {
+      "case_id": "QGOLD-001",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-002",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-003",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-004",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-005",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-006",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-007",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-008",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-009",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-010",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-011",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-012",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-013",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-014",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-015",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-016",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-017",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-018",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-019",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-020",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QGOLD-021",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-001",
+      "diagnostics": [
+        {
+          "category": "unresolved_branch",
+          "message": "Branch 'main' is not resolved to a commit before evaluation",
+          "rule_id": "QV1-02",
+          "severity": "error",
+          "target": "source:users"
+        },
+        {
+          "category": "mutable_source_manifest",
+          "message": "Source manifest is not immutable for one execution (unresolved branch)",
+          "rule_id": "QV1-03",
+          "severity": "error",
+          "target": "source:users"
+        }
+      ],
+      "expected": [
+        "QV1-02",
+        "QV1-03"
+      ],
+      "got": [
+        "QV1-02",
+        "QV1-03"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-002",
+      "diagnostics": [
+        {
+          "category": "semantic_equality_forgery",
+          "message": "Semantic similarity from sol:evaluator/vector_similarity/v1 is interpreted as exact identity on field 'name'; `=` MUST mean exact typed equality (8.5, 26.8)",
+          "rule_id": "QINV-04",
+          "severity": "error",
+          "target": "node:f"
+        },
+        {
+          "category": "heuristic_labeled_exact",
+          "message": "A stochastic/heuristic evaluation is labeled exact without proof (26.6)",
+          "rule_id": "QV6-04",
+          "severity": "error",
+          "target": "node:f"
+        }
+      ],
+      "expected": [
+        "QINV-04",
+        "QV6-04"
+      ],
+      "got": [
+        "QINV-04",
+        "QV6-04"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-003",
+      "diagnostics": [
+        {
+          "category": "false_exact_result",
+          "message": "Approximate retrieval result is labeled exact",
+          "rule_id": "QINV-06",
+          "severity": "error",
+          "target": "root_bound"
+        },
+        {
+          "category": "false_exact",
+          "message": "Exact guarantee without a certified derivation",
+          "rule_id": "QV5-03",
+          "severity": "error",
+          "target": "root_bound"
+        },
+        {
+          "category": "missing_upper_derivation",
+          "message": "Bounded result upper object has no transfer rule or source-bound provenance",
+          "rule_id": "QV8-06",
+          "severity": "error",
+          "target": "root_bound.provenance"
+        }
+      ],
+      "expected": [
+        "QINV-06",
+        "QV5-03",
+        "QV8-06"
+      ],
+      "got": [
+        "QINV-06",
+        "QV5-03",
+        "QV8-06"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-004",
+      "diagnostics": [
+        {
+          "category": "negation_across_incomplete_boundary",
+          "message": "Classical exact negation crosses an open or incomplete boundary",
+          "rule_id": "QV4-02",
+          "severity": "error",
+          "target": "node:d"
+        }
+      ],
+      "expected": [
+        "QV4-02"
+      ],
+      "got": [
+        "QV4-02"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-005",
+      "diagnostics": [
+        {
+          "category": "raw_cardinality_under_bucketed_policy",
+          "message": "Raw cardinality is disclosed under a bucketed cardinality policy",
+          "rule_id": "QV9-03",
+          "severity": "error",
+          "target": "record.cardinality_disclosure"
+        }
+      ],
+      "expected": [
+        "QV9-03"
+      ],
+      "got": [
+        "QV9-03"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-006",
+      "diagnostics": [
+        {
+          "category": "limit_without_deterministic_order",
+          "message": "Limit is committed without deterministic ordering",
+          "rule_id": "QV3-04",
+          "severity": "error",
+          "target": "node:l"
+        }
+      ],
+      "expected": [
+        "QV3-04"
+      ],
+      "got": [
+        "QV3-04"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-007",
+      "diagnostics": [
+        {
+          "category": "duplicated_evaluator_call",
+          "message": "The plan duplicates an inline evaluator call; an inline evaluator is not duplicable by default (26.4)",
+          "rule_id": "QV6-05",
+          "severity": "error",
+          "target": "node:e1/e2"
+        },
+        {
+          "category": "preservation_dimensions_uncovered",
+          "message": "The duplicated stochastic call breaks evaluation-identity equivalence; the preservation contract does not cover the query-required logical-equivalence dimensions (27)",
+          "rule_id": "QV7-03",
+          "severity": "error",
+          "target": "query"
+        }
+      ],
+      "expected": [
+        "QV6-05",
+        "QV7-03"
+      ],
+      "got": [
+        "QV6-05",
+        "QV7-03"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-008",
+      "diagnostics": [
+        {
+          "category": "stale_materialized_view",
+          "message": "Source commits do not match: the summary was computed against a different source manifest than the query (QV8-03)",
+          "rule_id": "QV8-03",
+          "severity": "error",
+          "target": "node:f"
+        }
+      ],
+      "expected": [
+        "QV8-03"
+      ],
+      "got": [
+        "QV8-03"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-009",
+      "diagnostics": [
+        {
+          "category": "truth_status_collapse",
+          "message": "Truth-status field 'verification' is compared as proposition truth; unverified is not false",
+          "rule_id": "QINV-05",
+          "severity": "error",
+          "target": "node:f"
+        }
+      ],
+      "expected": [
+        "QINV-05"
+      ],
+      "got": [
+        "QINV-05"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-010",
+      "diagnostics": [
+        {
+          "category": "type_error",
+          "message": "Expression compares field 'name' with an immutable object reference; named outputs are not object references",
+          "rule_id": "QV0-03",
+          "severity": "error",
+          "target": "node:f"
+        }
+      ],
+      "expected": [
+        "QV0-03"
+      ],
+      "got": [
+        "QV0-03"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-011",
+      "diagnostics": [
+        {
+          "category": "unbound_output_variable",
+          "message": "Output variables range over an unbounded domain and are not finitely bound",
+          "rule_id": "QV2-01",
+          "severity": "error",
+          "target": "node:d"
+        },
+        {
+          "category": "unsafe_unbounded_generation",
+          "message": "Values are generated from an unbounded domain",
+          "rule_id": "QV2-05",
+          "severity": "error",
+          "target": "node:d"
+        }
+      ],
+      "expected": [
+        "QV2-01",
+        "QV2-05"
+      ],
+      "got": [
+        "QV2-01",
+        "QV2-05"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-012",
+      "diagnostics": [
+        {
+          "category": "truncation_labeled_exact",
+          "message": "Budget-truncated (incomplete) execution carries the exact guarantee",
+          "rule_id": "QV5-07",
+          "severity": "error",
+          "target": "execution.json:guarantee"
+        }
+      ],
+      "expected": [
+        "QV5-07"
+      ],
+      "got": [
+        "QV5-07"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-013",
+      "diagnostics": [
+        {
+          "category": "preservation_dimensions_uncovered",
+          "message": "Cited rewrite sol:rewrite/experimental_aggregate_fold/v1 does not cover the query-required logical-equivalence dimensions ['provenance'] (25.4.3, 27)",
+          "rule_id": "QV7-03",
+          "severity": "error",
+          "target": "root_bound.provenance"
+        },
+        {
+          "category": "missing_membership_provenance",
+          "message": "Lower-bound tuple carries no why membership provenance as requested (12.5)",
+          "rule_id": "QV8-05",
+          "severity": "error",
+          "target": "root_bound.provenance:[1, \"a\"]"
+        }
+      ],
+      "expected": [
+        "QV7-03",
+        "QV8-05"
+      ],
+      "got": [
+        "QV7-03",
+        "QV8-05"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-014",
+      "diagnostics": [
+        {
+          "category": "temporal_validation_failure",
+          "message": "Latest-commit selection is not a valid commit resolution: ancestry, tie_rule missing; LATEST MUST NOT be interpreted solely by wall-clock timestamp in a branching history (17.5)",
+          "rule_id": "QV1-02",
+          "severity": "error",
+          "target": "source:s"
+        }
+      ],
+      "expected": [
+        "QV1-02"
+      ],
+      "got": [
+        "QV1-02"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-015",
+      "diagnostics": [
+        {
+          "category": "implicit_bag_conversion",
+          "message": "Set-semantics claim over a bag source without an explicit Distinct",
+          "rule_id": "QV3-02",
+          "severity": "error",
+          "target": "root_bound"
+        }
+      ],
+      "expected": [
+        "QV3-02"
+      ],
+      "got": [
+        "QV3-02"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-016",
+      "diagnostics": [
+        {
+          "category": "wrong_side_difference",
+          "message": "Bounded difference lower uses lower-left (L1\\L2) instead of upper-right (L1\\U2)",
+          "rule_id": "QV4-04",
+          "severity": "error",
+          "target": "root_bound"
+        },
+        {
+          "category": "missing_transfer_rule",
+          "message": "Certified lower side has no normative or registered transfer rule",
+          "rule_id": "QV5-02",
+          "severity": "error",
+          "target": "root_bound"
+        }
+      ],
+      "expected": [
+        "QV4-04",
+        "QV5-02"
+      ],
+      "got": [
+        "QV4-04",
+        "QV5-02"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-017",
+      "diagnostics": [
+        {
+          "category": "wrong_side_difference",
+          "message": "Bounded difference lower uses lower-left (L1\\L2) instead of upper-right (L1\\U2)",
+          "rule_id": "QV4-04",
+          "severity": "error",
+          "target": "root_bound"
+        },
+        {
+          "category": "missing_transfer_rule",
+          "message": "Certified lower side has no normative or registered transfer rule",
+          "rule_id": "QV5-02",
+          "severity": "error",
+          "target": "root_bound"
+        }
+      ],
+      "expected": [
+        "QV4-04",
+        "QV5-02"
+      ],
+      "got": [
+        "QV4-04",
+        "QV5-02"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-018",
+      "diagnostics": [
+        {
+          "category": "missing_certified_side",
+          "message": "Guarantee exact claims a certified lower side without a concrete bound relation",
+          "rule_id": "QV5-02",
+          "severity": "error",
+          "target": "root_bound"
+        },
+        {
+          "category": "missing_certified_side",
+          "message": "Guarantee exact claims a certified upper side without a concrete bound relation",
+          "rule_id": "QV5-02",
+          "severity": "error",
+          "target": "root_bound"
+        },
+        {
+          "category": "false_exact",
+          "message": "Exact guarantee without a certified derivation",
+          "rule_id": "QV5-03",
+          "severity": "error",
+          "target": "root_bound"
+        }
+      ],
+      "expected": [
+        "QV5-02",
+        "QV5-03"
+      ],
+      "got": [
+        "QV5-02",
+        "QV5-03"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-019",
+      "diagnostics": [
+        {
+          "category": "scalar_bound_over_inexact_aggregate",
+          "message": "Inexact aggregate labeled with a scalar bound without a registered interval rule",
+          "rule_id": "QV5-06",
+          "severity": "error",
+          "target": "root_bound"
+        },
+        {
+          "category": "aggregate_bound_nonconformance",
+          "message": "Aggregate bound does not conform to the registered rule's certified interval",
+          "rule_id": "QV5-12",
+          "severity": "error",
+          "target": "root_bound"
+        }
+      ],
+      "expected": [
+        "QV5-06",
+        "QV5-12"
+      ],
+      "got": [
+        "QV5-06",
+        "QV5-12"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-020",
+      "diagnostics": [
+        {
+          "category": "heuristic_contribution_to_certified_side",
+          "message": "A heuristic evaluator contributes to an exact certified side without a normative or registered transfer rule (13.7.1, 26.6)",
+          "rule_id": "QV5-08",
+          "severity": "error",
+          "target": "node:e"
+        }
+      ],
+      "expected": [
+        "QV5-08"
+      ],
+      "got": [
+        "QV5-08"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-021",
+      "diagnostics": [
+        {
+          "category": "unregistered_rewrite",
+          "message": "Rewrite 'sol:rewrite/unregistered_transform/v1' is not registered (25.4.1)",
+          "rule_id": "QV7-01",
+          "severity": "error",
+          "target": "node:j"
+        }
+      ],
+      "expected": [
+        "QV7-01"
+      ],
+      "got": [
+        "QV7-01"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-022",
+      "diagnostics": [
+        {
+          "category": "evaluator_barrier",
+          "message": "Rewrite crosses a semantic-evaluator barrier (25.5)",
+          "rule_id": "QV6-05",
+          "severity": "error",
+          "target": "node:j"
+        },
+        {
+          "category": "unmet_precondition",
+          "message": "Precondition evaluator_free not met: the span contains a semantic-evaluator node",
+          "rule_id": "QV7-02",
+          "severity": "error",
+          "target": "node:j"
+        }
+      ],
+      "expected": [
+        "QV6-05",
+        "QV7-02"
+      ],
+      "got": [
+        "QV6-05",
+        "QV7-02"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-023",
+      "diagnostics": [
+        {
+          "category": "stale_assurance",
+          "message": "Effective assurance degraded to unknown through stale dependencies",
+          "rule_id": "QV5-10",
+          "severity": "error",
+          "target": "node:j"
+        },
+        {
+          "category": "stale_proof",
+          "message": "Rule evidence ['record:verification_044'] is stale; effective assurance is unknown (25.4.6-7)",
+          "rule_id": "QV7-04",
+          "severity": "error",
+          "target": "node:j"
+        }
+      ],
+      "expected": [
+        "QV5-10",
+        "QV7-04"
+      ],
+      "got": [
+        "QV5-10",
+        "QV7-04"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-024",
+      "diagnostics": [
+        {
+          "category": "transient_assessment",
+          "message": "A transient cache entry that may expire or vary does not satisfy the stable-assessment invariant (26.5)",
+          "rule_id": "QINV-13",
+          "severity": "error",
+          "target": "node:e"
+        },
+        {
+          "category": "transient_evaluation_key",
+          "message": "The evaluation key resolves to a transient result, not an immutable result object (26.5)",
+          "rule_id": "QV6-03",
+          "severity": "error",
+          "target": "node:e"
+        }
+      ],
+      "expected": [
+        "QINV-13",
+        "QV6-03"
+      ],
+      "got": [
+        "QINV-13",
+        "QV6-03"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-025",
+      "diagnostics": [
+        {
+          "category": "incomplete_evaluation_key",
+          "message": "The evaluation key is missing required fields: prompt_template_digest (26.5, Q15)",
+          "rule_id": "QV6-03",
+          "severity": "error",
+          "target": "node:e"
+        }
+      ],
+      "expected": [
+        "QV6-03"
+      ],
+      "got": [
+        "QV6-03"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-026",
+      "diagnostics": [
+        {
+          "category": "non_preserving_policy_boundary",
+          "message": "Rewrite spans a policy boundary without an explicit disclosure proof; non-preserving by default (25.5)",
+          "rule_id": "QV7-07",
+          "severity": "error",
+          "target": "node:pb"
+        },
+        {
+          "category": "disclosure_change",
+          "message": "Moving the filter across the authorization boundary changes tuple-existence disclosure",
+          "rule_id": "QV9-09",
+          "severity": "error",
+          "target": "node:pb"
+        }
+      ],
+      "expected": [
+        "QV7-07",
+        "QV9-09"
+      ],
+      "got": [
+        "QV7-07",
+        "QV9-09"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-027",
+      "diagnostics": [
+        {
+          "category": "verbose_denial",
+          "message": "Error distinguishes nonexistent and unauthorized references contrary to policy",
+          "rule_id": "QV9-05",
+          "severity": "error",
+          "target": "record.error_behavior"
+        }
+      ],
+      "expected": [
+        "QV9-05"
+      ],
+      "got": [
+        "QV9-05"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-028",
+      "diagnostics": [
+        {
+          "category": "provenance_disclosure_policy_violation",
+          "message": "Provenance disclosure violates the selected leakage policy: source:r",
+          "rule_id": "QV8-08",
+          "severity": "error",
+          "target": "root_bound.provenance"
+        },
+        {
+          "category": "independent_visibility_violation",
+          "message": "Provenance does not obey the policy's independent visibility rules for lower-membership, upper-derivation, and rewrite/evaluator identities (32.7)",
+          "rule_id": "QV9-04",
+          "severity": "error",
+          "target": "root_bound.provenance"
+        }
+      ],
+      "expected": [
+        "QV8-08",
+        "QV9-04"
+      ],
+      "got": [
+        "QV8-08",
+        "QV9-04"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-029",
+      "diagnostics": [
+        {
+          "category": "non_inference_claim_without_profile",
+          "message": "General non-inference claim appears without no conforming non-inference profile (32.6) and declared physical channels weaker than suppressed: timing",
+          "rule_id": "QV9-08",
+          "severity": "error",
+          "target": "record.non_inference_claim"
+        }
+      ],
+      "expected": [
+        "QV9-08"
+      ],
+      "got": [
+        "QV9-08"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-030",
+      "diagnostics": [
+        {
+          "category": "incompatible_source_manifests",
+          "message": "Lower and upper relations use incompatible source manifests",
+          "rule_id": "QV1-05",
+          "severity": "error",
+          "target": "source:users"
+        }
+      ],
+      "expected": [
+        "QV1-05"
+      ],
+      "got": [
+        "QV1-05"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-031",
+      "diagnostics": [
+        {
+          "category": "inverted_bounds",
+          "message": "Source lower relation contains a tuple absent from the upper relation",
+          "rule_id": "QV5-01",
+          "severity": "error",
+          "target": "source:vals"
+        }
+      ],
+      "expected": [
+        "QV5-01"
+      ],
+      "got": [
+        "QV5-01"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-032",
+      "diagnostics": [
+        {
+          "category": "top_k_without_position_certainty",
+          "message": "Inexact top-k/limit labeled exact without a registered position-certainty rule",
+          "rule_id": "QV3-05",
+          "severity": "error",
+          "target": "node:l"
+        }
+      ],
+      "expected": [
+        "QV3-05"
+      ],
+      "got": [
+        "QV3-05"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-033",
+      "diagnostics": [
+        {
+          "category": "heuristic_view_substitution",
+          "message": "View substitution does not preserve value, bounds, provenance, policy, and freshness: the summary was produced heuristically and is not a covering exact view (28.5)",
+          "rule_id": "QV8-02",
+          "severity": "error",
+          "target": "node:f"
+        }
+      ],
+      "expected": [
+        "QV8-02"
+      ],
+      "got": [
+        "QV8-02"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-034",
+      "diagnostics": [
+        {
+          "category": "lossy_summary",
+          "message": "Machine summary is not field-complete for the query; missing fields: ['tag'] (QV8-04)",
+          "rule_id": "QV8-04",
+          "severity": "error",
+          "target": "node:f"
+        }
+      ],
+      "expected": [
+        "QV8-04"
+      ],
+      "got": [
+        "QV8-04"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-035",
+      "diagnostics": [
+        {
+          "category": "continuation_binding_mismatch",
+          "message": "Continuation binding mismatch (30.3): resuming against a later branch head fails the source-manifest binding",
+          "rule_id": "QRY-EXEC-002",
+          "severity": "error",
+          "target": "continuation"
+        },
+        {
+          "category": "unresolved_branch",
+          "message": "Branch 'main' is not resolved to a commit before evaluation",
+          "rule_id": "QV1-02",
+          "severity": "error",
+          "target": "source:records"
+        },
+        {
+          "category": "mutable_source_manifest",
+          "message": "Source manifest is not immutable for one execution (unresolved branch)",
+          "rule_id": "QV1-03",
+          "severity": "error",
+          "target": "source:records"
+        }
+      ],
+      "expected": [
+        "QRY-EXEC-002",
+        "QV1-02",
+        "QV1-03"
+      ],
+      "got": [
+        "QRY-EXEC-002",
+        "QV1-02",
+        "QV1-03"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-036",
+      "diagnostics": [
+        {
+          "category": "experimental_rule_sole_basis",
+          "message": "Experimental rule applied; the result may not be labeled exact or certified solely on this rule (25.8)",
+          "rule_id": "QV7-06",
+          "severity": "error",
+          "target": "node:ag"
+        }
+      ],
+      "expected": [
+        "QV7-06"
+      ],
+      "got": [
+        "QV7-06"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-037",
+      "diagnostics": [
+        {
+          "category": "bound_provenance_honesty",
+          "message": "Bound provenance conflates upper-bound enclosure with exact membership",
+          "rule_id": "QINV-14",
+          "severity": "error",
+          "target": "root_bound.provenance:[2, \"b\"]"
+        },
+        {
+          "category": "upper_only_why_provenance",
+          "message": "Tuple in U\\L carries ordinary why-provenance asserting exact membership",
+          "rule_id": "QV8-07",
+          "severity": "error",
+          "target": "root_bound.provenance:[2, \"b\"]"
+        }
+      ],
+      "expected": [
+        "QINV-14",
+        "QV8-07"
+      ],
+      "got": [
+        "QINV-14",
+        "QV8-07"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-038",
+      "diagnostics": [
+        {
+          "category": "missing_upper_derivation",
+          "message": "Bounded result upper object has no transfer rule or source-bound provenance",
+          "rule_id": "QV8-06",
+          "severity": "error",
+          "target": "root_bound.provenance"
+        }
+      ],
+      "expected": [
+        "QV8-06"
+      ],
+      "got": [
+        "QV8-06"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-039",
+      "diagnostics": [
+        {
+          "category": "fixture_value_match",
+          "message": "Justification by fixture value matching is not a disclosure proof (QPATH-039)",
+          "rule_id": "QINV-15",
+          "severity": "error",
+          "target": "node:pb"
+        },
+        {
+          "category": "non_preserving_policy_boundary",
+          "message": "Rewrite spans a policy boundary without an explicit disclosure proof; non-preserving by default (25.5)",
+          "rule_id": "QV7-07",
+          "severity": "error",
+          "target": "node:pb"
+        }
+      ],
+      "expected": [
+        "QINV-15",
+        "QV7-07"
+      ],
+      "got": [
+        "QINV-15",
+        "QV7-07"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-040",
+      "diagnostics": [
+        {
+          "category": "containment_not_certified",
+          "message": "A structural one-sided bound does not satisfy the declared containment: a tuple-generating evaluator does not preserve the input relation as an upper bound (13.7.1, 26.6)",
+          "rule_id": "QV5-09",
+          "severity": "error",
+          "target": "node:e"
+        },
+        {
+          "category": "tuple_generating_select",
+          "message": "An evaluator used as a tuple-preserving Select generates tuples (26.6)",
+          "rule_id": "QV6-07",
+          "severity": "error",
+          "target": "node:e"
+        }
+      ],
+      "expected": [
+        "QV5-09",
+        "QV6-07"
+      ],
+      "got": [
+        "QV5-09",
+        "QV6-07"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-041",
+      "diagnostics": [
+        {
+          "category": "prose_only_proof",
+          "message": "Assurance `proven` is claimed from an unchecked prose reference; prose alone MUST NOT support proven (25.6)",
+          "rule_id": "QV7-08",
+          "severity": "error",
+          "target": "node:j"
+        }
+      ],
+      "expected": [
+        "QV7-08"
+      ],
+      "got": [
+        "QV7-08"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-042",
+      "diagnostics": [
+        {
+          "category": "aggregate_bound_nonconformance",
+          "message": "Aggregate bound does not conform to the registered rule's certified interval",
+          "rule_id": "QV5-12",
+          "severity": "error",
+          "target": "root_bound"
+        }
+      ],
+      "expected": [
+        "QV5-12"
+      ],
+      "got": [
+        "QV5-12"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-043",
+      "diagnostics": [
+        {
+          "category": "physical_claim_without_profile",
+          "message": "Physical side-channel preservation claimed without a physical conformance profile (25.3)",
+          "rule_id": "QV7-09",
+          "severity": "error",
+          "target": "node:j"
+        },
+        {
+          "category": "logical_physical_conflation",
+          "message": "A logical rewrite is used for a physical non-inference claim",
+          "rule_id": "QV9-10",
+          "severity": "error",
+          "target": "node:j"
+        }
+      ],
+      "expected": [
+        "QV7-09",
+        "QV9-10"
+      ],
+      "got": [
+        "QV7-09",
+        "QV9-10"
+      ],
+      "kind": "normative",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-044",
+      "diagnostics": [
+        {
+          "category": "unmet_precondition",
+          "message": "Precondition columns_unused_downstream not met: every output column is used",
+          "rule_id": "QV7-02",
+          "severity": "error",
+          "target": "node:p"
+        }
+      ],
+      "expected": [
+        "QV7-02"
+      ],
+      "got": [
+        "QV7-02"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-045",
+      "diagnostics": [
+        {
+          "category": "unmet_precondition",
+          "message": "Precondition on_partitionable not met: on-conditions do not partition over the inner join's sides",
+          "rule_id": "QV7-02",
+          "severity": "error",
+          "target": "node:j2"
+        }
+      ],
+      "expected": [
+        "QV7-02"
+      ],
+      "got": [
+        "QV7-02"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QPATH-046",
+      "diagnostics": [
+        {
+          "category": "unmet_precondition",
+          "message": "Nothing to normalize: no nested same-kind unions or duplicate distinct inputs",
+          "rule_id": "QV7-02",
+          "severity": "error",
+          "target": "node:u"
+        }
+      ],
+      "expected": [
+        "QV7-02"
+      ],
+      "got": [
+        "QV7-02"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-001",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-002",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-003",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-004",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-005",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-006",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-007",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-008",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-009",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-010",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-011",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-012",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-013",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-014",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-015",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-016",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-017",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-018",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-019",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-020",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-021",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-022",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-023",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-024",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-025",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-026",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-027",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-028",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-029",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-030",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-031",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-032",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-033",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-034",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-035",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-036",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-037",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-038",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-039",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-040",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-041",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-042",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-043",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-044",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-045",
+      "diagnostics": [],
+      "expected": [],
+      "got": [],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-046",
+      "diagnostics": [
+        {
+          "category": "schema",
+          "message": "'query_id' is a required property",
+          "rule_id": "QRY-SCHEMA-001",
+          "severity": "error",
+          "target": "query/"
+        }
+      ],
+      "expected": [
+        "QRY-SCHEMA-001"
+      ],
+      "got": [
+        "QRY-SCHEMA-001"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-047",
+      "diagnostics": [
+        {
+          "category": "duplicate_node",
+          "message": "Duplicate node id",
+          "rule_id": "QRY-SEM-001",
+          "severity": "error",
+          "target": "node:u"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-001"
+      ],
+      "got": [
+        "QRY-SEM-001"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-048",
+      "diagnostics": [
+        {
+          "category": "missing_root",
+          "message": "Root node 'nope' not found",
+          "rule_id": "QRY-SEM-002",
+          "severity": "error",
+          "target": "query.root"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-002"
+      ],
+      "got": [
+        "QRY-SEM-002"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-049",
+      "diagnostics": [
+        {
+          "category": "missing_input",
+          "message": "Input 'missing' not found",
+          "rule_id": "QRY-SEM-003",
+          "severity": "error",
+          "target": "node:f"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-003"
+      ],
+      "got": [
+        "QRY-SEM-003"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-050",
+      "diagnostics": [
+        {
+          "category": "cycle",
+          "message": "Cycle detected",
+          "rule_id": "QRY-SEM-004",
+          "severity": "error",
+          "target": "node:a"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-004"
+      ],
+      "got": [
+        "QRY-SEM-004"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-051",
+      "diagnostics": [
+        {
+          "category": "unknown_source",
+          "message": "Source 'ghost' not declared",
+          "rule_id": "QRY-SEM-005",
+          "severity": "error",
+          "target": "node:x"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-005"
+      ],
+      "got": [
+        "QRY-SEM-005"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-052",
+      "diagnostics": [
+        {
+          "category": "missing_field",
+          "message": "Field 'nope' not found",
+          "rule_id": "QRY-SEM-006",
+          "severity": "error",
+          "target": "node:p"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-006"
+      ],
+      "got": [
+        "QRY-SEM-006"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-053",
+      "diagnostics": [
+        {
+          "category": "union_schema_mismatch",
+          "message": "Union inputs have incompatible schemas",
+          "rule_id": "QRY-SEM-007",
+          "severity": "error",
+          "target": "node:uall"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-007"
+      ],
+      "got": [
+        "QRY-SEM-007"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-054",
+      "diagnostics": [
+        {
+          "category": "invalid_selectivity",
+          "message": "Selectivity must satisfy 0 <= min <= max <= 1",
+          "rule_id": "QRY-SEM-008",
+          "severity": "error",
+          "target": "node:f"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-008"
+      ],
+      "got": [
+        "QRY-SEM-008"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-055",
+      "diagnostics": [
+        {
+          "category": "invalid_limit",
+          "message": "Limit must be a non-negative integer",
+          "rule_id": "QRY-SEM-009",
+          "severity": "error",
+          "target": "node:l"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-009"
+      ],
+      "got": [
+        "QRY-SEM-009"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-056",
+      "diagnostics": [
+        {
+          "category": "unknown_operation",
+          "message": "Unknown op 'explode'",
+          "rule_id": "QRY-SEM-010",
+          "severity": "error",
+          "target": "node:x"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-010"
+      ],
+      "got": [
+        "QRY-SEM-010"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-057",
+      "diagnostics": [
+        {
+          "category": "duplicate_field",
+          "message": "Duplicate projected field name",
+          "rule_id": "QRY-SEM-011",
+          "severity": "error",
+          "target": "node:p"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-011"
+      ],
+      "got": [
+        "QRY-SEM-011"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-058",
+      "diagnostics": [
+        {
+          "category": "invalid_join_type",
+          "message": "Invalid join type 'weird'",
+          "rule_id": "QRY-SEM-012",
+          "severity": "error",
+          "target": "node:j"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-012"
+      ],
+      "got": [
+        "QRY-SEM-012"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-059",
+      "diagnostics": [
+        {
+          "category": "bound_mismatch",
+          "message": "Expected root bound does not match inferred bound",
+          "rule_id": "QRY-BOUND-001",
+          "severity": "error",
+          "target": "expected_bounds.root_bound"
+        }
+      ],
+      "expected": [
+        "QRY-BOUND-001"
+      ],
+      "got": [
+        "QRY-BOUND-001"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-060",
+      "diagnostics": [
+        {
+          "category": "certificate_missing_step",
+          "message": "Certificate missing proof step",
+          "rule_id": "QRY-CERT-001",
+          "severity": "error",
+          "target": "cert:l"
+        }
+      ],
+      "expected": [
+        "QRY-CERT-001"
+      ],
+      "got": [
+        "QRY-CERT-001"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-061",
+      "diagnostics": [
+        {
+          "category": "certificate_step_bound_mismatch",
+          "message": "Certificate step bound does not match inferred bound",
+          "rule_id": "QRY-CERT-002",
+          "severity": "error",
+          "target": "cert:l"
+        }
+      ],
+      "expected": [
+        "QRY-CERT-002"
+      ],
+      "got": [
+        "QRY-CERT-002"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-062",
+      "diagnostics": [
+        {
+          "category": "certificate_final_mismatch",
+          "message": "Certificate final bound mismatch",
+          "rule_id": "QRY-CERT-003",
+          "severity": "error",
+          "target": "cert.final_bound"
+        }
+      ],
+      "expected": [
+        "QRY-CERT-003"
+      ],
+      "got": [
+        "QRY-CERT-003"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-063",
+      "diagnostics": [
+        {
+          "category": "certificate_order_invalid",
+          "message": "Input step u does not precede node",
+          "rule_id": "QRY-CERT-004",
+          "severity": "error",
+          "target": "cert:f"
+        },
+        {
+          "category": "certificate_order_invalid",
+          "message": "Input step p does not precede node",
+          "rule_id": "QRY-CERT-004",
+          "severity": "error",
+          "target": "cert:l"
+        },
+        {
+          "category": "certificate_order_invalid",
+          "message": "Input step f does not precede node",
+          "rule_id": "QRY-CERT-004",
+          "severity": "error",
+          "target": "cert:p"
+        }
+      ],
+      "expected": [
+        "QRY-CERT-004"
+      ],
+      "got": [
+        "QRY-CERT-004"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-064",
+      "diagnostics": [
+        {
+          "category": "certificate_root_mismatch",
+          "message": "Certificate root does not match query root",
+          "rule_id": "QRY-CERT-005",
+          "severity": "error",
+          "target": "cert.root"
+        }
+      ],
+      "expected": [
+        "QRY-CERT-005"
+      ],
+      "got": [
+        "QRY-CERT-005"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-065",
+      "diagnostics": [
+        {
+          "category": "schema",
+          "message": "'schema' is a required property",
+          "rule_id": "QRY-SCHEMA-001",
+          "severity": "error",
+          "target": "query/sources/users"
+        }
+      ],
+      "expected": [
+        "QRY-SCHEMA-001"
+      ],
+      "got": [
+        "QRY-SCHEMA-001"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-066",
+      "diagnostics": [
+        {
+          "category": "missing_field",
+          "message": "Group key 'missing' not found",
+          "rule_id": "QRY-SEM-006",
+          "severity": "error",
+          "target": "node:a"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-006"
+      ],
+      "got": [
+        "QRY-SEM-006"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-067",
+      "diagnostics": [
+        {
+          "category": "missing_field",
+          "message": "Sort field 'missing' not found",
+          "rule_id": "QRY-SEM-006",
+          "severity": "error",
+          "target": "node:s"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-006"
+      ],
+      "got": [
+        "QRY-SEM-006"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-068",
+      "diagnostics": [
+        {
+          "category": "missing_field",
+          "message": "Distinct key 'missing' not found",
+          "rule_id": "QRY-SEM-006",
+          "severity": "error",
+          "target": "node:d"
+        }
+      ],
+      "expected": [
+        "QRY-SEM-006"
+      ],
+      "got": [
+        "QRY-SEM-006"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    },
+    {
+      "case_id": "QRY-069",
+      "diagnostics": [
+        {
+          "category": "missing_certificate",
+          "message": "Certificate missing",
+          "rule_id": "QRY-CERT-000",
+          "severity": "error",
+          "target": "certificate"
+        }
+      ],
+      "expected": [
+        "QRY-CERT-000"
+      ],
+      "got": [
+        "QRY-CERT-000"
+      ],
+      "kind": "supplemental",
+      "passed": true
+    }
+  ],
+  "format": "solqry-corpus-report/v1",
+  "normative": {
+    "passed": 64,
+    "total": 64
+  },
+  "report_digest": "sha256:3855d1c452fae2d59ef62e5aabb3a49d70250f4fc5ccaea6be405d8ecb39bb24",
+  "spec": "RFC-SOL-QRY-0001 v0.3.0 design draft, 36",
+  "supplemental": {
+    "passed": 72,
+    "total": 72
+  }
+}

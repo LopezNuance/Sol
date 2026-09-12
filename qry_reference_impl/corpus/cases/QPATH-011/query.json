@@ -1,0 +1,55 @@
+{
+  "description": "The unsafe universe: query asks for every value that is not a claim.",
+  "nodes": [
+    {
+      "id": "ru",
+      "op": "read",
+      "source": "universe"
+    },
+    {
+      "id": "rc",
+      "op": "read",
+      "source": "claims"
+    },
+    {
+      "id": "d",
+      "inputs": [
+        "ru",
+        "rc"
+      ],
+      "op": "difference"
+    }
+  ],
+  "query_id": "QPATH-011",
+  "root": "d",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "claims": {
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    "universe": {
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "unbounded": true
+    }
+  }
+}

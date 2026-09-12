@@ -1,0 +1,7 @@
+{
+  "case_id": "QRY-061",
+  "description": "certificate bad step bound",
+  "expected_diagnostics": [
+    "QRY-CERT-002"
+  ]
+}

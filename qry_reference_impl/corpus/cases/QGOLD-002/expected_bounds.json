@@ -1,0 +1,187 @@
+{
+  "query_id": "QGOLD-002",
+  "root": "j",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "sol:bound/join/v1",
+        "source:orders",
+        "source:users"
+      ],
+      "evidence": [
+        "source:orders",
+        "source:users"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/join/v1",
+    "guarantee": "exact",
+    "intervals": [],
+    "lower": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "amount",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a",
+          1,
+          10
+        ],
+        [
+          1,
+          "a",
+          1,
+          40
+        ],
+        [
+          2,
+          "b",
+          2,
+          20
+        ],
+        [
+          3,
+          "c",
+          3,
+          30
+        ]
+      ]
+    },
+    "lower_object": "object:sha256:cd0bb4cb0627ffc48cf31dfbdf50dce65303439720a2f44bdc68aa314e257282",
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            2,
+            "b",
+            2,
+            20
+          ]
+        },
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            1,
+            "a",
+            1,
+            10
+          ]
+        },
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            3,
+            "c",
+            3,
+            30
+          ]
+        },
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            1,
+            "a",
+            1,
+            40
+          ]
+        }
+      ],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [
+          "object:sha256:9fbe511977a778ee39d74fedf17ed1e6070bd19b322856493b9e2fe3bb757772",
+          "object:sha256:bd0bb0a272301bfd312c838e9c5af012e7ecb3e5cba27ca393536dbc97ded562"
+        ],
+        "rewrites": [],
+        "rule_id": "sol:bound/join/v1",
+        "sources": [
+          "source:orders",
+          "source:users"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": "object:sha256:cd0bb4cb0627ffc48cf31dfbdf50dce65303439720a2f44bdc68aa314e257282",
+    "upper": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "amount",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a",
+          1,
+          10
+        ],
+        [
+          1,
+          "a",
+          1,
+          40
+        ],
+        [
+          2,
+          "b",
+          2,
+          20
+        ],
+        [
+          3,
+          "c",
+          3,
+          30
+        ]
+      ]
+    },
+    "upper_object": "object:sha256:cd0bb4cb0627ffc48cf31dfbdf50dce65303439720a2f44bdc68aa314e257282"
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

@@ -1,0 +1,21 @@
+{
+  "actor_id": "human:alice",
+  "cell_id": "cell_014",
+  "cell_type": "sol:cell/code",
+  "contract_hash": "digest:sha256:e37728a9ee4acaea172718e2e4f7bf97e684dfdc0d133181da3db869a15a7fca",
+  "depends_on": [
+    "cell:cell_011"
+  ],
+  "language": "python",
+  "produces": [
+    {
+      "mime_type": "application/x-parquet",
+      "name": "metrics_table",
+      "schema_ref": "object:sha256:0221c4f663f5c39c77a05539e68b4f3135e870ed6aac103babcd1a6310620761"
+    }
+  ],
+  "source": "metrics = compute_metrics(results)",
+  "source_hash": "digest:sha256:a153fe297edfc699622388540a031e69a2fb967d72143539d6d36a9a8ad28f3d",
+  "summary": "Computes loss, accuracy, and EOS rate for each checkpoint.",
+  "title": "Compute Evaluation Metrics"
+}

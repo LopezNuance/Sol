@@ -1,0 +1,144 @@
+{
+  "description": "Materialized semantic assessment queried as ordinary data.",
+  "extensions": [
+    "urn:qry:v0.3:materialized-assessment"
+  ],
+  "nodes": [
+    {
+      "id": "ra",
+      "op": "read",
+      "source": "assessments"
+    },
+    {
+      "id": "f",
+      "input": "ra",
+      "op": "filter",
+      "predicate": {
+        "terms": [
+          {
+            "field": "label",
+            "op": "eq",
+            "value": "equivalent"
+          }
+        ]
+      }
+    }
+  ],
+  "query_id": "QGOLD-009",
+  "root": "f",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "assessments": {
+      "assessment": {
+        "assessment_policy": "policy:internal_assessment",
+        "authorization_policy": "policy:internal_authorized",
+        "configuration_digest": "digest:sha256:f7658225273f060d2706c6cd9eab9ae4d2e2a32d489d5e287dce036bd4dfba07",
+        "created_by": "agent:semantic_matcher_001",
+        "evaluation_id": "semantic_eval_batch_041",
+        "evaluator_id": "sol:evaluator/semantic_equivalence/v1",
+        "input_digests": [
+          "digest:sha256:aac90235cce9b11208ade6e648dc5f46a37168253d6f3a0d3b7a28c91c393bab",
+          "digest:sha256:00f0f3f465d1cdd5a55a724dbb4b5d9c81ac5a0591697be1eac3f601419422ce",
+          "digest:sha256:46b372a2a330ea199c0486242ea2f75e60857ffabcf3af4a33bd7ed84c16e886"
+        ],
+        "leakage_policy": "policy:internal_standard",
+        "model_id": "provider/model",
+        "model_version": "2026-07-01",
+        "output_schema": "object:sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+        "result_object": "object:sha256:ee06b616b199d4eedf7852de2ced96fe5060a75a57b5270dea4b236fbc32d7af",
+        "source_commit": "commit:commit_042",
+        "visibility_policy": "policy:internal_full"
+      },
+      "schema": [
+        {
+          "name": "evaluation_id",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "left_ref",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "right_ref",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "label",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "score",
+          "nullable": false,
+          "type": "decimal"
+        },
+        {
+          "name": "evaluator_actor",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "model_id",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "configuration_digest",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "evidence_ref",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "created_at",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          "semantic_eval_041",
+          "cell:cell_001",
+          "cell:cell_002",
+          "equivalent",
+          0.97,
+          "agent:semantic_matcher_001",
+          "provider/model",
+          "digest:sha256:f7658225273f060d2706c6cd9eab9ae4d2e2a32d489d5e287dce036bd4dfba07",
+          "object:sha256:d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1",
+          "2026-07-02T10:00:00Z"
+        ],
+        [
+          "semantic_eval_042",
+          "cell:cell_001",
+          "cell:cell_003",
+          "distinct",
+          0.31,
+          "agent:semantic_matcher_001",
+          "provider/model",
+          "digest:sha256:f7658225273f060d2706c6cd9eab9ae4d2e2a32d489d5e287dce036bd4dfba07",
+          "object:sha256:d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2d2",
+          "2026-07-02T10:00:00Z"
+        ],
+        [
+          "semantic_eval_043",
+          "cell:cell_002",
+          "cell:cell_003",
+          "equivalent",
+          0.88,
+          "agent:semantic_matcher_001",
+          "provider/model",
+          "digest:sha256:f7658225273f060d2706c6cd9eab9ae4d2e2a32d489d5e287dce036bd4dfba07",
+          "object:sha256:d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3",
+          "2026-07-02T10:00:00Z"
+        ]
+      ]
+    }
+  }
+}

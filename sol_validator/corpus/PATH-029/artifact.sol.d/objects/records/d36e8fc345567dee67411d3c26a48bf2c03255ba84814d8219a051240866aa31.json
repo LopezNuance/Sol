@@ -1,0 +1,6 @@
+{
+  "compression": "sol:compression/lzma",
+  "mime_type": "application/x-parquet",
+  "object_id": "object:sha256:d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31",
+  "size_bytes": 42
+}

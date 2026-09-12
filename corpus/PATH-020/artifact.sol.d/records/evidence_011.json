@@ -1,0 +1,19 @@
+{
+  "created_by": "human:alice",
+  "evidence_type": "external_source",
+  "external_ref": {
+    "availability": "unavailable",
+    "uri": "https://example.invalid/source"
+  },
+  "record_id": "evidence_011",
+  "record_type": "sol:record/evidence",
+  "status": {
+    "lifecycle": "active",
+    "staleness": "current",
+    "verification": "unverified"
+  },
+  "summary": "Unavailable external evidence.",
+  "supports": [
+    "record:claim_007"
+  ]
+}

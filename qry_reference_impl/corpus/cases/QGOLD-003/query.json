@@ -1,0 +1,83 @@
+{
+  "description": "Positive recursive dependency closure.",
+  "extensions": [
+    "urn:qry:v0.3:positive-recursion"
+  ],
+  "nodes": [
+    {
+      "id": "rr",
+      "op": "read",
+      "source": "roots"
+    },
+    {
+      "id": "re",
+      "op": "read",
+      "source": "edges"
+    },
+    {
+      "edge": "re",
+      "id": "f",
+      "on": {
+        "left": "src",
+        "right": "dst"
+      },
+      "op": "least_fixpoint",
+      "seed": "rr"
+    }
+  ],
+  "query_id": "QGOLD-003",
+  "root": "f",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "edges": {
+      "schema": [
+        {
+          "name": "src",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "dst",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          2
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          5,
+          6
+        ]
+      ]
+    },
+    "roots": {
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ]
+      ]
+    }
+  }
+}

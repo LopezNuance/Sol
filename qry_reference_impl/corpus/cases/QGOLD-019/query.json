@@ -1,0 +1,47 @@
+{
+  "description": "A tighter registered bound than the normative baseline is accepted (13.18).",
+  "nodes": [
+    {
+      "id": "v",
+      "op": "read",
+      "source": "vals"
+    },
+    {
+      "id": "f1",
+      "input": "v",
+      "op": "filter",
+      "predicate": {
+        "max_selectivity": 1.0,
+        "min_selectivity": 0.0
+      }
+    }
+  ],
+  "query_id": "QGOLD-019",
+  "root": "f1",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "vals": {
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ]
+    }
+  }
+}

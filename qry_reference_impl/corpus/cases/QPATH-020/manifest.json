@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-020",
+  "description": "The heuristic resurrection: heuristic semantic membership passes through a join and the output is labeled exact.",
+  "expected_diagnostics": [
+    "QV5-08"
+  ]
+}

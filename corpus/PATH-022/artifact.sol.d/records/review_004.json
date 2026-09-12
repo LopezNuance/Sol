@@ -1,0 +1,14 @@
+{
+  "comment": "accepted",
+  "created_at": "2026-01-01T00:00:00Z",
+  "proposal_id": "record:proposal_003",
+  "record_id": "review_004",
+  "record_type": "sol:record/review",
+  "review_status": "accepted",
+  "reviewed_by": "human:alice",
+  "status": {
+    "lifecycle": "active",
+    "staleness": "current",
+    "verification": "unverified"
+  }
+}

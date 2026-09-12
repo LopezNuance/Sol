@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-036",
+  "description": "The experimental theorem: an unverified rewrite rule is the sole basis for an exact result.",
+  "expected_diagnostics": [
+    "QV7-06"
+  ]
+}

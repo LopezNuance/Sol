@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-025",
+  "description": "The incomplete evaluation key: the prompt-template digest is omitted from a semantic evaluator key.",
+  "expected_diagnostics": [
+    "QV6-03"
+  ]
+}

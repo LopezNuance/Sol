@@ -1,0 +1,11 @@
+{
+  "case_id": "QPATH-035",
+  "description": "The continuation drift: the continuation resumes against a later branch head.",
+  "expected_diagnostics": [
+    "QRY-EXEC-002",
+    "QV1-02",
+    "QV1-03"
+  ],
+  "expected_guarantee": "bounded",
+  "expected_status": "incomplete_with_continuation"
+}

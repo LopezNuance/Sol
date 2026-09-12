@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-019",
+  "description": "A tighter registered bound than the normative baseline is accepted (13.18).",
+  "expected_diagnostics": []
+}

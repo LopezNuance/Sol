@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-017",
+  "description": "The unswapped negation: complement uses D\\L as a lower bound instead of D\\U.",
+  "expected_diagnostics": [
+    "QV4-04",
+    "QV5-02"
+  ]
+}

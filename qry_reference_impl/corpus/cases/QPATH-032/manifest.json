@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-032",
+  "description": "The top-k certainty illusion: an upper-bounded input is sorted and limited without a position-certainty rule.",
+  "expected_diagnostics": [
+    "QV3-05"
+  ]
+}

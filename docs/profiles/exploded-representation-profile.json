@@ -1,0 +1,53 @@
+{
+  "profile_id": "solqry-authoritative-exploded/v1",
+  "title": "Authoritative exploded RFC-SOL-0001 representation profile",
+  "date": "2026-09-08",
+  "status": "published",
+  "base_spec": {
+    "id": "RFC-SOL-0001",
+    "version": "v0.1.0",
+    "section": "56 (Exploded Debug Representation)",
+    "normativity": "non-normative debug/corpus representation; the physical .solnb container (section 14.6) is the normative interchange form"
+  },
+  "representation": {
+    "kind": "exploded",
+    "root": "artifact.sol.d/",
+    "layout": {
+      "manifest": "manifest.json",
+      "execution_structure": "execution_structure.json",
+      "diagnostics": "diagnostics.json",
+      "cells": "cells/<cell_id>.json",
+      "records": "records/<record_id>.json",
+      "actors": "actors/<actor_id>.json",
+      "runs": "runs/<run_id>.json",
+      "commits": "commits/<commit_id>.json",
+      "object_payloads": "objects/sha256/<sha256-hex>",
+      "object_records": "objects/records/<sha256-hex>.json",
+      "renders": "renders/<render_id>.json"
+    },
+    "notes": [
+      "Object payloads are stored flat under objects/sha256/ named by the full 64-hex sha256 digest (no sharding).",
+      "Each object payload has a companion record at objects/records/<sha256-hex>.json (the object-record schema class).",
+      "diagnostics.json holds committed Level-2 diagnostics. expected_diagnostics.json is corpus-only (the expected diagnostic set) and is not part of the artifact.",
+      "The machine summary is a pseudo-render at renders/machine_summary.json; committed renders are renders/<render_id>.json."
+    ]
+  },
+  "reference_profile": {
+    "id": "solqry-reference-exploded/v1",
+    "scan_passed": true,
+    "source": "freeze_report.json, condition 8 evidence"
+  },
+  "instances": [
+    {
+      "path": "corpus/",
+      "cases": 31,
+      "description": "Original 31-case prototype corpus (GOLD-01..06, PATH-001..025); the OpenAI-sandbox 31/31 lineage."
+    },
+    {
+      "path": "sol_validator/corpus/",
+      "cases": 37,
+      "description": "Current 37-case corpus (adds PATH-026..031 for V0-07..V0-13); GOLD-01 reassembled from the spec examples with real digests."
+    }
+  ],
+  "purpose": "Designates the authoritative exploded RFC-SOL-0001 representation that SOL-QRY v0.3 freeze-gate condition 8 (exact evaluator runs over the authoritative exploded RFC-SOL-0001 representation) evaluates against. This is the publication + designation step that clears the condition 8 blocker."
+}

@@ -1,0 +1,82 @@
+{
+  "description": "Stratified negation licensed by a local completeness assertion.",
+  "nodes": [
+    {
+      "id": "ru",
+      "op": "read",
+      "source": "users"
+    },
+    {
+      "id": "rr",
+      "op": "read",
+      "source": "removed"
+    },
+    {
+      "id": "d",
+      "inputs": [
+        "ru",
+        "rr"
+      ],
+      "op": "difference"
+    }
+  ],
+  "query_id": "QGOLD-004",
+  "root": "d",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "removed": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          2,
+          "b"
+        ]
+      ]
+    },
+    "users": {
+      "lower": {
+        "tuples": [
+          [
+            1,
+            "a"
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            1,
+            "a"
+          ],
+          [
+            2,
+            "b"
+          ]
+        ]
+      }
+    }
+  }
+}

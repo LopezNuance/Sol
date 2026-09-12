@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-044",
+  "description": "The over-pruned projection: a projection is pruned although every output column is still used downstream.",
+  "expected_diagnostics": [
+    "QV7-02"
+  ]
+}

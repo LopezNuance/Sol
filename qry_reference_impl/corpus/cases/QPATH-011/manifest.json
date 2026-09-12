@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-011",
+  "description": "The unsafe universe: query asks for every value that is not a claim.",
+  "expected_diagnostics": [
+    "QV2-01",
+    "QV2-05"
+  ]
+}

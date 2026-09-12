@@ -1,0 +1,11 @@
+{
+  "actor_id": "agent:eval_reviewer_001",
+  "anchors_record": "record:claim_007",
+  "cell_id": "cell_claim_anchor_007",
+  "cell_type": "sol:cell/anchor",
+  "render_hint": {
+    "style": "callout"
+  },
+  "source_hash": "digest:sha256:b2489972b639398b86c06058be3bd3cd839a358b146d59d507bf881782c11cff",
+  "summary": "Places claim_007 into the narrative."
+}

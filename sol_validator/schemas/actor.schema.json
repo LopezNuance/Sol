@@ -1,12 +1,42 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "sol:schemas/actor/v0.1",
+  "$id": "sol:schemas/actor/v0.2",
+  "title": "Sol actor record (RFC-SOL-0001, published v0.2)",
+  "description": "Normative actor schema. Encodes decision Q8 (agent-authored commits, 2026-09-07): agent actors require model_id, model_version, delegated_by, and autonomy_level; configuration/prompt/tool-policy digests are SHOULD (optional here). Actor types per RFC section 16.1.",
   "type": "object",
   "required": ["actor_id", "actor_type"],
   "properties": {
     "actor_id": {"type": "string"},
     "actor_type": {"enum": ["human", "agent", "tool", "service", "system"]},
+    "display_name": {"type": "string"},
     "capabilities": {"type": "array", "items": {"type": "string"}},
-    "autonomy_level": {"enum": ["read_only", "propose_only", "review_required", "autonomous_commit"]}
+    "autonomy_level": {
+      "enum": ["read_only", "propose_only", "review_required", "autonomous_commit"]
+    },
+    "model_id": {"type": "string"},
+    "model_version": {"type": "string"},
+    "configuration_digest": {
+      "type": "string",
+      "pattern": "^digest:sha256:[a-f0-9]{64}$"
+    },
+    "prompt_template_digest": {
+      "type": "string",
+      "pattern": "^digest:sha256:[a-f0-9]{64}$"
+    },
+    "tool_policy_digest": {
+      "type": "string",
+      "pattern": "^digest:sha256:[a-f0-9]{64}$"
+    },
+    "delegated_by": {"type": "string"},
+    "tool_name": {"type": "string"},
+    "tool_version": {"type": "string"},
+    "environment_id": {"type": "string"}
+  },
+  "if": {
+    "properties": {"actor_type": {"const": "agent"}},
+    "required": ["actor_type"]
+  },
+  "then": {
+    "required": ["model_id", "model_version", "delegated_by", "autonomy_level"]
   }
 }

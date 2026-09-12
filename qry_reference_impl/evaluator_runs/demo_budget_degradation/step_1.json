@@ -1,0 +1,38 @@
+{
+  "actor_id": "tool:sol_query_engine",
+  "assurance": {
+    "depends_on": [
+      "tasks"
+    ],
+    "effective_status": "validated",
+    "evidence": [
+      "object:sha256:7143a496c96a5a1c8f6513fbec7355535c500aacbb6f0103881fe4c9ef51f762"
+    ],
+    "status": "validated"
+  },
+  "continuation": {
+    "partial_result_object": "object:sha256:a9141d1c70d84bd70749642d409352fdbd4f8cec731d5b2057d0a04d82937b9d",
+    "query_digest": "digest:sha256:9e0b1624fa66eac14e2d84e380305c8f4b3bf8c19a10f01d770ad7bef2335e81",
+    "source_manifest": "object:sha256:7143a496c96a5a1c8f6513fbec7355535c500aacbb6f0103881fe4c9ef51f762",
+    "token": "cont:sha256:69bb51712a8d77445b114401c1cbf67f577d96fbec273d1863520478c8d0d473"
+  },
+  "guarantee": {
+    "kind": "bounded",
+    "result_object": "object:sha256:0be6acde47453fb3fe28895057f126d2194c67ee55087df5b9816b25d8e0cd7e"
+  },
+  "logical_rewrites": [],
+  "provenance_mode": "tuple",
+  "query_digest": "digest:sha256:9e0b1624fa66eac14e2d84e380305c8f4b3bf8c19a10f01d770ad7bef2335e81",
+  "query_ref": "record:query_QDEMO-budget-degradation",
+  "query_run_id": "qrun:demo_budget_degradation:step_1",
+  "resource_usage": {
+    "object_bytes_read": 0,
+    "records_read": 6,
+    "semantic_evaluations": 0,
+    "wall_time_ms": 0
+  },
+  "rows_returned": 2,
+  "schema_version": "qry.execution.v0.3",
+  "source_manifest": "object:sha256:7143a496c96a5a1c8f6513fbec7355535c500aacbb6f0103881fe4c9ef51f762",
+  "status": "incomplete_with_continuation"
+}

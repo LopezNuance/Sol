@@ -1,0 +1,108 @@
+{
+  "error_behavior": "distinguished_from_missing",
+  "query_id": "QPATH-027",
+  "root": "r",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "source:r"
+      ],
+      "evidence": [
+        "source:r"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/relation/v1",
+    "guarantee": "exact",
+    "intervals": [],
+    "lower": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ]
+    },
+    "lower_object": "object:sha256:c9f8d7055deb334977d2ac28b0c271235fc08d8256ec98b857a38d0877d0217d",
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [
+        {
+          "cites": [
+            "source:r"
+          ],
+          "mode": "tuple",
+          "tuple": [
+            1
+          ]
+        },
+        {
+          "cites": [
+            "source:r"
+          ],
+          "mode": "tuple",
+          "tuple": [
+            2
+          ]
+        },
+        {
+          "cites": [
+            "source:r"
+          ],
+          "mode": "tuple",
+          "tuple": [
+            3
+          ]
+        }
+      ],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [],
+        "rewrites": [],
+        "rule_id": "sol:bound/relation/v1",
+        "sources": [
+          "source:r"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": "object:sha256:c9f8d7055deb334977d2ac28b0c271235fc08d8256ec98b857a38d0877d0217d",
+    "upper": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ]
+    },
+    "upper_object": "object:sha256:c9f8d7055deb334977d2ac28b0c271235fc08d8256ec98b857a38d0877d0217d"
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

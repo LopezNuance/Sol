@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Model Evaluation Report — Sol artifact</title>
+<style>
+body { font-family: system-ui, sans-serif; margin: 2rem auto; max-width: 60rem; color: #1a1a1a; line-height: 1.5; }
+header { border-bottom: 2px solid #1a1a1a; margin-bottom: 1rem; padding-bottom: .5rem; }
+.meta { color: #555; font-size: .9rem; }
+section { margin-bottom: 1.5rem; }
+h2 { font-size: 1.2rem; border-bottom: 1px solid #ccc; padding-bottom: .25rem; }
+.cell { border: 1px solid #ddd; border-radius: 4px; padding: .75rem; margin-bottom: .75rem; }
+.cell .type { font-size: .75rem; text-transform: uppercase; letter-spacing: .05em; color: #555; }
+.cell pre { background: #f6f6f6; padding: .5rem; overflow-x: auto; font-size: .85rem; }
+.anchor { border-left: 4px solid #2a6; background: #f2fbf6; }
+.disclosures { border: 1px solid #a60; background: #fff8ef; padding: .75rem; }
+.disclosures li { margin-bottom: .25rem; }
+table { border-collapse: collapse; font-size: .85rem; }
+th, td { border: 1px solid #ccc; padding: .25rem .5rem; text-align: left; }
+footer { margin-top: 2rem; border-top: 1px solid #ccc; padding-top: .5rem; color: #555; font-size: .85rem; }
+</style></head><body>
+<header>
+<h1>Model Evaluation Report</h1>
+<p class="meta">Sol artifact <code>art_01j9x7k9k5m2c8v6h3p4q2r1s0</code> · sol_version 0.1 · source commit: <code>commit_042</code></p>
+</header>
+<section id="cells"><h2>Cells</h2>
+<div class="cell prose">
+<p class="type">sol:cell/prose · cell_001</p>
+<h3>Task</h3>
+<p>Introduces the checkpoint comparison task.</p>
+<pre><code>Compare checkpoints.</code></pre>
+</div>
+<div class="cell config">
+<p class="type">sol:cell/config · cell_010</p>
+<h3>Config</h3>
+<p>Defines evaluation thresholds.</p>
+<pre><code>delta_tie = 0.02</code></pre>
+</div>
+<div class="cell data">
+<p class="type">sol:cell/data · cell_011</p>
+<h3>Dataset</h3>
+<p>Binds the evaluation dataset.</p>
+<pre><code>eval_dataset = frozen_dataset_v1</code></pre>
+</div>
+<div class="cell code">
+<p class="type">sol:cell/code · cell_014</p>
+<h3>Compute Evaluation Metrics</h3>
+<p>Computes loss, accuracy, and EOS rate for each checkpoint.</p>
+<pre><code>metrics = compute_metrics(results)</code></pre>
+<p>Output contract: metrics_table (application/x-parquet)</p>
+</div>
+<div class="cell display">
+<p class="type">sol:cell/display · cell_015</p>
+<h3>Metrics Table</h3>
+<p>Displays the current metrics table.</p>
+<p>Displays <code>cell:cell_014#metrics_table</code> → <code>object:sha256:d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31</code></p>
+<p>Output contract: eos_plot (image/png)</p>
+</div>
+<div class="cell anchor">
+<p class="type">sol:cell/anchor · cell_claim_anchor_007</p>
+<p>Places claim_007 into the narrative.</p>
+<div class="anchor"><p><strong>Anchor:</strong> places <code>record:claim_007</code> into the narrative. M200 has lower EOS hazard than M0 on open-ended prompts.</p></div>
+</div>
+</section>
+<section id="records"><h2>Semantic records</h2>
+<div class='cell'>
+<table>
+<tr><th>record_id</th><td>claim_007</td></tr>
+<tr><th>type</th><td>sol:record/claim</td></tr>
+<tr><th>summary</th><td>M200 has lower EOS hazard than M0 on open-ended prompts.</td></tr>
+<tr><th>status</th><td>active / current / verified</td></tr>
+<tr><th>statement</th><td>Checkpoint M200 has lower EOS hazard than M0 on open-ended prompts.</td></tr>
+<tr><th>claim_type</th><td>empirical_result</td></tr>
+<tr><th>supporting_evidence</th><td>record:evidence_011</td></tr>
+<tr><th>confidence</th><td>0.82</td></tr>
+</table></div>
+<div class='cell'>
+<table>
+<tr><th>record_id</th><td>decision_002</td></tr>
+<tr><th>type</th><td>sol:record/decision</td></tr>
+<tr><th>summary</th><td>Promote M200 for next-stage testing.</td></tr>
+<tr><th>status</th><td>active / current / unverified</td></tr>
+<tr><th>decision_type</th><td>branch_selection</td></tr>
+<tr><th>candidates</th><td>branch:main, branch:branch_007</td></tr>
+<tr><th>selected</th><td>branch:main</td></tr>
+<tr><th>decision_rule</th><td>lowest_invalidated_outputs_then_human_review</td></tr>
+<tr><th>made_by</th><td>human:alice</td></tr>
+<tr><th>based_on</th><td>record:claim_007, record:evidence_011</td></tr>
+</table></div>
+<div class='cell'>
+<table>
+<tr><th>record_id</th><td>evidence_011</td></tr>
+<tr><th>type</th><td>sol:record/evidence</td></tr>
+<tr><th>summary</th><td>Metrics table showing M200 has lower EOS rate.</td></tr>
+<tr><th>status</th><td>active / current / unverified</td></tr>
+<tr><th>evidence_type</th><td>metric_table</td></tr>
+<tr><th>source_ref</th><td>cell:cell_014#metrics_table</td></tr>
+<tr><th>source_object</th><td>object:sha256:d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31</td></tr>
+<tr><th>supports</th><td>record:claim_007</td></tr>
+</table></div>
+<div class='cell'>
+<table>
+<tr><th>record_id</th><td>task_001</td></tr>
+<tr><th>type</th><td>sol:record/task</td></tr>
+<tr><th>summary</th><td>Compare checkpoints M0, M200, and M2000.</td></tr>
+<tr><th>status</th><td>active / current / unverified</td></tr>
+<tr><th>task_type</th><td>human_instruction</td></tr>
+<tr><th>instruction_ref</th><td>object:sha256:3e14be743a8190e87586cca696b176955d21074988888643a4f22b01c50a6810</td></tr>
+</table></div>
+<div class='cell'>
+<table>
+<tr><th>record_id</th><td>verification_005</td></tr>
+<tr><th>type</th><td>sol:record/verification</td></tr>
+<tr><th>summary</th><td>Reexecution verification of claim_007.</td></tr>
+<tr><th>status</th><td>active / current / unverified</td></tr>
+<tr><th>target</th><td>record:claim_007</td></tr>
+<tr><th>method</th><td>sol:verify/reexecution</td></tr>
+<tr><th>result</th><td>passed</td></tr>
+<tr><th>performed_by</th><td>tool:sol_executor</td></tr>
+</table></div>
+</section>
+<section id="runs"><h2>Runs</h2>
+<div class='cell'>
+<table>
+<tr><th>run_id</th><td>run_008</td></tr>
+<tr><th>status</th><td>success</td></tr>
+<tr><th>source_commit</th><td>commit:commit_041</td></tr>
+<tr><th>result_commit</th><td>commit:commit_042</td></tr>
+<tr><th>actor</th><td>tool:sol_executor</td></tr>
+<tr><th>environment</th><td>env_001</td></tr>
+<tr><th>cells_executed</th><td>cell:cell_001, cell:cell_010, cell:cell_011, cell:cell_014, cell:cell_015</td></tr>
+<tr><th>binding</th><td>cell:cell_014#metrics_table → object:sha256:d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31 (valid)</td></tr>
+<tr><th>binding</th><td>cell:cell_015#eos_plot → object:sha256:c2e93ae90fa365e59bace5a370714589ef35a16f7a419c30037bff6cffc40bd2 (valid)</td></tr>
+</table></div>
+<div class='cell'>
+<table>
+<tr><th>run_id</th><td>run_012</td></tr>
+<tr><th>status</th><td>success</td></tr>
+<tr><th>source_commit</th><td>commit:commit_042</td></tr>
+<tr><th>result_commit</th><td>(none)</td></tr>
+<tr><th>actor</th><td>tool:sol_executor</td></tr>
+<tr><th>environment</th><td>env_001</td></tr>
+<tr><th>cells_executed</th><td>cell:cell_001, cell:cell_010, cell:cell_011, cell:cell_014</td></tr>
+<tr><th>binding</th><td>cell:cell_014#metrics_table → object:sha256:d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31 (valid)</td></tr>
+</table></div>
+</section>
+<footer>
+<p>Rendered view derived from commit <code>commit_042</code>. This view is a derived product (RFC section 47); the artifact is the source of truth (INV-01). Rendered without code execution (INV-07).</p>
+</footer></body></html>

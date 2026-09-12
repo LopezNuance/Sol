@@ -1,0 +1,79 @@
+{
+  "query_id": "QPATH-017",
+  "root": "x",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "source:d",
+        "source:l",
+        "sol:bound/difference/v1"
+      ],
+      "evidence": [
+        "source:d",
+        "source:l"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/difference/v1",
+    "guarantee": "bounded",
+    "lower": {
+      "fields": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    "lower_object": null,
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [],
+        "rewrites": [],
+        "rule_id": "sol:bound/difference/v1",
+        "sources": [
+          "source:d",
+          "source:l"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": null,
+    "upper": {
+      "fields": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ]
+    },
+    "upper_object": null
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

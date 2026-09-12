@@ -1,0 +1,407 @@
+{
+  "authoritative_feedback_source": "executable bound-algebra implementation, validators, and the committed corpus, certificate, and recorded-run artifacts",
+  "conditions": [
+    {
+      "evidence": {
+        "aggregate_family": [
+          "sol:bound/count_set/v1",
+          "sol:bound/sum/v1",
+          "sol:bound/min_max/v1",
+          "sol:bound/avg_optional_prefix/v1"
+        ],
+        "coverage": {
+          "Annotate": "sol:bound/annotate/v1",
+          "Difference": "sol:bound/difference/v1",
+          "Distinct": "sol:bound/distinct/v1",
+          "Evaluate": "sol:bound/structural_containment/v1",
+          "Group": "sol:bound/count_set/v1",
+          "Intersect": "sol:bound/intersect/v1",
+          "Join": "sol:bound/join/v1",
+          "LeastFixpoint": "sol:bound/least_fixpoint/v1",
+          "Limit": "sol:bound/limit/v1",
+          "Order": "sol:bound/order/v1",
+          "Project": "sol:bound/project/v1",
+          "Relation": "sol:bound/relation/v1",
+          "Rename": "sol:bound/rename/v1",
+          "Select": "sol:bound/select/v1",
+          "TemporalSlice": "sol:bound/temporal_slice/v1",
+          "Union": "sol:bound/union/v1"
+        }
+      },
+      "number": 1,
+      "passed": true,
+      "title": "Bound-transfer rules are defined for every core logical operator"
+    },
+    {
+      "evidence": {
+        "QPATH-003": [
+          "QINV-06",
+          "QV5-03",
+          "QV8-06"
+        ],
+        "QPATH-006": [
+          "QV3-04"
+        ],
+        "qv5_06_registered": true
+      },
+      "number": 2,
+      "passed": true,
+      "title": "Unsupported guarantee compositions deterministically reject or downgrade"
+    },
+    {
+      "evidence": {
+        "query_digest": "digest:sha256:c90e07df3f04ca5fec2e28f649b0219227858ddf335a067da26778c2ff916730",
+        "schemas": [
+          "schemas/qry_query.schema.json",
+          "schemas/qry_bounds_v3.schema.json",
+          "schemas/qry_bounds.schema.json",
+          "schemas/qry_certificate.schema.json",
+          "schemas/qry_execution.schema.json"
+        ]
+      },
+      "number": 3,
+      "passed": true,
+      "title": "Canonical typed AST and canonicalization schemas are published"
+    },
+    {
+      "evidence": {
+        "mapping_digest": "sha256:7d30035d599048e685d46a660375eceff3bbfb304b1be5827af518ad0ec20493",
+        "mapping_digest_recomputed": "sha256:7d30035d599048e685d46a660375eceff3bbfb304b1be5827af518ad0ec20493",
+        "profile": "qry_reference_impl/substrait/qry_substrait_profile.yaml",
+        "profile_document": "qry_reference_impl/substrait/mapping.md"
+      },
+      "number": 4,
+      "passed": true,
+      "title": "At least one Substrait mapping profile is documented"
+    },
+    {
+      "evidence": {
+        "mandatory_rules": [
+          "sol:rewrite/associate_exact_join/v1",
+          "sol:rewrite/normalize_union/v1",
+          "sol:rewrite/prune_exact_projection/v1",
+          "sol:rewrite/push_exact_selection_through_join/v1",
+          "sol:rewrite/substitute_exact_machine_summary/v1"
+        ],
+        "registered": [
+          "sol:rewrite/associate_exact_join/v1",
+          "sol:rewrite/experimental_aggregate_fold/v1",
+          "sol:rewrite/normalize_union/v1",
+          "sol:rewrite/prune_exact_projection/v1",
+          "sol:rewrite/push_exact_selection_through_join/v1",
+          "sol:rewrite/push_filter_across_policy_with_disclosure_proof/v1",
+          "sol:rewrite/substitute_exact_machine_summary/v1"
+        ],
+        "report_digest": "sha256:7216fec1a63c01a36945bbab81964c2b37bace5c64f0474adb2b78e66e12b3e4"
+      },
+      "number": 5,
+      "passed": true,
+      "title": "Rewrite-rule registration, proof-evidence classes, and assurance obligations are implemented"
+    },
+    {
+      "evidence": {
+        "bucketed_cardinality": "bucket:10-19",
+        "cases": {
+          "QGOLD-011": true,
+          "QPATH-005": true,
+          "QPATH-027": true,
+          "QPATH-028": true,
+          "QPATH-029": true
+        },
+        "count_buckets": [
+          "0",
+          "1-9",
+          "10-19",
+          "20-99",
+          "100+"
+        ],
+        "validator_rules": [
+          "QV8-08",
+          "QV9-03",
+          "QV9-04",
+          "QV9-05",
+          "QV9-08"
+        ]
+      },
+      "number": 6,
+      "passed": true,
+      "title": "Logical-disclosure baseline and validator rules are implemented"
+    },
+    {
+      "evidence": {
+        "case": "QGOLD-009",
+        "configuration_digest": "digest:sha256:f7658225273f060d2706c6cd9eab9ae4d2e2a32d489d5e287dce036bd4dfba07",
+        "evaluation_id": "semantic_eval_batch_041",
+        "evaluator_id": "sol:evaluator/semantic_equivalence/v1",
+        "result_object": "object:sha256:ee06b616b199d4eedf7852de2ced96fe5060a75a57b5270dea4b236fbc32d7af"
+      },
+      "number": 7,
+      "passed": true,
+      "title": "Semantic evaluator materialization and evaluation-key contracts are implemented"
+    },
+    {
+      "evidence": {
+        "all_runs_complete_exact": 68,
+        "instances": {
+          "corpus": 31,
+          "sol_validator_corpus": 37
+        },
+        "profile": "solqry-authoritative-exploded/v1",
+        "report_digest": "sha256:f91ffe426335b69038f1f5b0474c44cc4aca05eca6edef57b10672f91bf0747b"
+      },
+      "number": 8,
+      "passed": true,
+      "title": "Exact evaluator runs over the exploded RFC-SOL-0001 representation"
+    },
+    {
+      "evidence": {
+        "covering_applied": true,
+        "lossy_diagnostics": [
+          "QV8-04"
+        ],
+        "lossy_rejected": true
+      },
+      "number": 9,
+      "passed": true,
+      "title": "Machine-summary substitution succeeds only for proven covering queries"
+    },
+    {
+      "evidence": {
+        "normative": {
+          "passed": 64,
+          "total": 64
+        },
+        "report_digest": "sha256:3855d1c452fae2d59ef62e5aabb3a49d70250f4fc5ccaea6be405d8ecb39bb24",
+        "supplemental": {
+          "passed": 72,
+          "total": 72
+        }
+      },
+      "number": 10,
+      "passed": true,
+      "title": "Every mandatory golden and pathological case passes with deterministic diagnostics"
+    },
+    {
+      "evidence": {
+        "cases": {
+          "QGOLD-001": true,
+          "QGOLD-012": true,
+          "QPATH-012": true,
+          "QPATH-035": true
+        },
+        "schemas": [
+          "schemas/qry_execution.schema.json",
+          "schemas/qry_query.schema.json"
+        ]
+      },
+      "number": 11,
+      "passed": true,
+      "title": "Query and execution records validate against published schemas"
+    },
+    {
+      "evidence": {
+        "final_rows": [
+          [
+            2
+          ],
+          [
+            4
+          ],
+          [
+            6
+          ]
+        ],
+        "guarantees": [
+          "bounded",
+          "bounded",
+          "exact"
+        ],
+        "query_digest": "digest:sha256:9e0b1624fa66eac14e2d84e380305c8f4b3bf8c19a10f01d770ad7bef2335e81",
+        "result_object": "object:sha256:f90a446d916558d5f3ec29eb1984ed9789018506c2f8e377b8113336385841ff",
+        "statuses": [
+          "incomplete_with_continuation",
+          "incomplete_with_continuation",
+          "complete"
+        ]
+      },
+      "number": 12,
+      "passed": true,
+      "title": "At least one end-to-end bounded query demonstrates honest budget degradation"
+    },
+    {
+      "evidence": {
+        "cases": {
+          "QGOLD-013": true,
+          "QGOLD-014": true,
+          "QGOLD-015": true,
+          "QGOLD-016": true
+        }
+      },
+      "number": 13,
+      "passed": true,
+      "title": "Structural one-sided bounds are implemented and pass QGOLD-013 through QGOLD-016"
+    },
+    {
+      "evidence": {
+        "golden": true,
+        "pathologies": {
+          "QPATH-037": [
+            "QINV-14",
+            "QV8-07"
+          ],
+          "QPATH-038": [
+            "QV8-06"
+          ]
+        }
+      },
+      "number": 14,
+      "passed": true,
+      "title": "Bounded-result provenance distinguishes lower-membership certification from upper-bound derivation and upper-only non-exclusion"
+    },
+    {
+      "evidence": {
+        "case": "QPATH-023",
+        "diagnostics": [
+          "QV5-10",
+          "QV7-04"
+        ],
+        "stale_evaluates_as_unknown": true
+      },
+      "number": 15,
+      "passed": true,
+      "title": "Assurance evidence participates in ordinary Sol staleness propagation, and stale assurance evaluates effectively as unknown"
+    },
+    {
+      "evidence": {
+        "boundary_crossing_rejected": [
+          "QV7-07",
+          "QV9-09"
+        ],
+        "disclosure_proof_applied": true,
+        "proof_certificate": "certificates/rewrites/disclosure-proof.json"
+      },
+      "number": 16,
+      "passed": true,
+      "title": "Rewrites spanning policy or evaluator boundaries default to non-preserving unless explicitly proven"
+    },
+    {
+      "evidence": {
+        "QGOLD-020": true,
+        "QPATH-042": [
+          "QV5-12"
+        ],
+        "intervals": [
+          {
+            "field": "avg_amount",
+            "group": [
+              1
+            ],
+            "lower": "5/1",
+            "may_be_empty": false,
+            "upper": "21/2"
+          },
+          {
+            "field": "avg_amount",
+            "group": [
+              2
+            ],
+            "lower": "7/1",
+            "may_be_empty": true,
+            "upper": "7/1"
+          }
+        ],
+        "rule_id": "sol:bound/avg_optional_prefix/v1"
+      },
+      "number": 17,
+      "passed": true,
+      "title": "sol:bound/avg_optional_prefix/v1 or an equal-or-stronger registered AVG rule passes its golden and pathological cases when inexact AVG support is claimed"
+    },
+    {
+      "evidence": {
+        "adversarial_cases": {
+          "sol:rewrite/associate_exact_join/v1": [
+            "QPATH-045"
+          ],
+          "sol:rewrite/normalize_union/v1": [
+            "QPATH-046"
+          ],
+          "sol:rewrite/prune_exact_projection/v1": [
+            "QPATH-044"
+          ],
+          "sol:rewrite/push_exact_selection_through_join/v1": [
+            "QPATH-022"
+          ],
+          "sol:rewrite/substitute_exact_machine_summary/v1": [
+            "QPATH-034"
+          ]
+        },
+        "certificates": [
+          {
+            "cases": 4096,
+            "path": "qry_reference_impl/certificates/rewrites/join-associativity.json",
+            "rule_slug": "join-associativity",
+            "transcript_digest": "sha256:319615dfafde33cb5aa976cad096f289cb8ab9b823fc0071f688511aa22f0709",
+            "verified": true
+          },
+          {
+            "cases": 256,
+            "path": "qry_reference_impl/certificates/rewrites/machine-summary-substitution.json",
+            "rule_slug": "machine-summary-substitution",
+            "transcript_digest": "sha256:4b0e92ad9c028a4cea4445ddc5ed35f584b89ae46a06c7d3fc9ff9149f5cedac",
+            "verified": true
+          },
+          {
+            "cases": 256,
+            "path": "qry_reference_impl/certificates/rewrites/projection-pruning.json",
+            "rule_slug": "projection-pruning",
+            "transcript_digest": "sha256:228ccfa15c69bb92aad663c4d8758b5b67751d30ebbf1b6150e79e75128a4d35",
+            "verified": true
+          },
+          {
+            "cases": 256,
+            "path": "qry_reference_impl/certificates/rewrites/selection-pushdown.json",
+            "rule_slug": "selection-pushdown",
+            "transcript_digest": "sha256:1e8a22f6464e26397d49b4402e67220046a7ab9c3a26b88dcd2d9ee0e301e86c",
+            "verified": true
+          },
+          {
+            "cases": 512,
+            "path": "qry_reference_impl/certificates/rewrites/union-normalization.json",
+            "rule_slug": "union-normalization",
+            "transcript_digest": "sha256:0ca21b16112965516484c1a8963504ca6acf2c57ef5aac8dbbf64f8d5c71025c",
+            "verified": true
+          }
+        ],
+        "covering_proofs_verified": true,
+        "disclosure_proof_verified": true
+      },
+      "number": 18,
+      "passed": true,
+      "title": "The mandatory rewrite kernel has machine-checkable property tests and at least one adversarial corpus case per rule; claimed proven rules meet the accepted proof-artifact profile"
+    },
+    {
+      "evidence": {
+        "cases": {
+          "QGOLD-011": true,
+          "QPATH-029": [
+            "QV9-08"
+          ],
+          "QPATH-043": [
+            "QV7-09",
+            "QV9-10"
+          ]
+        },
+        "physical_side_channel_equivalence": "not_claimed: no physical conformance profile is published for v0.3.0 (25.3); logical rewrites cannot claim physical non-inference (QV7-09, QV9-10)"
+      },
+      "number": 19,
+      "passed": true,
+      "title": "Logical and physical leakage claims are separated, and no physical side-channel equivalence is inferred from logical rewriting alone"
+    }
+  ],
+  "failed": 0,
+  "format": "solqry-freeze-gate-report/v1",
+  "passed": 19,
+  "report_digest": "sha256:1ea510ee17a5d8b48677678c106f55a5a768b0b76f822bb771187c49c2884b83",
+  "spec": "RFC-SOL-QRY-0001 v0.3.0 design draft, 44",
+  "status": "FROZEN"
+}

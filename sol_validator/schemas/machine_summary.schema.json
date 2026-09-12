@@ -1,18 +1,57 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "sol:schemas/machine_summary/v0.1",
+  "$id": "sol:schemas/machine_summary/v0.2",
+  "title": "Sol machine summary render (RFC-SOL-0001, published v0.2)",
+  "description": "Normative machine-summary schema. Encodes decision Q11 (2026-09-07): in addition to the v0.1 draft fields, the summary MUST carry failures, diagnostics, open_proposals, stale, and renders (RFC section 48 components). Summary-artifact divergence remains invalid (V5-03); this schema checks structure only, so a structurally valid but dishonest summary is caught by V5-03.",
   "type": "object",
-  "required": ["render_id", "target", "source_commit", "artifact_id", "sol_version", "execution_structure", "cells", "actors", "records", "runs"],
+  "required": [
+    "render_id",
+    "target",
+    "source_commit",
+    "artifact_id",
+    "sol_version",
+    "execution_structure",
+    "cells",
+    "actors",
+    "records",
+    "runs",
+    "failures",
+    "diagnostics",
+    "open_proposals",
+    "stale",
+    "renders"
+  ],
   "properties": {
     "render_id": {"const": "machine_summary"},
     "target": {"const": "machine_summary"},
     "source_commit": {"type": ["string", "null"]},
     "artifact_id": {"type": "string"},
     "sol_version": {"type": "string"},
+    "manifest": {"type": "object"},
     "execution_structure": {"type": "object"},
     "cells": {"type": "array"},
     "actors": {"type": "array"},
-    "records": {"type": "array"},
-    "runs": {"type": "array"}
+    "records": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["record_id", "record_type", "summary", "status"],
+        "properties": {
+          "record_id": {"type": "string"},
+          "record_type": {"type": "string"},
+          "summary": {"type": ["string", "null"]},
+          "status": {"type": "object"}
+        }
+      }
+    },
+    "runs": {"type": "array"},
+    "failures": {"type": "array"},
+    "diagnostics": {"type": "array"},
+    "open_proposals": {"type": "array"},
+    "stale": {
+      "type": "array",
+      "description": "Status/staleness summary: references to records that are stale or need reverification."
+    },
+    "renders": {"type": "array"}
   }
 }

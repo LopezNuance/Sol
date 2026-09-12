@@ -1,0 +1,7 @@
+{
+  "case_id": "QRY-046",
+  "description": "schema missing query_id",
+  "expected_diagnostics": [
+    "QRY-SCHEMA-001"
+  ]
+}

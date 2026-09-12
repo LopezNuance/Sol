@@ -1,0 +1,63 @@
+{
+  "artifact_id": "art_0c9a48208778d814008bfc",
+  "artifact_type": "sol_notebook",
+  "authorization": {
+    "permit_self_application": false,
+    "protected_branches": [
+      {
+        "allowed_committers": [
+          "human:alice"
+        ],
+        "branch": "main",
+        "protected": true,
+        "required_capabilities": [
+          "approve"
+        ]
+      }
+    ]
+  },
+  "current_commit": "commit_001",
+  "environment": {
+    "environment_id": "env_imported",
+    "kernel": "python",
+    "kernel_version": "unknown",
+    "package_manifest": "digest:sha256:531db438740670cba835dd18356ffc6af02520c38703cbe041e6566ea83e2061"
+  },
+  "execution": {
+    "deterministic": false,
+    "partial_execution_policy": "invalidate_downstream",
+    "structure": "linear"
+  },
+  "imported_from": "ipynb",
+  "optional_features": [
+    "sol:feature/external_evidence"
+  ],
+  "provenance_status": "incomplete",
+  "rendering": {
+    "allowed_views": [
+      "html",
+      "markdown",
+      "audit",
+      "machine_summary"
+    ],
+    "default_view": "html"
+  },
+  "reproducibility_status": "unknown",
+  "required_features": [
+    "sol:feature/linear_execution",
+    "sol:feature/internal_object_store",
+    "sol:feature/machine_summary"
+  ],
+  "runtime": {
+    "kernel_adapter": "sol-kernel-python",
+    "language_version": "3.12.0",
+    "primary_language": "python"
+  },
+  "security": {
+    "execution_requires_confirmation": true,
+    "network_access": false,
+    "sandbox_profile": "sandbox_minimal"
+  },
+  "sol_version": "0.1",
+  "title": "sample.ipynb"
+}

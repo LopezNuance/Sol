@@ -1,0 +1,59 @@
+{
+  "description": "The provenance side door: values are redacted but provenance reveals restricted record identities.",
+  "leakage_policy": {
+    "logical_disclosure": {
+      "cardinality": "disclosed",
+      "diagnostics": "uniform",
+      "error_class": "uniform",
+      "provenance": "redacted",
+      "tuple_existence": "no_disclosure",
+      "unauthorized_reference_behavior": "indistinguishable_from_missing",
+      "values": "no_disclosure"
+    },
+    "policy_id": "policy:restricted_claims",
+    "residual_risk": [
+      "correlation_inference_possible"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "r",
+      "op": "read",
+      "source": "r"
+    }
+  ],
+  "query_id": "QPATH-028",
+  "root": "r",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "r": {
+      "restricted": true,
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ],
+        [
+          3,
+          "c"
+        ]
+      ]
+    }
+  }
+}

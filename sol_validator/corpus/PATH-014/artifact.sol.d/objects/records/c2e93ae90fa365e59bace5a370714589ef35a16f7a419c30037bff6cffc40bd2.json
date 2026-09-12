@@ -1,0 +1,9 @@
+{
+  "compression": "sol:compression/gzip",
+  "created_by": "cell:cell_015",
+  "created_by_run": "run:run_008",
+  "data_sensitivity": "internal",
+  "mime_type": "image/png",
+  "object_id": "object:sha256:c2e93ae90fa365e59bace5a370714589ef35a16f7a419c30037bff6cffc40bd2",
+  "size_bytes": 17
+}

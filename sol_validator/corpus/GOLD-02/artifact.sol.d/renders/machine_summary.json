@@ -35,19 +35,69 @@
       "cell_id": "cell_016",
       "cell_type": "sol:cell/code",
       "summary": "Cell that fails after valid prefix."
+    },
+    {
+      "cell_id": "cell_claim_anchor_007",
+      "cell_type": "sol:cell/anchor",
+      "summary": "Places claim_007 into the narrative."
     }
   ],
+  "diagnostics": [],
   "execution_structure": {
+    "branches": [
+      {
+        "base_commit": null,
+        "branch_id": "branch_001",
+        "created_by": "human:alice",
+        "head_commit": "commit:commit_042",
+        "name": "main",
+        "purpose": "Primary integration branch."
+      },
+      {
+        "base_commit": "commit:commit_042",
+        "branch_id": "branch_007",
+        "created_by": "human:alice",
+        "head_commit": "commit:commit_043",
+        "name": "strict_metric_threshold",
+        "purpose": "Test whether stricter pass criteria change the selected checkpoint."
+      }
+    ],
     "cells": [
       "cell:cell_001",
       "cell:cell_010",
       "cell:cell_011",
       "cell:cell_014",
       "cell:cell_015",
+      "cell:cell_claim_anchor_007",
       "cell:cell_016"
     ],
     "type": "linear"
   },
+  "failures": [
+    {
+      "error_type": "ExampleError",
+      "failed_cell": "cell:cell_016",
+      "record_id": "failure_002",
+      "run_id": "run:run_008",
+      "status": {
+        "lifecycle": "active",
+        "staleness": "current",
+        "verification": "unverified"
+      }
+    }
+  ],
+  "manifest": {
+    "artifact_id": "art_01j9x7k9k5m2c8v6h3p4q2r1s0",
+    "current_commit": "commit_042",
+    "reproducibility_status": "partially_reproducible",
+    "required_features": [
+      "sol:feature/linear_execution",
+      "sol:feature/internal_object_store",
+      "sol:feature/machine_summary"
+    ],
+    "sol_version": "0.1"
+  },
+  "open_proposals": [],
   "records": [
     {
       "record_id": "claim_007",
@@ -82,8 +132,12 @@
     {
       "record_id": "failure_002",
       "record_type": "sol:record/failure",
-      "status": {},
-      "summary": null
+      "status": {
+        "lifecycle": "active",
+        "staleness": "current",
+        "verification": "unverified"
+      },
+      "summary": "Execution failed before completion; see failure details."
     },
     {
       "record_id": "task_001",
@@ -103,19 +157,33 @@
         "staleness": "current",
         "verification": "unverified"
       },
-      "summary": null
+      "summary": "Reexecution verification of claim_007."
     }
   ],
   "render_id": "machine_summary",
+  "renders": [
+    {
+      "render_id": "render_012",
+      "source_commit": "commit:commit_042",
+      "target": "html"
+    }
+  ],
   "runs": [
     {
       "result_commit": "commit:commit_042",
       "run_id": "run_008",
       "source_commit": "commit:commit_041",
       "status": "partial_success"
+    },
+    {
+      "result_commit": null,
+      "run_id": "run_012",
+      "source_commit": "commit:commit_042",
+      "status": "success"
     }
   ],
   "sol_version": "0.1",
   "source_commit": "commit_042",
+  "stale": [],
   "target": "machine_summary"
 }

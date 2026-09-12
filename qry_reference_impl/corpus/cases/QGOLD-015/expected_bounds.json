@@ -1,0 +1,69 @@
+{
+  "query_id": "QGOLD-015",
+  "root": "i1",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "sol:bound/intersect/v1",
+        "source:ghosts",
+        "source:users"
+      ],
+      "evidence": [
+        "source:ghosts",
+        "source:users"
+      ],
+      "stale": false,
+      "status": "unaudited"
+    },
+    "bound_rule": "sol:bound/intersect/v1",
+    "guarantee": "upper_bound",
+    "intervals": [],
+    "lower": null,
+    "lower_object": null,
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [
+          "object:sha256:4b152a8f2e2e3f20adf139bed0b22c4caa48854ade5e06f2e277c3ae7e284626"
+        ],
+        "rewrites": [],
+        "rule_id": "sol:bound/intersect/v1",
+        "sources": [
+          "source:users"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": null,
+    "upper": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ]
+      ]
+    },
+    "upper_object": "object:sha256:4b152a8f2e2e3f20adf139bed0b22c4caa48854ade5e06f2e277c3ae7e284626"
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

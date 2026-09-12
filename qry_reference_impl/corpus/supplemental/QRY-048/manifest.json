@@ -1,0 +1,7 @@
+{
+  "case_id": "QRY-048",
+  "description": "missing root",
+  "expected_diagnostics": [
+    "QRY-SEM-002"
+  ]
+}

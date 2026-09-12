@@ -1,0 +1,30 @@
+{
+  "budget_rows_per_step": 2,
+  "final_rows": [
+    [
+      2
+    ],
+    [
+      4
+    ],
+    [
+      6
+    ]
+  ],
+  "gate_condition": 12,
+  "guarantees": [
+    "bounded",
+    "bounded",
+    "exact"
+  ],
+  "query_digest": "digest:sha256:9e0b1624fa66eac14e2d84e380305c8f4b3bf8c19a10f01d770ad7bef2335e81",
+  "result_object": "object:sha256:f90a446d916558d5f3ec29eb1984ed9789018506c2f8e377b8113336385841ff",
+  "source_manifest": "object:sha256:7143a496c96a5a1c8f6513fbec7355535c500aacbb6f0103881fe4c9ef51f762",
+  "statuses": [
+    "incomplete_with_continuation",
+    "incomplete_with_continuation",
+    "complete"
+  ],
+  "steps": 3,
+  "title": "End-to-end bounded query demonstrates honest budget degradation"
+}

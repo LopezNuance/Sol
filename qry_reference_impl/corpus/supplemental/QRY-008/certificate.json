@@ -1,0 +1,124 @@
+{
+  "case_id": "QRY-008",
+  "final_bound": {
+    "fields": [
+      {
+        "name": "id",
+        "nullable": false,
+        "type": "i64"
+      },
+      {
+        "name": "name",
+        "nullable": false,
+        "type": "string"
+      },
+      {
+        "name": "country",
+        "nullable": true,
+        "type": "string"
+      },
+      {
+        "name": "active",
+        "nullable": false,
+        "type": "bool"
+      }
+    ],
+    "order": [],
+    "rows": {
+      "max": 1000,
+      "min": 0
+    },
+    "unique_keys": [
+      [
+        "country"
+      ]
+    ]
+  },
+  "query_id": "QRY-008",
+  "root": "d",
+  "schema_version": "qry.certificate.v0.1",
+  "steps": [
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "name",
+            "nullable": false,
+            "type": "string"
+          },
+          {
+            "name": "country",
+            "nullable": true,
+            "type": "string"
+          },
+          {
+            "name": "active",
+            "nullable": false,
+            "type": "bool"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 1000,
+          "min": 0
+        },
+        "unique_keys": [
+          [
+            "id"
+          ]
+        ]
+      },
+      "input_nodes": [],
+      "node_id": "u",
+      "op": "read",
+      "rule": "qry.bound.read.v0"
+    },
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "name",
+            "nullable": false,
+            "type": "string"
+          },
+          {
+            "name": "country",
+            "nullable": true,
+            "type": "string"
+          },
+          {
+            "name": "active",
+            "nullable": false,
+            "type": "bool"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 1000,
+          "min": 0
+        },
+        "unique_keys": [
+          [
+            "country"
+          ]
+        ]
+      },
+      "input_nodes": [
+        "u"
+      ],
+      "node_id": "d",
+      "op": "distinct",
+      "rule": "qry.bound.distinct.v0"
+    }
+  ]
+}

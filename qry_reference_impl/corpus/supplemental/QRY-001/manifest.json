@@ -1,0 +1,5 @@
+{
+  "case_id": "QRY-001",
+  "description": "read users",
+  "expected_diagnostics": []
+}

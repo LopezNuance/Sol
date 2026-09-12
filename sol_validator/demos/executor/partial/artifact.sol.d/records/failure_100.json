@@ -1,0 +1,19 @@
+{
+  "actor_id": "tool:sol_executor",
+  "created_at": "2026-01-01T01:00:02Z",
+  "environment_id": "env_001",
+  "error_type": "UnregisteredSource",
+  "failed_cell": "cell:cell_016",
+  "message": "cell source has no registered kernel operation; the reference executor never executes unregistered code",
+  "record_id": "failure_100",
+  "record_type": "sol:record/failure",
+  "retryable": true,
+  "run_id": "run:run_100",
+  "source_commit": "commit:commit_042",
+  "status": {
+    "lifecycle": "active",
+    "staleness": "current",
+    "verification": "unverified"
+  },
+  "summary": "Execution failed at cell:cell_016; see failure details."
+}

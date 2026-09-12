@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-037",
+  "description": "The possible-as-proven tuple: a tuple occurring only in U is given ordinary why-provenance asserting exact-answer membership.",
+  "expected_diagnostics": [
+    "QINV-14",
+    "QV8-07"
+  ]
+}

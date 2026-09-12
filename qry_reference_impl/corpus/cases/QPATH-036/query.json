@@ -1,0 +1,57 @@
+{
+  "nodes": [
+    {
+      "id": "ra",
+      "op": "read",
+      "source": "a"
+    },
+    {
+      "aggregates": [
+        {
+          "field": "id",
+          "func": "count_set",
+          "name": "c"
+        }
+      ],
+      "group_by": [
+        "tag"
+      ],
+      "id": "ag",
+      "input": "ra",
+      "op": "aggregate"
+    }
+  ],
+  "query_id": "QPATH-036",
+  "root": "ag",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "a": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "tag",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "x"
+        ],
+        [
+          2,
+          "y"
+        ],
+        [
+          3,
+          "z"
+        ]
+      ]
+    }
+  }
+}

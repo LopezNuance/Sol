@@ -1,0 +1,92 @@
+{
+  "description": "The unswapped negation: complement uses D\\L as a lower bound instead of D\\U.",
+  "nodes": [
+    {
+      "id": "rd",
+      "op": "read",
+      "source": "d"
+    },
+    {
+      "id": "rl",
+      "op": "read",
+      "source": "l"
+    },
+    {
+      "id": "x",
+      "inputs": [
+        "rd",
+        "rl"
+      ],
+      "op": "difference"
+    }
+  ],
+  "query_id": "QPATH-017",
+  "root": "x",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "d": {
+      "lower": {
+        "tuples": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    },
+    "l": {
+      "lower": {
+        "tuples": [
+          [
+            3
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    }
+  }
+}

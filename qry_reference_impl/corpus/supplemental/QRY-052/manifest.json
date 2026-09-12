@@ -1,0 +1,7 @@
+{
+  "case_id": "QRY-052",
+  "description": "project missing field",
+  "expected_diagnostics": [
+    "QRY-SEM-006"
+  ]
+}

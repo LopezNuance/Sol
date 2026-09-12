@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-016",
+  "description": "Difference with a heuristic right operand retains the certified upper of the left operand; typed empty lower (13.8).",
+  "expected_diagnostics": []
+}

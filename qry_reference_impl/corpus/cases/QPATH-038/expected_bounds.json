@@ -1,0 +1,74 @@
+{
+  "query_id": "QPATH-038",
+  "root": "u",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "source:users",
+        "sol:bound/relation/v1"
+      ],
+      "evidence": [
+        "source:users"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/relation/v1",
+    "guarantee": "bounded",
+    "lower": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ]
+      ]
+    },
+    "lower_object": null,
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [],
+      "upper_derivation": null
+    },
+    "result_object": null,
+    "upper": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ]
+      ]
+    },
+    "upper_object": null
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

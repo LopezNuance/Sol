@@ -1,0 +1,7 @@
+{
+  "case_id": "QRY-063",
+  "description": "certificate bad order",
+  "expected_diagnostics": [
+    "QRY-CERT-004"
+  ]
+}

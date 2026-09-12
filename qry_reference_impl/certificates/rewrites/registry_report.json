@@ -1,0 +1,359 @@
+{
+  "experimental": [
+    "sol:rewrite/experimental_aggregate_fold/v1"
+  ],
+  "format": "solqry-rewrite-registry/v1",
+  "mandatory_rules": [
+    "sol:rewrite/push_exact_selection_through_join/v1",
+    "sol:rewrite/prune_exact_projection/v1",
+    "sol:rewrite/associate_exact_join/v1",
+    "sol:rewrite/normalize_union/v1",
+    "sol:rewrite/substitute_exact_machine_summary/v1"
+  ],
+  "registered": [
+    "sol:rewrite/associate_exact_join/v1",
+    "sol:rewrite/normalize_union/v1",
+    "sol:rewrite/prune_exact_projection/v1",
+    "sol:rewrite/push_exact_selection_through_join/v1",
+    "sol:rewrite/push_filter_across_policy_with_disclosure_proof/v1",
+    "sol:rewrite/substitute_exact_machine_summary/v1"
+  ],
+  "report_digest": "sha256:7216fec1a63c01a36945bbab81964c2b37bace5c64f0474adb2b78e66e12b3e4",
+  "rules": {
+    "sol:rewrite/associate_exact_join/v1": {
+      "assurance": "proven",
+      "derivation_ref": "object:sha256:886d07f74a1d5eb5f48faee9fa37a930262c5fd96e02e98f6e69ba59ba4a6f2c",
+      "experimental": false,
+      "pathology_tests": [
+        "QPATH-045"
+      ],
+      "pattern": "(A join B) join C with inner joins and partitionable on-conditions",
+      "preserves": [
+        "value",
+        "multiplicity",
+        "provenance",
+        "answer_bounds",
+        "assurance",
+        "logical_disclosure"
+      ],
+      "proof_evidence": [
+        {
+          "kind": "formal_derivation",
+          "ref": "object:sha256:886d07f74a1d5eb5f48faee9fa37a930262c5fd96e02e98f6e69ba59ba4a6f2c"
+        },
+        {
+          "kind": "property_test",
+          "ref": "object:sha256:319615dfafde33cb5aa976cad096f289cb8ab9b823fc0071f688511aa22f0709"
+        },
+        {
+          "kind": "adversarial_corpus",
+          "ref": "QPATH-045"
+        },
+        {
+          "kind": "checked_certificate",
+          "ref": "object:sha256:a26bab3da6fdfaee883d5d8c84f10834579fe74108642a91a01cecc93c264406"
+        }
+      ],
+      "replacement": "A join (B join C)",
+      "requires": {
+        "evaluator_free": true,
+        "field_names_unique": true,
+        "join_type": "inner",
+        "on_partitionable": true,
+        "same_authorization_policy": true,
+        "same_leakage_policy": true,
+        "same_temporal_context": true,
+        "same_visibility_policy": true,
+        "spans_policy_boundary": false
+      },
+      "rule_id": "sol:rewrite/associate_exact_join/v1",
+      "verification_refs": [
+        "record:verification_046"
+      ]
+    },
+    "sol:rewrite/experimental_aggregate_fold/v1": {
+      "assurance": "contract_asserted",
+      "derivation_ref": "object:sha256:9a9c9b583dcd0dd2ddef649ccab4c30d35cc0eb14b1cc87e8cc6f50d2e5e51f9",
+      "experimental": true,
+      "pathology_tests": [
+        "QPATH-036"
+      ],
+      "pattern": "adjacent exact aggregates over the same group keys",
+      "preserves": [
+        "value",
+        "multiplicity"
+      ],
+      "proof_evidence": [
+        {
+          "kind": "contract_assertion",
+          "ref": "contract:experimental_aggregate_fold/v1"
+        }
+      ],
+      "replacement": "folded aggregate (unverified)",
+      "requires": {
+        "aggregate_determinism": "exact",
+        "evaluator_free": true
+      },
+      "rule_id": "sol:rewrite/experimental_aggregate_fold/v1",
+      "verification_refs": []
+    },
+    "sol:rewrite/normalize_union/v1": {
+      "assurance": "proven",
+      "derivation_ref": "object:sha256:753ce18622db0d43e08ae9e6d8e4c45cf0cc5244277979f1323b977dcfe9940a",
+      "experimental": false,
+      "pathology_tests": [
+        "QPATH-046"
+      ],
+      "pattern": "nested same-kind unions and duplicate union_distinct inputs",
+      "preserves": [
+        "value",
+        "multiplicity",
+        "provenance",
+        "order",
+        "answer_bounds",
+        "assurance",
+        "logical_disclosure"
+      ],
+      "proof_evidence": [
+        {
+          "kind": "formal_derivation",
+          "ref": "object:sha256:753ce18622db0d43e08ae9e6d8e4c45cf0cc5244277979f1323b977dcfe9940a"
+        },
+        {
+          "kind": "property_test",
+          "ref": "object:sha256:0ca21b16112965516484c1a8963504ca6acf2c57ef5aac8dbbf64f8d5c71025c"
+        },
+        {
+          "kind": "adversarial_corpus",
+          "ref": "QPATH-046"
+        },
+        {
+          "kind": "checked_certificate",
+          "ref": "object:sha256:0456e5eb559e148c7e89a3769e6191c03be62de9802a2c162ffd7a99ee7d3713"
+        }
+      ],
+      "replacement": "flattened union; duplicate distinct inputs collapsed",
+      "requires": {
+        "evaluator_free": true,
+        "same_authorization_policy": true,
+        "same_leakage_policy": true,
+        "same_temporal_context": true,
+        "same_visibility_policy": true,
+        "schema_compatible": true,
+        "spans_policy_boundary": false
+      },
+      "rule_id": "sol:rewrite/normalize_union/v1",
+      "verification_refs": [
+        "record:verification_047"
+      ]
+    },
+    "sol:rewrite/prune_exact_projection/v1": {
+      "assurance": "proven",
+      "derivation_ref": "object:sha256:7be1f39f56f232b952698ab8a43770d254088765d1be042ca712fd7c994f70f4",
+      "experimental": false,
+      "pathology_tests": [
+        "QPATH-044"
+      ],
+      "pattern": "project(P) whose output columns are unused downstream",
+      "preserves": [
+        "value",
+        "multiplicity",
+        "provenance",
+        "order",
+        "answer_bounds",
+        "assurance",
+        "diagnostics",
+        "logical_disclosure"
+      ],
+      "proof_evidence": [
+        {
+          "kind": "formal_derivation",
+          "ref": "object:sha256:7be1f39f56f232b952698ab8a43770d254088765d1be042ca712fd7c994f70f4"
+        },
+        {
+          "kind": "property_test",
+          "ref": "object:sha256:228ccfa15c69bb92aad663c4d8758b5b67751d30ebbf1b6150e79e75128a4d35"
+        },
+        {
+          "kind": "adversarial_corpus",
+          "ref": "QPATH-044"
+        },
+        {
+          "kind": "checked_certificate",
+          "ref": "object:sha256:750e1035eb9c9366cc586dec3295e9f9db1a67e0cae386b08ab371f0bd798488"
+        }
+      ],
+      "replacement": "project(P') with P' pruned to the used columns",
+      "requires": {
+        "columns_unused_downstream": true,
+        "evaluator_free": true,
+        "same_authorization_policy": true,
+        "same_leakage_policy": true,
+        "same_temporal_context": true,
+        "same_visibility_policy": true,
+        "spans_policy_boundary": false
+      },
+      "rule_id": "sol:rewrite/prune_exact_projection/v1",
+      "verification_refs": [
+        "record:verification_045"
+      ]
+    },
+    "sol:rewrite/push_exact_selection_through_join/v1": {
+      "assurance": "proven",
+      "derivation_ref": "object:sha256:c41e673e1750a0f5a2ae3436e1fa699f653439ddc94f64bf24fba71eee3f4648",
+      "experimental": false,
+      "pathology_tests": [
+        "QPATH-022"
+      ],
+      "pattern": "join(filter(F_in, P), R) with P exact and left-scoped",
+      "preserves": [
+        "value",
+        "multiplicity",
+        "provenance",
+        "order",
+        "answer_bounds",
+        "assurance",
+        "logical_disclosure"
+      ],
+      "proof_evidence": [
+        {
+          "kind": "formal_derivation",
+          "ref": "object:sha256:c41e673e1750a0f5a2ae3436e1fa699f653439ddc94f64bf24fba71eee3f4648"
+        },
+        {
+          "kind": "property_test",
+          "ref": "object:sha256:1e8a22f6464e26397d49b4402e67220046a7ab9c3a26b88dcd2d9ee0e301e86c"
+        },
+        {
+          "kind": "adversarial_corpus",
+          "ref": "QPATH-022"
+        },
+        {
+          "kind": "checked_certificate",
+          "ref": "object:sha256:4fab1d623addfab0889601adb1bb455483ec5bb553bbe98fae5a00a2768aaa6d"
+        }
+      ],
+      "replacement": "filter(join(F_in, R), P)",
+      "requires": {
+        "collection_kinds": [
+          "set",
+          "bag"
+        ],
+        "evaluator_free": true,
+        "predicate_determinism": "exact",
+        "predicate_scope": [
+          "left_input"
+        ],
+        "same_authorization_policy": true,
+        "same_leakage_policy": true,
+        "same_temporal_context": true,
+        "same_visibility_policy": true,
+        "spans_policy_boundary": false
+      },
+      "rule_id": "sol:rewrite/push_exact_selection_through_join/v1",
+      "verification_refs": [
+        "record:verification_044"
+      ]
+    },
+    "sol:rewrite/push_filter_across_policy_with_disclosure_proof/v1": {
+      "assurance": "proven",
+      "derivation_ref": "object:sha256:13d5ea46e26ade88f5462fd9032316762a8205296a5192f66bc7e430895e8014",
+      "experimental": false,
+      "pathology_tests": [
+        "QPATH-026",
+        "QPATH-039"
+      ],
+      "pattern": "filter(F) above a policy boundary PB, with an accepted disclosure proof",
+      "preserves": [
+        "value",
+        "multiplicity",
+        "provenance",
+        "order",
+        "answer_bounds",
+        "assurance",
+        "logical_disclosure"
+      ],
+      "proof_evidence": [
+        {
+          "kind": "formal_derivation",
+          "ref": "object:sha256:13d5ea46e26ade88f5462fd9032316762a8205296a5192f66bc7e430895e8014"
+        },
+        {
+          "kind": "checked_certificate",
+          "ref": "object:sha256:963fde42f60d27b195c09b4cd81ffbb951851469dea68f048ed5f139dc7973e9"
+        },
+        {
+          "kind": "adversarial_corpus",
+          "ref": "QPATH-026"
+        }
+      ],
+      "replacement": "filter(F) pushed below PB (applied on the protected side)",
+      "requires": {
+        "boundary_kind": [
+          "authorization",
+          "visibility",
+          "leakage"
+        ],
+        "disclosure_proof": true,
+        "predicate_determinism": "exact",
+        "spans_policy_boundary": true
+      },
+      "rule_id": "sol:rewrite/push_filter_across_policy_with_disclosure_proof/v1",
+      "verification_refs": [
+        "record:verification_049"
+      ]
+    },
+    "sol:rewrite/substitute_exact_machine_summary/v1": {
+      "assurance": "proven",
+      "derivation_ref": "object:sha256:fc6c247d203f8ba6da8cf25fbdc11be2c518bde77a2768e0a911c84257397186",
+      "experimental": false,
+      "pathology_tests": [
+        "QPATH-034"
+      ],
+      "pattern": "query proven coverable by machine-summary levels 0-2 with a matching source commit",
+      "preserves": [
+        "value",
+        "multiplicity",
+        "provenance",
+        "answer_bounds",
+        "assurance",
+        "logical_disclosure",
+        "evaluation_identity"
+      ],
+      "proof_evidence": [
+        {
+          "kind": "formal_derivation",
+          "ref": "object:sha256:fc6c247d203f8ba6da8cf25fbdc11be2c518bde77a2768e0a911c84257397186"
+        },
+        {
+          "kind": "property_test",
+          "ref": "object:sha256:4b0e92ad9c028a4cea4445ddc5ed35f584b89ae46a06c7d3fc9ff9149f5cedac"
+        },
+        {
+          "kind": "adversarial_corpus",
+          "ref": "QPATH-034"
+        },
+        {
+          "kind": "checked_certificate",
+          "ref": "object:sha256:9fb5c47b099e6f7063232f6028f991481334c90546a2bec849d82a056339826f"
+        }
+      ],
+      "replacement": "query answered from the committed machine summary",
+      "requires": {
+        "covering_proof": true,
+        "evaluator_free": true,
+        "source_commit_match": true,
+        "spans_policy_boundary": false,
+        "summary_levels": [
+          0,
+          1,
+          2
+        ]
+      },
+      "rule_id": "sol:rewrite/substitute_exact_machine_summary/v1",
+      "verification_refs": [
+        "record:verification_048"
+      ]
+    }
+  }
+}

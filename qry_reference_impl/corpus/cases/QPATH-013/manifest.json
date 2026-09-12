@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-013",
+  "description": "The provenance-dropping rewrite: value-equivalent rows lose the required lower-membership lineage.",
+  "expected_diagnostics": [
+    "QV7-03",
+    "QV8-05"
+  ]
+}

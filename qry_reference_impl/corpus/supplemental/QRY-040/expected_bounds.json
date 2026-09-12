@@ -1,0 +1,143 @@
+{
+  "node_bounds": {
+    "f1": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "active",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 800,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "id"
+        ]
+      ]
+    },
+    "f2": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "active",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 400,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "id"
+        ]
+      ]
+    },
+    "u": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "active",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "id"
+        ]
+      ]
+    }
+  },
+  "query_id": "QRY-040",
+  "root": "f2",
+  "root_bound": {
+    "fields": [
+      {
+        "name": "id",
+        "nullable": false,
+        "type": "i64"
+      },
+      {
+        "name": "name",
+        "nullable": false,
+        "type": "string"
+      },
+      {
+        "name": "country",
+        "nullable": true,
+        "type": "string"
+      },
+      {
+        "name": "active",
+        "nullable": false,
+        "type": "bool"
+      }
+    ],
+    "order": [],
+    "rows": {
+      "max": 400,
+      "min": 0
+    },
+    "unique_keys": [
+      [
+        "id"
+      ]
+    ]
+  },
+  "schema_version": "qry.bounds.v0.1"
+}

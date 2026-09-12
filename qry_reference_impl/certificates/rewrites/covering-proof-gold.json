@@ -1,0 +1,14 @@
+{
+  "format": "solqry-covering-proof/v1",
+  "note": "QGOLD-005: field-complete exact machine summary (levels 0-2) computed against the source manifest.",
+  "source_commit": "object:sha256:a5d9bc662b5b2b05a5cce9ffb88cfc10f2e6e94f1ea78caad2e0ed46aef0a95f",
+  "summary_fields": [
+    "id",
+    "tag"
+  ],
+  "summary_levels": [
+    0,
+    1,
+    2
+  ]
+}

@@ -1,0 +1,47 @@
+{
+  "description": "The provenance-dropping rewrite: value-equivalent rows lose the required lower-membership lineage.",
+  "nodes": [
+    {
+      "id": "r",
+      "op": "read",
+      "source": "s"
+    }
+  ],
+  "query_id": "QPATH-013",
+  "required_dimensions": [
+    "value",
+    "provenance"
+  ],
+  "root": "r",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "s": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ],
+        [
+          3,
+          "c"
+        ]
+      ]
+    }
+  }
+}

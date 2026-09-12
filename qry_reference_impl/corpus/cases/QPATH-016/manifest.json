@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-016",
+  "description": "The invalid lower difference: LA EXCEPT LB is reported as a lower bound for A EXCEPT B.",
+  "expected_diagnostics": [
+    "QV4-04",
+    "QV5-02"
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "query_id": "QGOLD-009",
+  "root": "f",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "sol:bound/select/v1",
+        "source:assessments"
+      ],
+      "evidence": [
+        "source:assessments"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/select/v1",
+    "guarantee": "exact",
+    "intervals": [],
+    "lower": {
+      "fields": [
+        {
+          "name": "evaluation_id",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "left_ref",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "right_ref",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "label",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "score",
+          "nullable": false,
+          "type": "decimal"
+        },
+        {
+          "name": "evaluator_actor",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "model_id",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "configuration_digest",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "evidence_ref",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "created_at",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          "semantic_eval_041",
+          "cell:cell_001",
+          "cell:cell_002",
+          "equivalent",
+          0.97,
+          "agent:semantic_matcher_001",
+          "provider/model",
+          "digest:sha256:f7658225273f060d2706c6cd9eab9ae4d2e2a32d489d5e287dce036bd4dfba07",
+          "object:sha256:d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1",
+          "2026-07-02T10:00:00Z"
+        ],
+        [
+          "semantic_eval_043",
+          "cell:cell_002",
+          "cell:cell_003",
+          "equivalent",
+          0.88,
+          "agent:semantic_matcher_001",
+          "provider/model",
+          "digest:sha256:f7658225273f060d2706c6cd9eab9ae4d2e2a32d489d5e287dce036bd4dfba07",
+          "object:sha256:d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3",
+          "2026-07-02T10:00:00Z"
+        ]
+      ]
+    },
+    "lower_object": "object:sha256:0bdcd952bd344264ab8788863e91b77235961c3f852ac049939ca01bb49f8a4f",
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            "semantic_eval_043",
+            "cell:cell_002",
+            "cell:cell_003",
+            "equivalent",
+            0.88,
+            "agent:semantic_matcher_001",
+            "provider/model",
+            "digest:sha256:f7658225273f060d2706c6cd9eab9ae4d2e2a32d489d5e287dce036bd4dfba07",
+            "object:sha256:d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3",
+            "2026-07-02T10:00:00Z"
+          ]
+        },
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            "semantic_eval_041",
+            "cell:cell_001",
+            "cell:cell_002",
+            "equivalent",
+            0.97,
+            "agent:semantic_matcher_001",
+            "provider/model",
+            "digest:sha256:f7658225273f060d2706c6cd9eab9ae4d2e2a32d489d5e287dce036bd4dfba07",
+            "object:sha256:d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1",
+            "2026-07-02T10:00:00Z"
+          ]
+        }
+      ],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [
+          "object:sha256:ee06b616b199d4eedf7852de2ced96fe5060a75a57b5270dea4b236fbc32d7af"
+        ],
+        "rewrites": [],
+        "rule_id": "sol:bound/select/v1",
+        "sources": [
+          "source:assessments"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": "object:sha256:0bdcd952bd344264ab8788863e91b77235961c3f852ac049939ca01bb49f8a4f",
+    "upper": {
+      "fields": [
+        {
+          "name": "evaluation_id",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "left_ref",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "right_ref",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "label",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "score",
+          "nullable": false,
+          "type": "decimal"
+        },
+        {
+          "name": "evaluator_actor",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "model_id",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "configuration_digest",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "evidence_ref",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "created_at",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          "semantic_eval_041",
+          "cell:cell_001",
+          "cell:cell_002",
+          "equivalent",
+          0.97,
+          "agent:semantic_matcher_001",
+          "provider/model",
+          "digest:sha256:f7658225273f060d2706c6cd9eab9ae4d2e2a32d489d5e287dce036bd4dfba07",
+          "object:sha256:d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1d1",
+          "2026-07-02T10:00:00Z"
+        ],
+        [
+          "semantic_eval_043",
+          "cell:cell_002",
+          "cell:cell_003",
+          "equivalent",
+          0.88,
+          "agent:semantic_matcher_001",
+          "provider/model",
+          "digest:sha256:f7658225273f060d2706c6cd9eab9ae4d2e2a32d489d5e287dce036bd4dfba07",
+          "object:sha256:d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3d3",
+          "2026-07-02T10:00:00Z"
+        ]
+      ]
+    },
+    "upper_object": "object:sha256:0bdcd952bd344264ab8788863e91b77235961c3f852ac049939ca01bb49f8a4f"
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

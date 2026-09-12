@@ -1,0 +1,145 @@
+{
+  "description": "Positive recursive lower and upper fixed points feed a stratified difference with correctly swapped negative sides.",
+  "extensions": [
+    "urn:qry:v0.3:positive-recursion"
+  ],
+  "nodes": [
+    {
+      "id": "rr",
+      "op": "read",
+      "source": "roots"
+    },
+    {
+      "id": "re",
+      "op": "read",
+      "source": "edges"
+    },
+    {
+      "id": "ru",
+      "op": "read",
+      "source": "all_users"
+    },
+    {
+      "edge": "re",
+      "id": "f",
+      "on": {
+        "left": "src",
+        "right": "dst"
+      },
+      "op": "least_fixpoint",
+      "seed": "rr"
+    },
+    {
+      "id": "d",
+      "inputs": [
+        "ru",
+        "f"
+      ],
+      "op": "difference"
+    }
+  ],
+  "query_id": "QGOLD-017",
+  "root": "d",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "all_users": {
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ],
+        [
+          7
+        ],
+        [
+          8
+        ]
+      ]
+    },
+    "edges": {
+      "lower": {
+        "tuples": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "src",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "dst",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            1,
+            2
+          ],
+          [
+            2,
+            3
+          ],
+          [
+            3,
+            4
+          ],
+          [
+            1,
+            5
+          ],
+          [
+            5,
+            6
+          ]
+        ]
+      }
+    },
+    "roots": {
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ]
+      ]
+    }
+  }
+}

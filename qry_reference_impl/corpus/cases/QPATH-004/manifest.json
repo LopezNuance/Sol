@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-004",
+  "description": "The open-world negation: exact NOT EXISTS is used against externally incomplete evidence.",
+  "expected_diagnostics": [
+    "QV4-02"
+  ]
+}

@@ -1,0 +1,51 @@
+{
+  "description": "Gate 12: the exact answer ([[2],[4],[6]]) is smaller than the source (6 rows); with a budget of 2 rows per step the run degrades honestly: two bounded incomplete_with_continuation steps, then a complete exact step.",
+  "nodes": [
+    {
+      "id": "r",
+      "op": "read",
+      "source": "tasks"
+    },
+    {
+      "id": "f",
+      "input": "r",
+      "op": "filter",
+      "predicate": {
+        "terms": [
+          {
+            "field": "step",
+            "op": "lte",
+            "value": 6
+          }
+        ]
+      }
+    },
+    {
+      "by": [
+        "step"
+      ],
+      "id": "s",
+      "input": "f",
+      "op": "sort"
+    }
+  ],
+  "query_id": "QDEMO-budget-degradation",
+  "root": "s",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "tasks": {
+      "artifact": {
+        "digest": "object:sha256:bc20f2a6638cac1ccf9588cedd42f1e5ec9631d3941f7bf722dcf7d0a4f1db4c",
+        "path": "qry_reference_impl/demos/budget_degradation/artifact.sol.d",
+        "relation": "records"
+      },
+      "schema": [
+        {
+          "name": "step",
+          "nullable": false,
+          "type": "i64"
+        }
+      ]
+    }
+  }
+}

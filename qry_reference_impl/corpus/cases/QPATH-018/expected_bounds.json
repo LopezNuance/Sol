@@ -1,0 +1,27 @@
+{
+  "query_id": "QPATH-018",
+  "root": "rv",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [],
+      "evidence": [],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": null,
+    "guarantee": "exact",
+    "lower": null,
+    "lower_object": null,
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "none",
+      "lower_memberships": [],
+      "upper_derivation": null
+    },
+    "result_object": null,
+    "upper": null,
+    "upper_object": null
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

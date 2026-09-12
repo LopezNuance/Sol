@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-038",
+  "description": "The missing upper derivation: a bounded result has an upper object but no transfer rule or source-bound provenance.",
+  "expected_diagnostics": [
+    "QV8-06"
+  ]
+}

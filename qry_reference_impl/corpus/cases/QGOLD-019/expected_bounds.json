@@ -1,0 +1,95 @@
+{
+  "query_id": "QGOLD-019",
+  "root": "f1",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "source:vals",
+        "sol:bound/select_certified/v1"
+      ],
+      "evidence": [
+        "record:verification_001"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/select_certified/v1",
+    "guarantee": "bounded",
+    "lower": {
+      "fields": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          2
+        ],
+        [
+          4
+        ]
+      ]
+    },
+    "lower_object": null,
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [
+        {
+          "cites": [
+            "record:verification_001"
+          ],
+          "mode": "tuple",
+          "tuple": [
+            2
+          ]
+        },
+        {
+          "cites": [
+            "record:verification_001"
+          ],
+          "mode": "tuple",
+          "tuple": [
+            4
+          ]
+        }
+      ],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [],
+        "rewrites": [],
+        "rule_id": "sol:bound/select_certified/v1",
+        "sources": [
+          "source:vals"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": null,
+    "upper": {
+      "fields": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ]
+    },
+    "upper_object": null
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

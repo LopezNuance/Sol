@@ -1,0 +1,105 @@
+{
+  "query_id": "QGOLD-020",
+  "root": "g1",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "sol:bound/avg_optional_prefix/v1",
+        "source:amounts"
+      ],
+      "evidence": [
+        "source:amounts"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/avg_optional_prefix/v1",
+    "guarantee": "bounded",
+    "intervals": [
+      {
+        "field": "avg_amount",
+        "group": [
+          1
+        ],
+        "lower": "5/1",
+        "may_be_empty": false,
+        "upper": "21/2"
+      },
+      {
+        "field": "avg_amount",
+        "group": [
+          2
+        ],
+        "lower": "7/1",
+        "may_be_empty": true,
+        "upper": "7/1"
+      }
+    ],
+    "lower": {
+      "fields": [
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ]
+      ]
+    },
+    "lower_object": "object:sha256:df82afcd7d5ce9f3445d11a09613c6ca2934b33198db812268d0b21c99e86f21",
+    "may_be_empty_groups": [
+      [
+        2
+      ]
+    ],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            1
+          ]
+        }
+      ],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [
+          "object:sha256:8d94630addbedf5cb033b5442362eda5d2d9d989a12fc08a033b26c3a16e08ae",
+          "object:sha256:c615d6114c24eb2c26b0e1348e1a585262d62092655f36a7d231f56c11466cb0"
+        ],
+        "rewrites": [],
+        "rule_id": "sol:bound/avg_optional_prefix/v1",
+        "sources": [
+          "source:amounts"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": null,
+    "upper": {
+      "fields": [
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    "upper_object": "object:sha256:e844ba10af8ece761e4bcbfa9655484c447885be844e6b2e87e5c2476ce33cbd"
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

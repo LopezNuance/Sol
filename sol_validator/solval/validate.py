@@ -7,6 +7,8 @@ from dataclasses import dataclass, asdict
 from pathlib import Path
 from typing import Any
 
+import jsonschema
+
 from .model import Artifact
 from .refs import (
     OBJECT_RE,
@@ -37,6 +39,30 @@ CAPS_BY_AUTONOMY = {
     "autonomous_commit": {"read", "create_branch", "write_cell", "write_record", "execute", "commit", "apply_proposal"},
 }
 
+SCHEMA_DIR = Path(__file__).resolve().parent.parent / "schemas"
+_SCHEMA_CACHE: dict[str, dict[str, Any]] = {}
+
+
+def _load_schema(name: str) -> dict[str, Any]:
+    if name not in _SCHEMA_CACHE:
+        with open(SCHEMA_DIR / f"{name}.schema.json", encoding="utf-8") as f:
+            _SCHEMA_CACHE[name] = json.load(f)
+    return _SCHEMA_CACHE[name]
+
+
+def _schema_errors(instance: Any, schema_name: str) -> list[tuple[str, str]]:
+    """Deterministic (path, message) pairs for schema violations."""
+    validator = jsonschema.Draft202012Validator(_load_schema(schema_name))
+    errors = []
+    for err in validator.iter_errors(instance):
+        path = "/" + "/".join(str(p) for p in err.absolute_path)
+        if path == "/":
+            path = ""
+        errors.append((path, err.message))
+    errors.sort(key=lambda e: (json.dumps(list(e[0])), e[1]))
+    return errors
+
+
 @dataclass(frozen=True)
 class Diagnostic:
     rule_id: str
@@ -64,6 +90,7 @@ class Validator:
 
     def run(self) -> list[Diagnostic]:
         self.v0()
+        self.v0_schema()
         self.v1()
         self.v2()
         self.v3()
@@ -206,6 +233,57 @@ class Validator:
         ver = st.get("verification")
         if ver and ver not in VERIFICATION:
             self.diag("V0-04", "illegal_status_transition", f"record:{rid}.status.verification", f"unknown verification {ver}")
+
+    # ---------- V0 (published schemas) ----------
+    def v0_schema(self):
+        """Enforce the published normative schemas (Phase 2, 2026-09-07).
+
+        New stable rule IDs (unfreeze candidates batched into v0.1.0; the RFC
+        Appendix A catalog gains these at the promotion):
+          V0-07 cell schema conformance (decision Q7)
+          V0-08 actor schema conformance (decision Q8)
+          V0-09 semantic-record schema conformance (decisions Q9, Q10)
+          V0-10 object record conformance (decisions Q3, Q5)
+          V0-11 machine summary schema conformance (decision Q11)
+          V0-12 manifest environment conformance (decision Q2)
+          V0-13 run/commit schema conformance
+        Status-vocabulary violations from run records map to V0-04.
+        """
+        if self.a.manifest:
+            for path, msg in _schema_errors(self.a.manifest, "manifest"):
+                rule = "V0-12" if path.startswith("/environment") else "V0-01"
+                self.diag(rule, "schema", f"manifest{path}", f"manifest schema violation: {msg}")
+        for cell in self.a.cells.values():
+            for path, msg in _schema_errors(cell, "cell"):
+                self.diag("V0-07", "schema", f"cell:{cell.get('cell_id', '<unknown>')}{path}", f"cell schema violation: {msg}")
+        for rec in self.a.records.values():
+            for path, msg in _schema_errors(rec, "record"):
+                self.diag("V0-09", "schema", f"record:{rec.get('record_id', '<unknown>')}{path}", f"record schema violation: {msg}")
+        for actor in self.a.actors.values():
+            for path, msg in _schema_errors(actor, "actor"):
+                self.diag("V0-08", "schema", f"actor:{actor.get('actor_id', '<unknown>')}{path}", f"actor schema violation: {msg}")
+        for run in self.a.runs.values():
+            for path, msg in _schema_errors(run, "run"):
+                rule = "V0-04" if path == "/status" else "V0-13"
+                self.diag(rule, "schema", f"run:{run.get('run_id', '<unknown>')}{path}", f"run schema violation: {msg}")
+        for commit in self.a.commits.values():
+            for path, msg in _schema_errors(commit, "commit"):
+                self.diag("V0-13", "schema", f"commit:{commit.get('commit_id', '<unknown>')}{path}", f"commit schema violation: {msg}")
+        for digest, orec in self.a.object_records.items():
+            for path, msg in _schema_errors(orec, "object"):
+                self.diag("V0-10", "schema", f"object:sha256:{digest}{path}", f"object record schema violation: {msg}")
+        for i, d in enumerate(self.a.diagnostics):
+            for path, msg in _schema_errors(d, "diagnostic"):
+                self.diag("V0-01", "schema", f"diagnostics[{i}]{path}", f"diagnostic schema violation: {msg}")
+        summary_path = self.a.root / "renders" / "machine_summary.json"
+        if summary_path.exists():
+            try:
+                on_disk = json.loads(summary_path.read_text(encoding="utf-8"))
+                for path, msg in _schema_errors(on_disk, "machine_summary"):
+                    self.diag("V0-11", "schema", f"render:machine_summary{path}", f"machine summary schema violation: {msg}")
+            except Exception:
+                # Unreadable summaries are reported by V5-03.
+                pass
 
     # ---------- V1 ----------
     def v1(self):
@@ -562,6 +640,13 @@ def canonical(obj: Any) -> str:
 
 
 def generate_machine_summary(a: Artifact) -> dict[str, Any]:
+    """Reference render_machine_summary (Appendix C).
+
+    Carries the RFC section 48 components per decision Q11 (2026-09-07):
+    manifest summary, execution skeleton, cell summaries, actor index, record
+    index, status/staleness summary (stale), open proposals, run and failure
+    summaries, diagnostics, render list, and source commit.
+    """
     def short_status(rec: dict[str, Any]) -> dict[str, Any]:
         return {
             "record_id": rec.get("record_id"),
@@ -569,27 +654,87 @@ def generate_machine_summary(a: Artifact) -> dict[str, Any]:
             "summary": rec.get("summary"),
             "status": rec.get("status", {}),
         }
+
+    def staleish(rec: dict[str, Any]) -> bool:
+        st = rec.get("status", {}) if isinstance(rec.get("status"), dict) else {}
+        return st.get("staleness") in {"stale", "unknown"} or st.get("verification") in {"needs_reverification", "failed_verification"}
+
+    records_sorted = sorted(a.records.values(), key=lambda x: x.get("record_id") or "")
     return {
         "render_id": "machine_summary",
         "target": "machine_summary",
         "source_commit": a.manifest.get("current_commit") or max(a.commits.keys(), default=None),
         "artifact_id": a.manifest.get("artifact_id"),
         "sol_version": a.manifest.get("sol_version"),
+        "manifest": {
+            "sol_version": a.manifest.get("sol_version"),
+            "artifact_id": a.manifest.get("artifact_id"),
+            "required_features": a.manifest.get("required_features", []),
+            "current_commit": a.manifest.get("current_commit"),
+            "reproducibility_status": a.manifest.get("reproducibility_status"),
+        },
         "execution_structure": a.execution_structure,
         "cells": [
             {"cell_id": c.get("cell_id"), "cell_type": c.get("cell_type"), "summary": c.get("summary")}
             for c in sorted(a.cells.values(), key=lambda x: x.get("cell_id", ""))
         ],
         "actors": sorted(a.actors.keys()),
-        "records": [short_status(r) for r in sorted(a.records.values(), key=lambda x: x.get("record_id", ""))],
+        "records": [short_status(r) for r in records_sorted],
         "runs": [
             {"run_id": r.get("run_id"), "status": r.get("status"), "source_commit": r.get("source_commit"), "result_commit": r.get("result_commit")}
             for r in sorted(a.runs.values(), key=lambda x: x.get("run_id", ""))
+        ],
+        "failures": [
+            {
+                "record_id": rec.get("record_id"),
+                "run_id": rec.get("run_id"),
+                "failed_cell": rec.get("failed_cell"),
+                "error_type": rec.get("error_type"),
+                "status": rec.get("status", {}),
+            }
+            for rec in records_sorted
+            if rec.get("record_type") == "sol:record/failure"
+        ],
+        "diagnostics": list(a.diagnostics),
+        "open_proposals": sorted(
+            (
+                {
+                    "record_id": rec.get("record_id"),
+                    "base_commit": rec.get("base_commit"),
+                    "created_by": rec.get("created_by"),
+                    "lifecycle": rec.get("status", {}).get("lifecycle"),
+                }
+                for rec in a.records.values()
+                if rec.get("record_type") == "sol:record/proposal"
+                and rec.get("status", {}).get("lifecycle") == "pending_review"
+            ),
+            key=lambda x: x.get("record_id") or "",
+        ),
+        "stale": sorted(
+            f"record:{rec.get('record_id')}"
+            for rec in a.records.values()
+            if rec.get("record_id") and staleish(rec)
+        ),
+        # The render list covers the other committed renders; including the
+        # machine summary itself would make the generator non-idempotent
+        # (the on-disk summary would list itself, the regenerated one would not).
+        "renders": [
+            {"render_id": r.get("render_id"), "target": r.get("target"), "source_commit": r.get("source_commit")}
+            for r in sorted(a.renders.values(), key=lambda x: x.get("render_id") or "")
+            if r.get("render_id") != "machine_summary"
         ],
     }
 
 
 def validate_path(path: str | Path, profile: str = "default") -> list[Diagnostic]:
+    path = Path(path)
+    if path.is_file() and path.suffix == ".solnb":
+        # Physical container (decision Q1): unpack to a temp dir and run the
+        # same deterministic checks as the exploded representation.
+        from .container import unpack_to_temp
+
+        with unpack_to_temp(path) as tmp:
+            return validate_path(tmp, profile=profile)
     art = Artifact.load(path)
     return Validator(art, profile=profile).run()
 

@@ -1,0 +1,7 @@
+{
+  "case_id": "QRY-054",
+  "description": "bad selectivity",
+  "expected_diagnostics": [
+    "QRY-SEM-008"
+  ]
+}

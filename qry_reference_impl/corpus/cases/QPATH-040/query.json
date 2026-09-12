@@ -1,0 +1,72 @@
+{
+  "description": "The fabricated selector: a tuple-generating LLM operator is modeled as Select and inherits the input relation as an upper bound.",
+  "extensions": [
+    "urn:qry:v0.3:semantic-evaluator-barrier"
+  ],
+  "nodes": [
+    {
+      "id": "ru",
+      "op": "read",
+      "source": "users"
+    },
+    {
+      "evaluation_key": {
+        "assessment_policy": "policy:internal_assessment",
+        "authorization_policy": "policy:internal_authorized",
+        "configuration_digest": "digest:sha256:3f694818ef87411922ada55036d85089bcbd50eb178c2909c75aed20ef9f7155",
+        "evaluator_id": "sol:evaluator/tuple_generator/v1",
+        "input_digests": [
+          "digest:sha256:646351ee1ddd222ff27d188167219b1cdff4fb55f59bcac7db386528d38ee2e6"
+        ],
+        "leakage_policy": "policy:internal_standard",
+        "model_id": "provider/model",
+        "model_version": "2026-07-01",
+        "output_schema": "object:sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+        "prompt_template_digest": "digest:sha256:91aa908dce7c1dff928169d6a2061661b47f7af1513e7ea975438e0f42fa8014",
+        "random_seed": 48191,
+        "service_version": "v2026.07",
+        "source_commit": "commit:commit_042",
+        "tool_policy_digest": "digest:sha256:4f3a4bc46fd77d01a34fe4bcc4e6b220c3ee487bfe05daeb67cced59545e19e5",
+        "visibility_policy": "policy:internal_full"
+      },
+      "evaluator": "sol:evaluator/tuple_generator/v1",
+      "id": "e",
+      "input": "ru",
+      "mode": "heuristic",
+      "op": "evaluate"
+    }
+  ],
+  "query_id": "QPATH-040",
+  "root": "e",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "users": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ],
+        [
+          3,
+          "c"
+        ]
+      ]
+    }
+  }
+}

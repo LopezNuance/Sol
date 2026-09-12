@@ -1,0 +1,10 @@
+{
+  "record_id": "rec_02",
+  "record_type": "sol:record/task",
+  "status": {
+    "lifecycle": "active",
+    "staleness": "current",
+    "verification": "unverified"
+  },
+  "step": 4
+}

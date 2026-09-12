@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-031",
+  "description": "The inverted bounds: lower relation contains a tuple absent from the upper relation.",
+  "expected_diagnostics": [
+    "QV5-01"
+  ]
+}

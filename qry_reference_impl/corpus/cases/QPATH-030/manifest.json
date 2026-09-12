@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-030",
+  "description": "The mismatched bounds: lower and upper relations come from different commits.",
+  "expected_diagnostics": [
+    "QV1-05"
+  ]
+}

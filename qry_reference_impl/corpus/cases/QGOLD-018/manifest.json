@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-018",
+  "description": "Bounded result carries membership provenance for lower tuples and bound-derivation provenance for the upper relation.",
+  "expected_diagnostics": []
+}

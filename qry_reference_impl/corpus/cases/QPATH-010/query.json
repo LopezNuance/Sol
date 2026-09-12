@@ -1,0 +1,53 @@
+{
+  "description": "The unresolved object masquerade: a named output is compared directly to an immutable object reference.",
+  "nodes": [
+    {
+      "id": "ru",
+      "op": "read",
+      "source": "users"
+    },
+    {
+      "id": "f",
+      "input": "ru",
+      "op": "filter",
+      "predicate": {
+        "terms": [
+          {
+            "field": "name",
+            "op": "eq",
+            "value": "object:sha256:abababababababababababababababababababababababababababababababab"
+          }
+        ]
+      }
+    }
+  ],
+  "query_id": "QPATH-010",
+  "root": "f",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "users": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ]
+      ]
+    }
+  }
+}

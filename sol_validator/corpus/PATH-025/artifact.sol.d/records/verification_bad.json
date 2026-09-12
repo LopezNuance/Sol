@@ -13,5 +13,6 @@
     "staleness": "current",
     "verification": "unverified"
   },
+  "summary": "Failed reexecution verification.",
   "target": "record:claim_007"
 }

@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-015",
+  "description": "Intersection with one heuristic operand retains the certified upper of the other operand (13.7.1, 13.17).",
+  "expected_diagnostics": []
+}

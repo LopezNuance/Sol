@@ -1,0 +1,121 @@
+{
+  "node_bounds": {
+    "p1": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "unique_keys": []
+    },
+    "p2": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "unique_keys": []
+    },
+    "u": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "active",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "id"
+        ]
+      ]
+    },
+    "ua": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 2000,
+        "min": 0
+      },
+      "unique_keys": []
+    }
+  },
+  "query_id": "QRY-012",
+  "root": "ua",
+  "root_bound": {
+    "fields": [
+      {
+        "name": "id",
+        "nullable": false,
+        "type": "i64"
+      },
+      {
+        "name": "country",
+        "nullable": true,
+        "type": "string"
+      }
+    ],
+    "order": [],
+    "rows": {
+      "max": 2000,
+      "min": 0
+    },
+    "unique_keys": []
+  },
+  "schema_version": "qry.bounds.v0.1"
+}

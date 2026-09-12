@@ -2,15 +2,33 @@
 
 ## Status
 
-v0.1.0-draft, frozen
+v0.1.0 (promoted 2026-09-08 from the v0.1.0-draft freeze)
+
+This promotion unfroze the draft per Change Control and carried:
+
+* the errata log entries E-001 and E-002 (`docs/errata/RFC-SOL-0001-errata.md`);
+* the nine batched unfreeze candidates from the Phase 1 decisions
+  (`docs/decisions/2026-09-07-v01-blocking-questions.md`): Q1 (reference
+  container), Q2 (minimum environment manifest), Q3 (compression codec
+  floor), Q5 (object-size floor), Q6 (imported `.ipynb` classification),
+  Q7 (cell-summary strictness), Q8 (agent-actor field set), Q9 (minimal
+  claim/evidence schema), and Q11 (machine summary schema);
+* the two errata-class clarifications from the same decisions: Q4 (branch
+  floor) and Q10 (mandatory status dimensions);
+* the published normative schemas (nine classes, v0.2 set,
+  `sol_validator/schemas/`) and their validator rules V0-07 through V0-13.
+
+The eleven v0.1-blocking open questions in §59 are resolved; the normative
+content above is their landing place. Venue: internal submission stage
+(`docs/decisions/2026-09-07-phase0-venue.md`).
 
 ## Change Control
 
-This draft is frozen for implementation.
+v0.1.0 is the current baseline. The v0.1.0-draft freeze was lifted on 2026-09-08 to carry the batched unfreeze candidates and errata recorded in the Status section.
 
 Errata may correct spelling, formatting, example hygiene, appendix text, and non-normative clarification without changing the version.
 
-Any change to an invariant, normative requirement, status vocabulary, legal transition table, reference grammar, conformance level, or validation rule unfreezes the draft and requires a version bump.
+Any change to an invariant, normative requirement, status vocabulary, legal transition table, reference grammar, conformance level, or validation rule unfreezes the current baseline and requires a version bump. Unfreeze candidates are batched into the next minor version; they are not applied per-item.
 
 Complete examples intended for conformance use must validate. Partial examples and schema fragments should be marked as such when used outside this RFC.
 
@@ -30,7 +48,11 @@ Proposed media type:
 application/vnd.sol.notebook
 ```
 
-The project name, extension, and media type remain subject to namespace, trademark, and ecosystem review.
+Namespace and ecosystem review completed 2026-09-12
+(`docs/reviews/2026-09-12-stage2-namespace-review.md`): the IANA media
+type `application/vnd.sol.notebook` is available, and `.solnb` has no
+known usage. The trademark search remains a required open action for
+the project owner before public release.
 
 ## Abstract
 
@@ -680,11 +702,15 @@ A reader MUST be able to verify manifest, index, and object integrity through de
 
 A remote artifact SHOULD support progressive loading over range-capable storage.
 
-## 14.6 Container guidance
+## 14.6 Reference container
 
-The reference implementation SHOULD prefer a container with native random access, such as an embedded database or indexed package layout.
+The v0.1 reference container is a single-file ZIP archive (`.solnb`, media type `application/vnd.sol.notebook`) with STORED (uncompressed) entries whose internal layout is identical to the exploded `artifact.sol.d/` representation (§56).
 
-A stream-oriented container is acceptable only if paired with an index sufficient to satisfy bounded reads and random object access.
+The ZIP central directory serves as the structural index: manifest and index reads, and random object access, are bounded without scanning object payloads (REQ-014.1, REQ-014.2, REQ-014.3).
+
+Objects are already compressed per §43 (registered codecs), so container-level compression is redundant; STORED entries keep byte-exact integrity verification and random access simple. Container-level compression is a post-v0.1 candidate.
+
+The exploded directory remains the non-normative debug representation (§56). A non-reference implementation MAY use another container only if it satisfies REQ-014.1 through REQ-014.5.
 
 ---
 
@@ -724,6 +750,8 @@ runtime:
 environment:
   environment_id: "env_001"
   package_manifest: "digest:sha256:1111111111111111111111111111111111111111111111111111111111111111"
+  kernel: "python"
+  kernel_version: "3.12"
   container_ref: "registry.example/sol-runner@sha256:2222222222222222222222222222222222222222222222222222222222222222"
   sbom_ref: "object:sha256:3333333333333333333333333333333333333333333333333333333333333333"
 
@@ -747,6 +775,16 @@ rendering:
     - "audit"
     - "machine_summary"
 ```
+
+The `environment` block is required. It MUST contain:
+
+* `environment_id` — stable environment identifier.
+* `package_manifest` — digest of the resolved package manifest (lockfile pin).
+* `kernel` and `kernel_version` — required for artifacts containing code cells.
+
+It SHOULD contain `sbom_ref`, an object reference to an SBOM (§45).
+
+Run records reference `environment_id` (§30). Per-run deviations from the manifest environment MUST be recorded in the run record, not absorbed into the manifest.
 
 The manifest is part of the artifact’s execution contract.
 
@@ -800,6 +838,12 @@ If an actor’s identity, configuration, model version, prompt template, or tool
   "autonomy_level": "review_required"
 }
 ```
+
+For `actor_type: "agent"`, the mandatory fields are `actor_id`, `actor_type`, `model_id`, `model_version`, `delegated_by`, and `autonomy_level`.
+
+The model pin (`model_id`, `model_version`) identifies which model version acted; `delegated_by` records the delegation chain (INV-09); `autonomy_level` records the authorization posture at commit time (§17.2).
+
+`configuration_digest`, `prompt_template_digest`, and `tool_policy_digest` SHOULD be present when the agent’s output drives a decision, so that agent behavior is reproducible.
 
 ## 16.5 Tool actor
 
@@ -910,6 +954,8 @@ Unauthorized actions MUST produce an `unauthorized_action` diagnostic and MUST N
 # 18. Cell Schema
 
 A Sol cell MUST have a stable ID, type, summary, and source hash.
+
+`summary` is required, non-empty, and at most 500 characters. For code cells, `summary` SHOULD NOT duplicate `source` (a summary that is a byte-identical copy of the source defeats the bounded-read model, §11); v0.1 validators report duplication as a diagnostic, not a hard failure.
 
 The `produces` array is an output contract, not a concrete run binding. It declares named outputs that a run may bind to concrete objects.
 
@@ -1031,6 +1077,8 @@ Rendered outputs remain derived products and must identify their source commit.
 # 20. Status Model
 
 Semantic records use a normalized status model.
+
+All three status dimensions — `lifecycle`, `staleness`, and `verification` — are mandatory on every semantic record, with no record-type exemption. A vacuous dimension is present with its default value (`verification: unverified` where no verification method is registered) and is never omitted.
 
 Some status dimensions may be vacuous for some record types. Validators MUST NOT require verification of record types for which no verification method is registered.
 
@@ -1187,6 +1235,13 @@ A claim is a structured assertion intended to be addressable by humans, tools, a
 }
 ```
 
+The minimal claim schema is the base semantic record schema (§21) plus:
+
+* `statement` — required, non-empty. The assertion itself; `summary` is its bounded-read projection.
+* `claim_type` — required, from a registered vocabulary.
+* `supporting_evidence` — required array. A claim with `lifecycle: active` MUST reference at least one evidence record; draft claims MAY have an empty array.
+* `confidence`, `confidence_basis` — SHOULD.
+
 Claims intended to drive decisions MUST NOT exist only in prose.
 
 ---
@@ -1194,6 +1249,13 @@ Claims intended to drive decisions MUST NOT exist only in prose.
 # 24. Evidence Records
 
 Evidence records link claims to sources, outputs, cells, runs, or external references.
+
+The minimal evidence schema is the base semantic record schema (§21) plus:
+
+* `evidence_type` — required.
+* Exactly one of `source_ref` (internal: cell, named-output, or object reference) or `external_ref` (external: URI with `retrieved_at` and `availability` per §24.2; `snapshot_object` SHOULD be present when the snapshot is stored internally).
+* `supports` — required array of claim references.
+* `source_object`, `derived_from` — SHOULD.
 
 ## 24.1 Internal evidence
 
@@ -1955,6 +2017,8 @@ A proposal application commit MUST reference:
 
 Branches support alternative execution paths, assumptions, datasets, runtime configurations, or conclusions.
 
+The v0.1 branch floor: branch records (as below) are required; every artifact has at least one branch, and the main branch is protected per §17.4. Multiple concurrent branches are required — a single-branch conformance floor would leave the authorization and staleness rules untestable. Commits record their branch, and branch heads are part of the Level 1 execution skeleton (§11).
+
 ```json
 {
   "branch_id": "branch_007",
@@ -1964,6 +2028,8 @@ Branches support alternative execution paths, assumptions, datasets, runtime con
   "purpose": "Test whether stricter pass criteria change the selected checkpoint."
 }
 ```
+
+Branch merges are deferred in v0.1 (MVP MAY-defer list). The merge-record and conflict vocabulary below is normative for a later version; v0.1 validators do not validate merge records.
 
 Merge records SHOULD preserve both branches’ provenance and identify conflicts explicitly.
 
@@ -1987,11 +2053,13 @@ Required outputs and large artifacts are stored inside the artifact.
 
 Objects are content-addressed and immutable.
 
+A conforming object store MUST support objects from 0 bytes to at least 1 GiB (2^30 bytes) inclusive, with `get_range` valid for any range within a supported object. Objects above 1 GiB MAY be split into multiple registered objects; a conforming v0.1 implementation MAY reject objects above 1 GiB at `put` time with a diagnostic.
+
 ```json
 {
   "object_id": "object:sha256:1f4c9a2b7e6d5c4b3a291817161514131211100f0e0d0c0b0a09080706050403",
   "mime_type": "image/png",
-  "compression": "zstd",
+  "compression": "sol:compression/zstd",
   "size_bytes": 1842032,
   "created_by": "cell:cell_014",
   "created_by_run": "run:run_008",
@@ -2046,6 +2114,14 @@ sol:compression/gzip
 sol:compression/brotli
 sol:compression/none
 ```
+
+Conformance floor (v0.1):
+
+* MUST support (read and write): `sol:compression/none`, `sol:compression/gzip`.
+* SHOULD support: `sol:compression/zstd` (preferred codec for new objects where available).
+* MAY support: `sol:compression/brotli`.
+
+Writers MUST declare the codec per object via the `compression` field (§42). Readers MUST reject objects whose declared codec they do not support rather than guessing.
 
 Objects with identical content SHOULD be stored once and referenced multiple times.
 
@@ -2188,6 +2264,16 @@ It is a standalone JSON serialization of read Levels 0–2:
 * render list,
 * and source commit.
 
+The machine summary schema is a published normative artifact (`sol:schemas/machine_summary/v0.2`, `sol_validator/schemas/machine_summary.schema.json`). It requires:
+
+* identity and source-commit pinning: `render_id`, `target`, `source_commit`, `artifact_id`, `sol_version`;
+* the Level 1 skeleton: `execution_structure`;
+* Level 2 content: `cells` (cell summaries), `actors` (actor index), `records` (record index with full status blocks), `runs` (run summaries);
+* `failures` (failure summaries), `diagnostics` (diagnostic summaries), `open_proposals` (proposal states), `stale` (status/staleness summary), `renders` (render list);
+* SHOULD: `manifest` (manifest summary block).
+
+The `renders` list covers the other committed renders; the machine summary does not list itself, which keeps the summary generator a fixed point.
+
 The machine summary is intended for:
 
 * agent handoff,
@@ -2321,6 +2407,13 @@ When importing `.ipynb`, an importer SHOULD:
 * mark provenance incomplete where unavailable,
 * classify outputs as historical or potentially stale unless validated,
 * create an initial import commit.
+
+Imported outputs are committed to the internal object store and classified as follows:
+
+* Staleness: `unknown`. The original execution is not a Sol run, so `current` is unjustified; nothing is known to have changed upstream, so `stale` is unjustified. This is the only value consistent with §20.1.
+* Verification: `unverified`. No Sol verification record exists for imported work.
+* Provenance: incomplete, declared. The importer MUST create the initial import commit, MUST set `imported_from: "ipynb"` and `provenance_status: "incomplete"` in the manifest, and MUST NOT fabricate run records for imported outputs. Evidence records referencing imported objects carry `derived_from: []`; the import metadata is the explicit incomplete-provenance marker.
+* Render honesty: any human-facing render of imported outputs MUST disclose that the content is imported with incomplete provenance (V5-02; acceptance criterion 15).
 
 Export to `.ipynb` MAY be supported but SHOULD be considered lossy if internal history, object-store semantics, actor attribution, provenance, branches, proposals, claims, evidence, semantic records, or execution graphs cannot be represented.
 
@@ -2506,17 +2599,21 @@ A Sol MVP is acceptable if it can demonstrate:
 
 ## v0.1 blocking
 
-1. What physical container should be used for the reference implementation?
-2. What minimum environment manifest is required?
-3. Which compression codecs are mandatory?
-4. How much branch support is required in v0.1?
-5. What is the minimum object-size support requirement?
-6. How should imported `.ipynb` outputs be classified?
-7. How strict should the cell-summary requirement be?
-8. Which actor fields are mandatory for agent-authored commits?
-9. What is the minimal claim/evidence schema?
-10. Which semantic-record status fields are mandatory?
-11. What exact machine summary schema is required?
+Resolved 2026-09-07; dated decision notes in
+`docs/decisions/2026-09-07-v01-blocking-questions.md`. Normative content
+landed in the v0.1.0 promotion:
+
+1. What physical container should be used for the reference implementation? — single-file ZIP, STORED entries, layout identical to `artifact.sol.d/` (§14.6).
+2. What minimum environment manifest is required? — `environment_id` + `package_manifest` MUST; `kernel`/`kernel_version` MUST for code-cell artifacts; `sbom_ref` SHOULD (§15).
+3. Which compression codecs are mandatory? — MUST: `none`, `gzip`; SHOULD: `zstd`; MAY: `brotli` (§43).
+4. How much branch support is required in v0.1? — branch records and protected main required; multiple concurrent branches required; merges deferred (§41).
+5. What is the minimum object-size support requirement? — 0 B .. 1 GiB inclusive; `get_range` valid anywhere in a supported object (§42).
+6. How should imported `.ipynb` outputs be classified? — `staleness: unknown`, `verification: unverified`, no fabricated runs, render disclosure (§53).
+7. How strict should the cell-summary requirement be? — required, non-empty, at most 500 characters; non-duplication is SHOULD (§18).
+8. Which actor fields are mandatory for agent-authored commits? — model pin + `delegated_by` + `autonomy_level` MUST; digests SHOULD (§16.4).
+9. What is the minimal claim/evidence schema? — claim: +`statement`/`claim_type`/`supporting_evidence`; evidence: +`evidence_type`, one source, `supports` (§23, §24).
+10. Which semantic-record status fields are mandatory? — all three dimensions on all records; vacuous dimensions carry a default value, never an omission (§20).
+11. What exact machine summary schema is required? — published schema `sol:schemas/machine_summary/v0.2` (§48).
 
 ## post-v0.1
 
@@ -2545,9 +2642,21 @@ Validation rules are assigned stable IDs so diagnostics can remain diffable acro
 V0-01  Manifest present, parses, sol_version recognized.
 V0-02  artifact_id present and well-formed.
 V0-03  required_features all supported.
-V0-04  All committed status values in registered vocabularies.
+V0-04  All committed status values in registered vocabularies. Applies to
+       lifecycle, staleness, and verification statuses; context_status values
+       (section 37.4) are open pending the post-v0.1 registry decision.
 V0-05  All references parse under §9 grammar.
 V0-06  Every object: ref resolves in store; digest: refs are well-formed.
+V0-07  Cell schema conformance (published cell schema; decision Q7).
+V0-08  Actor schema conformance (published actor schema; decision Q8).
+V0-09  Semantic-record schema conformance (published record schema;
+       decisions Q9, Q10).
+V0-10  Object record conformance (published object schema; decisions Q3, Q5).
+V0-11  Machine summary schema conformance (published machine summary
+       schema; decision Q11).
+V0-12  Manifest environment conformance (published manifest schema;
+       decision Q2).
+V0-13  Run/commit schema conformance (published run and commit schemas).
 ```
 
 ## V1 — Referential Integrity
@@ -2656,7 +2765,7 @@ PATH-002  The silent read
 
 PATH-003  The outlived conclusion
           Evidence invalidated; claim still current/verified.
-          Expected: V2-05, V3-01.
+          Expected: V2-05, V3-01, V3-08.
 
 PATH-004  The status forgery
           stale → current written directly, no rerun or verification.
@@ -2668,15 +2777,15 @@ PATH-005  The orphan application
 
 PATH-006  The name-as-digest
           object: ref whose digest field is actually a name; unresolvable.
-          Expected: V0-06.
+          Expected: V0-05, V0-06.
 
 PATH-007  The dishonest render
           HTML omits stale flags present in artifact.
-          Expected: V5-02.
+          Expected: V5-02, V2-05.
 
 PATH-008  The anonymous hand
           Commit with no resolvable actor.
-          Expected: V1-02.
+          Expected: V1-02, V4-01, V4-03.
 
 PATH-009  The unauthorized merge
           propose_only agent commits to protected main.
@@ -2692,7 +2801,7 @@ PATH-011  The greedy partial
 
 PATH-012  The detached sidecar
           Required output referenced by external path.
-          Expected: INV-06 / V1-06.
+          Expected: V0-06, V1-06.
 
 PATH-013  The corrupted object
           Stored payload does not match its digest.
@@ -2728,7 +2837,7 @@ PATH-020  The vanished source
 
 PATH-021  The swept evidence
           GC removed an object reachable from evidence.
-          Expected: V1-06.
+          Expected: V0-06, V1-06.
 
 PATH-022  The divergent applier
           Commit ops do not match the applied proposal’s changeset.
@@ -2736,7 +2845,7 @@ PATH-022  The divergent applier
 
 PATH-023  The drifted binding
           Named-output ref resolves to object from stale or invalid run.
-          Expected: V1-05.
+          Expected: V1-05, V2-05.
 
 PATH-024  The unknown demand
           required_features includes unsupported feature; reader proceeds anyway.
@@ -2745,6 +2854,30 @@ PATH-024  The unknown demand
 PATH-025  The mislabeled failure
           failed_verification record exists; target still verified.
           Expected: V3-02.
+
+PATH-026  The empty summary
+          Cell summary is empty; bounded-read contract broken.
+          Expected: V0-07.
+
+PATH-027  The unaccountable agent
+          Agent actor without a delegation chain (delegated_by missing).
+          Expected: V0-08.
+
+PATH-028  The missing dimension
+          Record status omits the verification dimension.
+          Expected: V0-09.
+
+PATH-029  The unregistered codec
+          Object record declares a compression identifier outside the registry.
+          Expected: V0-10.
+
+PATH-030  The incomplete summary
+          Machine summary omits a required component (stale).
+          Expected: V0-11, V5-03.
+
+PATH-031  The unpinned environment
+          Manifest environment lacks the package manifest pin.
+          Expected: V0-12.
 ```
 
 ---
@@ -2790,6 +2923,11 @@ The reference implementation should publish schemas for:
 * actor records,
 * machine summary,
 * diagnostics.
+
+The published v0.2 schema set (`sol_validator/schemas/`, JSON Schema draft
+2020-12, `$id` `sol:schemas/<class>/v0.2`) is the normative artifact set for
+this list; the reference validator enforces it and emits stable rule IDs
+V0-07 through V0-13 (Appendix A).
 
 The pathology corpus should be treated as executable specification support.
 

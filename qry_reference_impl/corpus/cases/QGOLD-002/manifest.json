@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-002",
+  "description": "Exact join with tuple provenance.",
+  "expected_diagnostics": []
+}

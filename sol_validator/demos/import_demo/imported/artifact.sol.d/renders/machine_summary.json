@@ -1,0 +1,64 @@
+{
+  "actors": [
+    "human:alice"
+  ],
+  "artifact_id": "art_0c9a48208778d814008bfc",
+  "cells": [
+    {
+      "cell_id": "cell_001",
+      "cell_type": "sol:cell/prose",
+      "summary": "Imported markdown cell 1 from sample.ipynb (provenance incomplete)."
+    },
+    {
+      "cell_id": "cell_002",
+      "cell_type": "sol:cell/code",
+      "summary": "Imported code cell 2 from sample.ipynb (provenance incomplete)."
+    },
+    {
+      "cell_id": "cell_003",
+      "cell_type": "sol:cell/code",
+      "summary": "Imported code cell 3 from sample.ipynb (provenance incomplete)."
+    }
+  ],
+  "diagnostics": [],
+  "execution_structure": {
+    "cells": [
+      "cell:cell_001",
+      "cell:cell_002",
+      "cell:cell_003"
+    ],
+    "type": "linear"
+  },
+  "failures": [],
+  "manifest": {
+    "artifact_id": "art_0c9a48208778d814008bfc",
+    "current_commit": "commit_001",
+    "reproducibility_status": "unknown",
+    "required_features": [
+      "sol:feature/linear_execution",
+      "sol:feature/internal_object_store",
+      "sol:feature/machine_summary"
+    ],
+    "sol_version": "0.1"
+  },
+  "open_proposals": [],
+  "records": [
+    {
+      "record_id": "task_import_001",
+      "record_type": "sol:record/task",
+      "status": {
+        "lifecycle": "active",
+        "staleness": "current",
+        "verification": "unverified"
+      },
+      "summary": "Imported notebook sample.ipynb with incomplete provenance."
+    }
+  ],
+  "render_id": "machine_summary",
+  "renders": [],
+  "runs": [],
+  "sol_version": "0.1",
+  "source_commit": "commit_001",
+  "stale": [],
+  "target": "machine_summary"
+}

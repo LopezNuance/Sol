@@ -1,0 +1,54 @@
+{
+  "description": "The truth-status collapse: verification = unverified is rewritten as proposition = false.",
+  "nodes": [
+    {
+      "id": "rt",
+      "op": "read",
+      "source": "tasks"
+    },
+    {
+      "id": "f",
+      "input": "rt",
+      "op": "filter",
+      "predicate": {
+        "terms": [
+          {
+            "field": "verification",
+            "op": "eq",
+            "value": false
+          }
+        ]
+      }
+    }
+  ],
+  "query_id": "QPATH-009",
+  "root": "f",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "tasks": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "kind": "truth_status",
+          "name": "verification",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          true
+        ],
+        [
+          2,
+          false
+        ]
+      ]
+    }
+  }
+}

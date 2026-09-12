@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-007",
+  "description": "The duplicated stochastic call: the optimizer duplicates an inline stochastic evaluator.",
+  "expected_diagnostics": [
+    "QV6-05",
+    "QV7-03"
+  ]
+}

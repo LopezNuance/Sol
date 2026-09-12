@@ -1,19 +1,85 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "sol:schemas/manifest/v0.1",
+  "$id": "sol:schemas/manifest/v0.2",
+  "title": "Sol artifact manifest (RFC-SOL-0001, published v0.2)",
+  "description": "Normative manifest schema. Encodes decision Q2 (minimum environment manifest, 2026-09-07): environment.environment_id and environment.package_manifest are required; environment.kernel and environment.kernel_version are required by validator rule V0-12 when the artifact contains code cells. imported_from/provenance_status encode decision Q6 (imported .ipynb classification).",
   "type": "object",
-  "required": ["sol_version", "artifact_type", "artifact_id", "required_features", "runtime", "execution", "security"],
+  "required": [
+    "sol_version",
+    "artifact_type",
+    "artifact_id",
+    "required_features",
+    "runtime",
+    "execution",
+    "security",
+    "environment"
+  ],
   "properties": {
     "sol_version": {"type": "string"},
     "artifact_type": {"const": "sol_notebook"},
-    "artifact_id": {"type": "string"},
-    "required_features": {"type": "array", "items": {"type": "string"}},
+    "artifact_id": {
+      "type": "string",
+      "pattern": "^art_[A-Za-z0-9]+$",
+      "description": "Well-formed per V0-02; stable for the artifact lineage (RFC section 9.1)."
+    },
+    "artifact_did": {"type": "string"},
+    "forked_from": {"type": "string"},
+    "title": {"type": "string"},
+    "current_commit": {"type": ["string", "null"]},
+    "required_features": {
+      "type": "array",
+      "items": {"type": "string"},
+      "minItems": 1
+    },
     "optional_features": {"type": "array", "items": {"type": "string"}},
-    "runtime": {"type": "object"},
-    "environment": {"type": "object"},
-    "execution": {"type": "object"},
+    "runtime": {
+      "type": "object",
+      "required": ["primary_language"],
+      "properties": {
+        "primary_language": {"type": "string"},
+        "language_version": {"type": "string"},
+        "kernel_adapter": {"type": "string"}
+      }
+    },
+    "environment": {
+      "type": "object",
+      "required": ["environment_id", "package_manifest"],
+      "properties": {
+        "environment_id": {"type": "string"},
+        "package_manifest": {
+          "type": "string",
+          "pattern": "^digest:sha256:[a-f0-9]{64}$",
+          "description": "Digest of the resolved package manifest (lockfile pin)."
+        },
+        "kernel": {"type": "string"},
+        "kernel_version": {"type": "string"},
+        "sbom_ref": {"type": "string"}
+      }
+    },
+    "execution": {
+      "type": "object",
+      "required": ["structure"],
+      "properties": {
+        "structure": {"enum": ["linear", "graph"]},
+        "partial_execution_policy": {"type": "string"},
+        "deterministic": {"type": "boolean"},
+        "random_seed": {}
+      }
+    },
     "security": {"type": "object"},
     "rendering": {"type": "object"},
-    "authorization": {"type": "object"}
+    "authorization": {"type": "object"},
+    "reproducibility_status": {
+      "enum": ["reproducible", "partially_reproducible", "not_reproducible", "unknown"],
+      "description": "RFC section 27.4 vocabulary; derived from verification records only (V3-03)."
+    },
+    "imported_from": {
+      "type": "string",
+      "description": "Decision Q6: set when the artifact was imported (e.g. 'ipynb')."
+    },
+    "provenance_status": {
+      "enum": ["complete", "incomplete"],
+      "description": "Decision Q6: imported artifacts declare incomplete provenance."
+    }
   }
 }

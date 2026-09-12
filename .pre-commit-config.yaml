@@ -1,0 +1,20 @@
+default_stages: [pre-commit]
+
+repos:
+  - repo: local
+    hooks:
+      - id: quality-fast
+        name: quality fast
+        entry: bash -c 'scripts/quality.sh  fast'
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-commit]
+
+      - id: quality-prepush
+        name: quality prepush
+        entry: bash -c 'scripts/quality.sh  prepush'
+        language: system
+        pass_filenames: false
+        always_run: true
+        stages: [pre-push, manual]

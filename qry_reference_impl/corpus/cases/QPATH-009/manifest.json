@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-009",
+  "description": "The truth-status collapse: verification = unverified is rewritten as proposition = false.",
+  "expected_diagnostics": [
+    "QINV-05"
+  ]
+}

@@ -1,0 +1,5 @@
+{
+  "case_id": "QRY-002",
+  "description": "read orders",
+  "expected_diagnostics": []
+}

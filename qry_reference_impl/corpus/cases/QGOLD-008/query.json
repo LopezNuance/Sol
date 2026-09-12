@@ -1,0 +1,61 @@
+{
+  "description": "COUNT_SET interval derived from relation bounds.",
+  "nodes": [
+    {
+      "id": "rv",
+      "op": "read",
+      "source": "vals"
+    },
+    {
+      "aggregates": [
+        {
+          "func": "count_set",
+          "name": "c"
+        }
+      ],
+      "group_by": [
+        "v"
+      ],
+      "id": "ag",
+      "input": "rv",
+      "op": "aggregate"
+    }
+  ],
+  "query_id": "QGOLD-008",
+  "root": "ag",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "vals": {
+      "lower": {
+        "tuples": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    }
+  }
+}

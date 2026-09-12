@@ -1,6 +1,7 @@
 {
   "actor_id": "human:alice",
   "actor_type": "human",
+  "auth_ref": "identity_provider:user_123",
   "capabilities": [
     "read",
     "write_cell",

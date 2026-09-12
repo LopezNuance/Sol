@@ -1,0 +1,37 @@
+{
+  "description": "The timestamp time traveler: the latest commit is selected by wall-clock timestamp across divergent branches, with no ancestry relation or tie rule.",
+  "nodes": [
+    {
+      "id": "r",
+      "op": "read",
+      "source": "s"
+    }
+  ],
+  "query_id": "QPATH-014",
+  "root": "r",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "s": {
+      "branch": "main",
+      "commit": "object:sha256:0000000000000000000000000000000000000000000000000000000000000000",
+      "latest": {
+        "branch": "main"
+      },
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    }
+  }
+}

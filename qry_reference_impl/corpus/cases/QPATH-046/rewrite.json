@@ -1,0 +1,4 @@
+{
+  "location": "node:u",
+  "rule_id": "sol:rewrite/normalize_union/v1"
+}

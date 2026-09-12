@@ -1,0 +1,103 @@
+{
+  "query_id": "QGOLD-006",
+  "root": "u",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "sol:bound/union/v1",
+        "source:a",
+        "source:b"
+      ],
+      "evidence": [
+        "source:a",
+        "source:b"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/union/v1",
+    "guarantee": "bounded",
+    "intervals": [],
+    "lower": {
+      "fields": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          3
+        ]
+      ]
+    },
+    "lower_object": "object:sha256:7c9798c56e51a175782c5d10785bbdace8fa352b8d8318d6c4a18861bccbb0de",
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            1
+          ]
+        },
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            3
+          ]
+        }
+      ],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [
+          "object:sha256:4bd334ffc94340f3689da2cc13ccc486adce70d3d1640c395669dcfcf5196034",
+          "object:sha256:7c9798c56e51a175782c5d10785bbdace8fa352b8d8318d6c4a18861bccbb0de",
+          "object:sha256:a1e2d57fb193becccbf290062fa7fd9e054a831c6c91bcc87a9d57a429f7f579",
+          "object:sha256:ec5a721b7c2273e57afd06faf854b19cd325b44595279f927f121e7b3b31a512"
+        ],
+        "rewrites": [],
+        "rule_id": "sol:bound/union/v1",
+        "sources": [
+          "source:a",
+          "source:b"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": null,
+    "upper": {
+      "fields": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ]
+    },
+    "upper_object": "object:sha256:6fc5438784bc0f5c49b0db6c56dfcd35f23bbf994009938c8bdb4279f111831f"
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

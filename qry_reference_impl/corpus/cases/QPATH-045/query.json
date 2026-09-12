@@ -1,0 +1,134 @@
+{
+  "nodes": [
+    {
+      "id": "ra",
+      "op": "read",
+      "source": "a"
+    },
+    {
+      "id": "rb",
+      "op": "read",
+      "source": "b"
+    },
+    {
+      "id": "rc",
+      "op": "read",
+      "source": "c"
+    },
+    {
+      "id": "j1",
+      "join_type": "inner",
+      "left": "ra",
+      "on": [
+        {
+          "left": "id",
+          "right": "id"
+        }
+      ],
+      "op": "join",
+      "right": "rb"
+    },
+    {
+      "id": "j2",
+      "join_type": "inner",
+      "left": "j1",
+      "on": [
+        {
+          "left": "w",
+          "right": "id"
+        }
+      ],
+      "op": "join",
+      "right": "rc"
+    }
+  ],
+  "query_id": "QPATH-045",
+  "root": "j2",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "a": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "tag",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "x"
+        ],
+        [
+          2,
+          "y"
+        ],
+        [
+          3,
+          "z"
+        ]
+      ]
+    },
+    "b": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "val",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          20
+        ],
+        [
+          4,
+          40
+        ]
+      ]
+    },
+    "c": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "w",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          100
+        ],
+        [
+          2,
+          200
+        ],
+        [
+          5,
+          500
+        ]
+      ]
+    }
+  }
+}

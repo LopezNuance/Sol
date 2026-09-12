@@ -1,22 +1,124 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "sol:schemas/record/v0.1",
+  "$id": "sol:schemas/record/v0.2",
+  "title": "Sol semantic record (RFC-SOL-0001, published v0.2)",
+  "description": "Normative semantic-record schema. Encodes decision Q10 (all three status dimensions mandatory on every record; vacuous dimensions carry a default value, never omitted) and decision Q9 (minimal claim/evidence field sets). Record-type-specific lifecycle vocabularies are enforced by validator rule V0-04, not by this schema.",
   "type": "object",
   "required": ["record_id", "record_type", "summary", "status"],
   "properties": {
     "record_id": {"type": "string"},
-    "record_type": {"type": "string"},
-    "summary": {"type": "string"},
+    "record_type": {
+      "enum": [
+        "sol:record/task",
+        "sol:record/claim",
+        "sol:record/evidence",
+        "sol:record/proposal",
+        "sol:record/review",
+        "sol:record/decision",
+        "sol:record/verification",
+        "sol:record/failure"
+      ]
+    },
+    "summary": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "description": "Bounded-read projection (RFC section 11 Level 2)."
+    },
     "created_by": {"type": "string"},
     "created_at": {"type": "string"},
     "depends_on": {"type": "array", "items": {"type": "string"}},
     "status": {
       "type": "object",
+      "required": ["lifecycle", "staleness", "verification"],
       "properties": {
         "lifecycle": {"type": "string"},
         "staleness": {"enum": ["current", "stale", "unknown"]},
-        "verification": {"enum": ["unverified", "verified", "failed_verification", "needs_reverification"]}
+        "verification": {
+          "enum": ["unverified", "verified", "failed_verification", "needs_reverification"]
+        }
+      }
+    },
+    "supersedes": {"type": "array", "items": {"type": "string"}},
+    "superseded_by": {"type": ["string", "null"]},
+    "anchors": {"type": "array", "items": {"type": "string"}},
+    "status_transition": {"type": "object"},
+    "statement": {"type": "string", "minLength": 1},
+    "claim_type": {"type": "string"},
+    "supporting_evidence": {"type": "array", "items": {"type": "string"}},
+    "confidence": {"type": "number"},
+    "confidence_basis": {"type": "string"},
+    "evidence_type": {"type": "string"},
+    "source_ref": {"type": "string"},
+    "source_object": {"type": "string"},
+    "supports": {"type": "array", "items": {"type": "string"}},
+    "derived_from": {"type": "array", "items": {"type": "string"}},
+    "external_ref": {
+      "type": "object",
+      "required": ["uri", "availability"],
+      "properties": {
+        "uri": {"type": "string"},
+        "retrieved_at": {"type": "string"},
+        "snapshot_object": {"type": "string"},
+        "availability": {"enum": ["archived", "live", "unavailable"]}
+      }
+    },
+    "base_commit": {"type": "string"},
+    "changes": {"type": "array", "items": {"type": "object"}},
+    "predicted_invalidations": {"type": "array", "items": {"type": "string"}},
+    "rationale": {"type": "string"},
+    "proposal_id": {"type": "string"},
+    "reviewed_by": {"type": "string"},
+    "review_status": {"type": "string"},
+    "comment": {"type": "string"},
+    "decision_type": {"type": "string"},
+    "candidates": {"type": "array"},
+    "selected": {"type": "string"},
+    "decision_rule": {"type": "string"},
+    "made_by": {"type": "string"},
+    "based_on": {"type": "array", "items": {"type": "string"}},
+    "target": {"type": "string"},
+    "method": {"type": "string"},
+    "performed_by": {"type": "string"},
+    "result": {"type": "string"},
+    "concordance": {"type": "object"},
+    "evidence": {"type": "array"},
+    "run_id": {"type": "string"},
+    "source_commit": {"type": "string"},
+    "actor_id": {"type": "string"},
+    "failed_cell": {"type": "string"},
+    "error_type": {"type": "string"},
+    "message": {"type": "string"},
+    "environment_id": {"type": "string"},
+    "retryable": {"type": "boolean"},
+    "task_type": {"type": "string"},
+    "instruction_ref": {"type": "string"}
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {"record_type": {"const": "sol:record/claim"}},
+        "required": ["record_type"]
+      },
+      "then": {
+        "required": ["statement", "claim_type", "supporting_evidence"],
+        "properties": {
+          "statement": {"minLength": 1}
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {"record_type": {"const": "sol:record/evidence"}},
+        "required": ["record_type"]
+      },
+      "then": {
+        "required": ["evidence_type", "supports"],
+        "anyOf": [
+          {"required": ["source_ref"]},
+          {"required": ["external_ref"]}
+        ]
       }
     }
-  }
+  ]
 }

@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-039",
+  "description": "The policy-boundary default bypass: a rewrite spans a LeakagePolicy node with no explicit disclosure proof, even though visible values happen to match in the fixture.",
+  "expected_diagnostics": [
+    "QINV-15",
+    "QV7-07"
+  ]
+}

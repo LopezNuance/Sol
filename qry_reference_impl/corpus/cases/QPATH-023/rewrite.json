@@ -1,0 +1,5 @@
+{
+  "claimed_assurance": "validated",
+  "location": "node:j",
+  "rule_id": "sol:rewrite/push_exact_selection_through_join/v1"
+}

@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-004",
+  "description": "Stratified negation licensed by a local completeness assertion.",
+  "expected_diagnostics": []
+}

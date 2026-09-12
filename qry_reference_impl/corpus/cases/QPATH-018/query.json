@@ -1,0 +1,35 @@
+{
+  "description": "The friendly-label planner: planner composes lower_bound and upper_bound labels without concrete bound relations.",
+  "nodes": [
+    {
+      "id": "rv",
+      "op": "read",
+      "source": "vals"
+    }
+  ],
+  "query_id": "QPATH-018",
+  "root": "rv",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "vals": {
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ]
+    }
+  }
+}

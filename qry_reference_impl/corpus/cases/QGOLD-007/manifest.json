@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-007",
+  "description": "Bounded difference using L1\\U2 and U1\\L2.",
+  "expected_diagnostics": []
+}

@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-015",
+  "description": "The bag-set confusion: projection under bag semantics is treated as duplicate-eliminating without an explicit Distinct.",
+  "expected_diagnostics": [
+    "QV3-02"
+  ]
+}

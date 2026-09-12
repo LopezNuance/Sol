@@ -1,0 +1,49 @@
+{
+  "description": "The possible-as-proven tuple: a tuple occurring only in U is given ordinary why-provenance asserting exact-answer membership.",
+  "nodes": [
+    {
+      "id": "u",
+      "op": "read",
+      "source": "users"
+    }
+  ],
+  "query_id": "QPATH-037",
+  "root": "u",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "users": {
+      "lower": {
+        "tuples": [
+          [
+            1,
+            "a"
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            1,
+            "a"
+          ],
+          [
+            2,
+            "b"
+          ]
+        ]
+      }
+    }
+  }
+}

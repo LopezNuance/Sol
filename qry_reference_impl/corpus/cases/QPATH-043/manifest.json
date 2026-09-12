@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-043",
+  "description": "The physical-leakage shortcut: a logical rewrite declares evaluator-invocation-count equivalence without a physical conformance profile.",
+  "expected_diagnostics": [
+    "QV7-09",
+    "QV9-10"
+  ]
+}

@@ -1,6 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "sol:schemas/commit/v0.1",
+  "$id": "sol:schemas/commit/v0.2",
+  "title": "Sol commit record (RFC-SOL-0001, published v0.2)",
+  "description": "Normative commit schema. branch is required per decision Q4 (branch floor, 2026-09-07): every commit records its branch; protected-branch enforcement is V4-01.",
   "type": "object",
   "required": ["commit_id", "parents", "branch", "author", "changes"],
   "properties": {
@@ -9,8 +11,33 @@
     "branch": {"type": "string"},
     "author": {"type": "string"},
     "message": {"type": "string"},
-    "applied_proposals": {"type": "array", "items": {"type": "object"}},
-    "changes": {"type": "array", "items": {"type": "object"}},
+    "applied_proposals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "proposal": {"type": "string"},
+          "accepted_by": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "changes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["op"],
+        "properties": {
+          "op": {"type": "string"},
+          "target": {"type": "string"},
+          "path": {"type": "string"},
+          "value_ref": {"type": "string"},
+          "cell_id": {"type": "string"},
+          "named_output": {"type": "string"},
+          "object_id": {"type": "string"},
+          "proposal": {"type": "string"}
+        }
+      }
+    },
     "created_at": {"type": "string"}
   }
 }

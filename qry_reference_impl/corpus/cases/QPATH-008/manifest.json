@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-008",
+  "description": "The stale materialized view: a view from commit 41 answers a query pinned to commit 42.",
+  "expected_diagnostics": [
+    "QV8-03"
+  ]
+}

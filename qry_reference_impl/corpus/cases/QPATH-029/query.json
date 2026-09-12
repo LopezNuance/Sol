@@ -1,0 +1,51 @@
+{
+  "description": "The timing promise: the service claims general non-inference while declaring timing protection only best-effort.",
+  "leakage_policy": {
+    "logical_disclosure": {
+      "cardinality": "disclosed",
+      "diagnostics": "uniform",
+      "error_class": "uniform",
+      "provenance": "redacted",
+      "tuple_existence": "no_disclosure",
+      "unauthorized_reference_behavior": "indistinguishable_from_missing",
+      "values": "no_disclosure"
+    },
+    "physical_side_channels": {
+      "timing": "best_effort"
+    },
+    "policy_id": "policy:restricted_claims",
+    "residual_risk": [
+      "timing_inference_possible"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "r",
+      "op": "read",
+      "source": "r"
+    }
+  ],
+  "query_id": "QPATH-029",
+  "root": "r",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "r": {
+      "restricted": true,
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    }
+  }
+}

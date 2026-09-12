@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-034",
+  "description": "The lossy summary: the machine summary omits a field required by the query but is used as a covering exact view.",
+  "expected_diagnostics": [
+    "QV8-04"
+  ]
+}

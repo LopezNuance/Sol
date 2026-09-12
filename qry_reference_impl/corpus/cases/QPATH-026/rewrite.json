@@ -1,0 +1,4 @@
+{
+  "location": "node:pb",
+  "rule_id": "sol:rewrite/push_filter_across_policy_with_disclosure_proof/v1"
+}

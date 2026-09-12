@@ -1,0 +1,87 @@
+{
+  "applied": true,
+  "record": {
+    "assurance": "proven",
+    "covering_proof": "object:sha256:085a1903ddeb94a20446627f14b318f3995dc66bf1f451c0d4ce72b9f4ee306c",
+    "disclosure_proof": null,
+    "location": "node:f",
+    "preserved_dimensions": [
+      "value",
+      "multiplicity",
+      "provenance",
+      "answer_bounds",
+      "assurance",
+      "logical_disclosure",
+      "evaluation_identity"
+    ],
+    "proof_evidence_kinds": [
+      "formal_derivation",
+      "property_test",
+      "adversarial_corpus",
+      "checked_certificate"
+    ],
+    "rule_id": "sol:rewrite/substitute_exact_machine_summary/v1",
+    "source_commit": "object:sha256:a5d9bc662b5b2b05a5cce9ffb88cfc10f2e6e94f1ea78caad2e0ed46aef0a95f"
+  },
+  "rewritten_query": {
+    "description": "Exact machine-summary substitution with matching source commit.",
+    "nodes": [
+      {
+        "id": "ra",
+        "op": "read",
+        "source": "a"
+      },
+      {
+        "id": "f",
+        "input": "ra",
+        "op": "filter",
+        "predicate": {
+          "terms": [
+            {
+              "field": "tag",
+              "op": "eq",
+              "value": "y"
+            }
+          ]
+        }
+      }
+    ],
+    "query_id": "QGOLD-005",
+    "root": "f",
+    "schema_version": "qry.query.v0.3",
+    "sources": {
+      "a": {
+        "machine_summary": {
+          "covering_proof": "object:sha256:085a1903ddeb94a20446627f14b318f3995dc66bf1f451c0d4ce72b9f4ee306c",
+          "source_commit": "object:sha256:a5d9bc662b5b2b05a5cce9ffb88cfc10f2e6e94f1ea78caad2e0ed46aef0a95f"
+        },
+        "schema": [
+          {
+            "name": "id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "tag",
+            "nullable": false,
+            "type": "string"
+          }
+        ],
+        "tuples": [
+          [
+            1,
+            "x"
+          ],
+          [
+            2,
+            "y"
+          ],
+          [
+            3,
+            "z"
+          ]
+        ]
+      }
+    }
+  }
+}

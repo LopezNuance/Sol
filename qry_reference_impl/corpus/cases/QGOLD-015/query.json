@@ -1,0 +1,66 @@
+{
+  "description": "Intersection with one heuristic operand retains the certified upper of the other operand (13.7.1, 13.17).",
+  "nodes": [
+    {
+      "id": "a",
+      "op": "read",
+      "source": "users"
+    },
+    {
+      "id": "b",
+      "op": "read",
+      "source": "ghosts"
+    },
+    {
+      "id": "i1",
+      "inputs": [
+        "a",
+        "b"
+      ],
+      "op": "intersect"
+    }
+  ],
+  "query_id": "QGOLD-015",
+  "root": "i1",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "ghosts": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ]
+    },
+    "users": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ]
+      ]
+    }
+  }
+}

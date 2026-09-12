@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-024",
+  "description": "The transient memo: the evaluator is declared deterministic-per-key, but repeated calls may recompute different results after cache eviction.",
+  "expected_diagnostics": [
+    "QINV-13",
+    "QV6-03"
+  ]
+}

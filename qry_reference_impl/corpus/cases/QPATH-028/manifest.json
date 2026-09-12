@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-028",
+  "description": "The provenance side door: values are redacted but provenance reveals restricted record identities.",
+  "expected_diagnostics": [
+    "QV8-08",
+    "QV9-04"
+  ]
+}

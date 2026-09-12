@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-026",
+  "description": "The policy-crossing rewrite: the plan moves a filter across an authorization boundary and changes tuple-existence disclosure.",
+  "expected_diagnostics": [
+    "QV7-07",
+    "QV9-09"
+  ]
+}

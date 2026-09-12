@@ -135,3 +135,6 @@ venv/
 ENV/
 env/
 .venv/
+
+# container benchmark: regenerated packed test containers
+container_benchmark/work/

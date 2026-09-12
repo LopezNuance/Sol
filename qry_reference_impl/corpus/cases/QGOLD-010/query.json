@@ -1,0 +1,102 @@
+{
+  "nodes": [
+    {
+      "id": "ra",
+      "op": "read",
+      "source": "a"
+    },
+    {
+      "id": "rb",
+      "op": "read",
+      "source": "b"
+    },
+    {
+      "id": "f",
+      "input": "ra",
+      "op": "filter",
+      "predicate": {
+        "terms": [
+          {
+            "field": "tag",
+            "op": "eq",
+            "value": "y"
+          }
+        ]
+      }
+    },
+    {
+      "id": "j",
+      "join_type": "inner",
+      "left": "f",
+      "on": [
+        {
+          "left": "id",
+          "right": "id"
+        }
+      ],
+      "op": "join",
+      "right": "rb"
+    }
+  ],
+  "query_id": "QGOLD-010",
+  "root": "j",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "a": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "tag",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "x"
+        ],
+        [
+          2,
+          "y"
+        ],
+        [
+          3,
+          "z"
+        ]
+      ]
+    },
+    "b": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "val",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          20
+        ],
+        [
+          4,
+          40
+        ]
+      ]
+    }
+  }
+}

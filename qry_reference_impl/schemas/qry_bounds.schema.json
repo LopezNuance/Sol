@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/qry/schemas/qry_bounds.schema.json",
+  "title": "QRY Bounds v0.1",
+  "type": "object",
+  "required": ["schema_version", "query_id", "root", "root_bound"],
+  "properties": {
+    "schema_version": {"const": "qry.bounds.v0.1"},
+    "query_id": {"type": "string"},
+    "root": {"type": "string"},
+    "node_bounds": {"type": "object"},
+    "root_bound": {"$ref": "#/$defs/bound"}
+  },
+  "$defs": {
+    "bound": {
+      "type": "object",
+      "required": ["rows", "fields"],
+      "properties": {
+        "rows": {
+          "type": "object",
+          "required": ["min", "max"],
+          "properties": {
+            "min": {"type": "integer", "minimum": 0},
+            "max": {"anyOf": [{"type": "integer", "minimum": 0}, {"type": "null"}]}
+          },
+          "additionalProperties": false
+        },
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["name", "type", "nullable"],
+            "properties": {
+              "name": {"type": "string"},
+              "type": {"type": "string"},
+              "nullable": {"type": "boolean"}
+            },
+            "additionalProperties": false
+          }
+        },
+        "order": {"type": "array", "items": {"type": "string"}},
+        "unique_keys": {"type": "array", "items": {"type": "array", "items": {"type": "string"}}}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

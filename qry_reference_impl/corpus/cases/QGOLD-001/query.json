@@ -1,0 +1,60 @@
+{
+  "description": "Exact snapshot query over one artifact.",
+  "nodes": [
+    {
+      "id": "r",
+      "op": "read",
+      "source": "records"
+    },
+    {
+      "by": [
+        "record_id"
+      ],
+      "id": "s",
+      "input": "r",
+      "op": "sort"
+    }
+  ],
+  "query_id": "QGOLD-001",
+  "root": "s",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "records": {
+      "artifact": {
+        "digest": "object:sha256:2081e700c5a36b965e5d986e0e8792115510b73ba72bdbcf3df99780b8f35b35",
+        "path": "sol_validator/corpus/GOLD-01/artifact.sol.d",
+        "relation": "records"
+      },
+      "schema": [
+        {
+          "name": "record_id",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "record_type",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "lifecycle",
+          "nullable": true,
+          "path": "status.lifecycle",
+          "type": "string"
+        },
+        {
+          "name": "staleness",
+          "nullable": true,
+          "path": "status.staleness",
+          "type": "string"
+        },
+        {
+          "name": "verification",
+          "nullable": true,
+          "path": "status.verification",
+          "type": "string"
+        }
+      ]
+    }
+  }
+}

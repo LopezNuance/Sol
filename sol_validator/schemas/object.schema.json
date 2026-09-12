@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "sol:schemas/object/v0.1",
+  "title": "Sol object record (RFC-SOL-0001, published v0.1)",
+  "description": "Normative object-record schema (the schema class missing from the v0.1 draft set; Appendix C requires it). Encodes decision Q3 (compression codecs: only the four registered identifiers of RFC section 43) and decision Q5 (object-size floor: 0 bytes to 1 GiB inclusive). In the exploded debug representation object records live at objects/records/<digest>.json; in the physical .solnb container they accompany each object entry.",
+  "type": "object",
+  "required": ["object_id", "mime_type", "compression", "size_bytes"],
+  "properties": {
+    "object_id": {
+      "type": "string",
+      "pattern": "^object:sha256:[a-f0-9]{64}$"
+    },
+    "mime_type": {"type": "string"},
+    "compression": {
+      "enum": [
+        "sol:compression/zstd",
+        "sol:compression/gzip",
+        "sol:compression/brotli",
+        "sol:compression/none"
+      ],
+      "description": "Registered compression identifiers (RFC section 43). Conformance floor: none + gzip (decision Q3)."
+    },
+    "size_bytes": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 1073741824,
+      "description": "Uncompressed size in bytes; 2^30 = 1 GiB (decision Q5)."
+    },
+    "created_by": {"type": "string"},
+    "created_by_run": {"type": "string"},
+    "data_sensitivity": {"type": "string"}
+  }
+}

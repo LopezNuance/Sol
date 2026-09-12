@@ -1,0 +1,90 @@
+{
+  "query_id": "QPATH-013",
+  "root": "r",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "source:s",
+        "sol:bound/relation/v1"
+      ],
+      "evidence": [
+        "source:s"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/relation/v1",
+    "guarantee": "bounded",
+    "intervals": [],
+    "lower": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ]
+      ]
+    },
+    "lower_object": null,
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "why",
+      "lower_memberships": [],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [],
+        "rewrites": [
+          "sol:rewrite/experimental_aggregate_fold/v1"
+        ],
+        "rule_id": "sol:bound/relation/v1",
+        "sources": [
+          "source:s"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": null,
+    "upper": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ],
+        [
+          3,
+          "c"
+        ]
+      ]
+    },
+    "upper_object": null
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

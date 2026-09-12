@@ -1,0 +1,5 @@
+{
+  "disclosure_proof": "object:sha256:963fde42f60d27b195c09b4cd81ffbb951851469dea68f048ed5f139dc7973e9",
+  "location": "node:pb",
+  "rule_id": "sol:rewrite/push_filter_across_policy_with_disclosure_proof/v1"
+}

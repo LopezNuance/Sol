@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-008",
+  "description": "COUNT_SET interval derived from relation bounds.",
+  "expected_diagnostics": []
+}

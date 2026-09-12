@@ -1,0 +1,4343 @@
+{
+  "cases": 256,
+  "property": "kernel cross-check: the substitute-branch decision (QV8-03 commit match, QV8-04 field completeness, eligible) agrees with the covering decision procedure",
+  "rule_id": "sol:rewrite/substitute_exact_machine_summary/v1",
+  "rule_slug": "machine-summary-substitution",
+  "schema_version": "solqry.rewrite-certificate/v1",
+  "seed": 20260909,
+  "transcript": [
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 0,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 1,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 2,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 3,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 4,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 5,
+      "preserved": true,
+      "query_fields": [
+        "f0"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 6,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 7,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 8,
+      "preserved": true,
+      "query_fields": [
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 9,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 10,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 11,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 12,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 13,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 14,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 15,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 16,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 17,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 18,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 19,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 20,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 21,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 22,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 23,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3"
+      ],
+      "summary_fields": [
+        "f3"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 24,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 25,
+      "preserved": true,
+      "query_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 26,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 27,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 28,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 29,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 30,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 31,
+      "preserved": true,
+      "query_fields": [
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 32,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 33,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 34,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 35,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3"
+      ],
+      "summary_fields": [
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 36,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 37,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 38,
+      "preserved": true,
+      "query_fields": [
+        "f0"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 39,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 40,
+      "preserved": true,
+      "query_fields": [
+        "f0"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 41,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 42,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 43,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 44,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 45,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 46,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 47,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 48,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 49,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 50,
+      "preserved": true,
+      "query_fields": [
+        "f1"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 51,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 52,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 53,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 54,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 55,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 56,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 57,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 58,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 59,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 60,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 61,
+      "preserved": true,
+      "query_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 62,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 63,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3"
+      ],
+      "summary_fields": [
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 64,
+      "preserved": true,
+      "query_fields": [
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 65,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 66,
+      "preserved": true,
+      "query_fields": [
+        "f1"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 67,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 68,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 69,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 70,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 71,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 72,
+      "preserved": true,
+      "query_fields": [
+        "f0"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 73,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 74,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 75,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 76,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 77,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 78,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 79,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 80,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 81,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 82,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 83,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 84,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 85,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 86,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 87,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 88,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3"
+      ],
+      "summary_fields": [
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 89,
+      "preserved": true,
+      "query_fields": [
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 90,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 91,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 92,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 93,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 94,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 95,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 96,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 97,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 98,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 99,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 100,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 101,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 102,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 103,
+      "preserved": true,
+      "query_fields": [
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 104,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 105,
+      "preserved": true,
+      "query_fields": [
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 106,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 107,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 108,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 109,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 110,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 111,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 112,
+      "preserved": true,
+      "query_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 113,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 114,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 115,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 116,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 117,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 118,
+      "preserved": true,
+      "query_fields": [
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 119,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 120,
+      "preserved": true,
+      "query_fields": [
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 121,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 122,
+      "preserved": true,
+      "query_fields": [
+        "f0"
+      ],
+      "summary_fields": [
+        "f1"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 123,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 124,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 125,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 126,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 127,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 128,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 129,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 130,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 131,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 132,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 133,
+      "preserved": true,
+      "query_fields": [
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 134,
+      "preserved": true,
+      "query_fields": [
+        "f1"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 135,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 136,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 137,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 138,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 139,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 140,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 141,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 142,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 143,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 144,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 145,
+      "preserved": true,
+      "query_fields": [
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 146,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 147,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 148,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 149,
+      "preserved": true,
+      "query_fields": [
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 150,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 151,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 152,
+      "preserved": true,
+      "query_fields": [
+        "f0"
+      ],
+      "summary_fields": [
+        "f1"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 153,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 154,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 155,
+      "preserved": true,
+      "query_fields": [
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 156,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 157,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 158,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 159,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 160,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 161,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 162,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 163,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 164,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 165,
+      "preserved": true,
+      "query_fields": [
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 166,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 167,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 168,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 169,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 170,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 171,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 172,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 173,
+      "preserved": true,
+      "query_fields": [
+        "f1"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 174,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 175,
+      "preserved": true,
+      "query_fields": [
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 176,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 177,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 178,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 179,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 180,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 181,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 182,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 183,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 184,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 185,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 186,
+      "preserved": true,
+      "query_fields": [
+        "f0"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 187,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 188,
+      "preserved": true,
+      "query_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 189,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 190,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 191,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 192,
+      "preserved": true,
+      "query_fields": [
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 193,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 194,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 195,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 196,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 197,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1"
+      ],
+      "summary_fields": [
+        "f0"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 198,
+      "preserved": true,
+      "query_fields": [
+        "f0"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 199,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 200,
+      "preserved": true,
+      "query_fields": [
+        "f0"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 201,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 202,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 203,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3"
+      ],
+      "summary_fields": [
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 204,
+      "preserved": true,
+      "query_fields": [
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 205,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 206,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 207,
+      "preserved": true,
+      "query_fields": [
+        "f0"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 208,
+      "preserved": true,
+      "query_fields": [
+        "f1"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 209,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 210,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 211,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 212,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 213,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 214,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 215,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 216,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 217,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 218,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 219,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 220,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 221,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 222,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f1",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 223,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": []
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 224,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 225,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 226,
+      "preserved": true,
+      "query_fields": [
+        "f3"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 227,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 228,
+      "preserved": true,
+      "query_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 229,
+      "preserved": true,
+      "query_fields": [
+        "f2"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 230,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 231,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 232,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 233,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 234,
+      "preserved": true,
+      "query_fields": [
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 235,
+      "preserved": true,
+      "query_fields": [
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 236,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 237,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 238,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 239,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 240,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 241,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 242,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 243,
+      "preserved": true,
+      "query_fields": [
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 244,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 245,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f4"
+      ],
+      "summary_fields": [
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 246,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 247,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 248,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 249,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f2"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 250,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "eligible",
+      "commit_match": true,
+      "expected": "eligible",
+      "instance": 251,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1",
+        "f2",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 252,
+      "preserved": true,
+      "query_fields": [
+        "f3"
+      ],
+      "summary_fields": [
+        "f2",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 253,
+      "preserved": true,
+      "query_fields": [
+        "f2",
+        "f3"
+      ],
+      "summary_fields": [
+        "f0",
+        "f1"
+      ]
+    },
+    {
+      "actual": "QV8-04",
+      "commit_match": true,
+      "expected": "QV8-04",
+      "instance": 254,
+      "preserved": true,
+      "query_fields": [
+        "f1",
+        "f2"
+      ],
+      "summary_fields": [
+        "f0",
+        "f3",
+        "f4"
+      ]
+    },
+    {
+      "actual": "QV8-03",
+      "commit_match": false,
+      "expected": "QV8-03",
+      "instance": 255,
+      "preserved": true,
+      "query_fields": [
+        "f0",
+        "f4"
+      ],
+      "summary_fields": []
+    }
+  ],
+  "transcript_digest": "sha256:4b0e92ad9c028a4cea4445ddc5ed35f584b89ae46a06c7d3fc9ff9149f5cedac"
+}

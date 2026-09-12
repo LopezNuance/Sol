@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-009",
+  "description": "Materialized semantic assessment queried as ordinary data.",
+  "expected_diagnostics": []
+}

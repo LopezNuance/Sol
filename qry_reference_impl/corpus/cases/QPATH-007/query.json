@@ -1,0 +1,115 @@
+{
+  "description": "The duplicated stochastic call: the optimizer duplicates an inline stochastic evaluator.",
+  "extensions": [
+    "urn:qry:v0.3:semantic-evaluator-barrier"
+  ],
+  "nodes": [
+    {
+      "id": "ru",
+      "op": "read",
+      "source": "users"
+    },
+    {
+      "evaluation_key": {
+        "assessment_policy": "policy:internal_assessment",
+        "authorization_policy": "policy:internal_authorized",
+        "configuration_digest": "digest:sha256:06d52fb46e55bdf4e92d7a501355f668cb737f5452f17e46a9e6b207b6bd4ece",
+        "evaluator_id": "sol:evaluator/vector_similarity/v1",
+        "input_digests": [
+          "digest:sha256:646351ee1ddd222ff27d188167219b1cdff4fb55f59bcac7db386528d38ee2e6"
+        ],
+        "leakage_policy": "policy:internal_standard",
+        "model_id": "provider/model",
+        "model_version": "2026-07-01",
+        "output_schema": "object:sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+        "prompt_template_digest": "digest:sha256:81a906e5101b1ffb893e24feb6d31e670d8a19694a6c2ab77c8f0a4ee222eb9d",
+        "random_seed": 48191,
+        "service_version": "v2026.07",
+        "source_commit": "commit:commit_042",
+        "tool_policy_digest": "digest:sha256:f6f896a98beff6056192ecbba23fe4fb9435b9768cd4d4d1add23086ea0e889b",
+        "visibility_policy": "policy:internal_full"
+      },
+      "evaluator": "sol:evaluator/vector_similarity/v1",
+      "id": "e1",
+      "input": "ru",
+      "mode": "heuristic",
+      "op": "evaluate"
+    },
+    {
+      "evaluation_key": {
+        "assessment_policy": "policy:internal_assessment",
+        "authorization_policy": "policy:internal_authorized",
+        "configuration_digest": "digest:sha256:06d52fb46e55bdf4e92d7a501355f668cb737f5452f17e46a9e6b207b6bd4ece",
+        "evaluator_id": "sol:evaluator/vector_similarity/v1",
+        "input_digests": [
+          "digest:sha256:646351ee1ddd222ff27d188167219b1cdff4fb55f59bcac7db386528d38ee2e6"
+        ],
+        "leakage_policy": "policy:internal_standard",
+        "model_id": "provider/model",
+        "model_version": "2026-07-01",
+        "output_schema": "object:sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+        "prompt_template_digest": "digest:sha256:81a906e5101b1ffb893e24feb6d31e670d8a19694a6c2ab77c8f0a4ee222eb9d",
+        "random_seed": 48191,
+        "service_version": "v2026.07",
+        "source_commit": "commit:commit_042",
+        "tool_policy_digest": "digest:sha256:f6f896a98beff6056192ecbba23fe4fb9435b9768cd4d4d1add23086ea0e889b",
+        "visibility_policy": "policy:internal_full"
+      },
+      "evaluator": "sol:evaluator/vector_similarity/v1",
+      "id": "e2",
+      "input": "ru",
+      "mode": "heuristic",
+      "op": "evaluate"
+    },
+    {
+      "id": "j",
+      "join_type": "inner",
+      "left": "e1",
+      "on": [
+        {
+          "left": "id",
+          "right": "id"
+        }
+      ],
+      "op": "join",
+      "right": "e2"
+    }
+  ],
+  "query_id": "QPATH-007",
+  "required_dimensions": [
+    "value",
+    "evaluation_identity"
+  ],
+  "root": "j",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "users": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ],
+        [
+          3,
+          "c"
+        ]
+      ]
+    }
+  }
+}

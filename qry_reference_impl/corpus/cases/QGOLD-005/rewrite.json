@@ -1,0 +1,6 @@
+{
+  "covering_proof": "object:sha256:085a1903ddeb94a20446627f14b318f3995dc66bf1f451c0d4ce72b9f4ee306c",
+  "location": "node:f",
+  "rule_id": "sol:rewrite/substitute_exact_machine_summary/v1",
+  "source_commit": "object:sha256:a5d9bc662b5b2b05a5cce9ffb88cfc10f2e6e94f1ea78caad2e0ed46aef0a95f"
+}

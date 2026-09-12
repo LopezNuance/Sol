@@ -1,0 +1,49 @@
+{
+  "description": "Bounded result carries membership provenance for lower tuples and bound-derivation provenance for the upper relation.",
+  "nodes": [
+    {
+      "id": "ru",
+      "op": "read",
+      "source": "users"
+    }
+  ],
+  "query_id": "QGOLD-018",
+  "root": "ru",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "users": {
+      "lower": {
+        "tuples": [
+          [
+            1,
+            "a"
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            1,
+            "a"
+          ],
+          [
+            2,
+            "b"
+          ]
+        ]
+      }
+    }
+  }
+}

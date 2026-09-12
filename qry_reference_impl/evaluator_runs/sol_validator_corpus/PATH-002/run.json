@@ -1,0 +1,33 @@
+{
+  "actor_id": "tool:sol_query_engine",
+  "assurance": {
+    "depends_on": [
+      "records"
+    ],
+    "effective_status": "validated",
+    "evidence": [
+      "object:sha256:b488e17138ca249e89ecd3307a400bef548e3cc3806e5d4a28414e6a40ea2ed9"
+    ],
+    "status": "validated"
+  },
+  "continuation": null,
+  "guarantee": {
+    "kind": "exact",
+    "result_object": "object:sha256:8c7cf6c168ede119934610c752029a6e147f172928e1341f8d0b0e5b05e470eb"
+  },
+  "logical_rewrites": [],
+  "provenance_mode": "tuple",
+  "query_digest": "digest:sha256:a02459905c0cc3b6ca84b776edac68bc656a0db8e40ccffea00342611802e40f",
+  "query_ref": "record:query_solqry-record-census",
+  "query_run_id": "qrun:sol_validator_corpus:PATH-002",
+  "resource_usage": {
+    "object_bytes_read": 0,
+    "records_read": 5,
+    "semantic_evaluations": 0,
+    "wall_time_ms": 0
+  },
+  "rows_returned": 5,
+  "schema_version": "qry.execution.v0.3",
+  "source_manifest": "object:sha256:b488e17138ca249e89ecd3307a400bef548e3cc3806e5d4a28414e6a40ea2ed9",
+  "status": "complete"
+}

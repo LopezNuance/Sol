@@ -1,0 +1,4 @@
+{
+  "location": "node:j2",
+  "rule_id": "sol:rewrite/associate_exact_join/v1"
+}

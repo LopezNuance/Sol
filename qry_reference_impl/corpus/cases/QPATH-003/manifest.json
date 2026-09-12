@@ -1,0 +1,9 @@
+{
+  "case_id": "QPATH-003",
+  "description": "The false exact result: approximate nearest-neighbor retrieval returns top-k rows labeled exact.",
+  "expected_diagnostics": [
+    "QINV-06",
+    "QV5-03",
+    "QV8-06"
+  ]
+}

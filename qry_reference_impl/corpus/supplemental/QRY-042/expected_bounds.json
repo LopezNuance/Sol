@@ -1,0 +1,145 @@
+{
+  "node_bounds": {
+    "j": {
+      "fields": [
+        {
+          "name": "left.id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "left.name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "left.country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "left.active",
+          "nullable": false,
+          "type": "bool"
+        },
+        {
+          "name": "right.user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "right.tier",
+          "nullable": true,
+          "type": "string"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "unique_keys": []
+    },
+    "p": {
+      "fields": [
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "tier",
+          "nullable": true,
+          "type": "string"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "user_id"
+        ]
+      ]
+    },
+    "u": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "active",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "id"
+        ]
+      ]
+    }
+  },
+  "query_id": "QRY-042",
+  "root": "j",
+  "root_bound": {
+    "fields": [
+      {
+        "name": "left.id",
+        "nullable": false,
+        "type": "i64"
+      },
+      {
+        "name": "left.name",
+        "nullable": false,
+        "type": "string"
+      },
+      {
+        "name": "left.country",
+        "nullable": true,
+        "type": "string"
+      },
+      {
+        "name": "left.active",
+        "nullable": false,
+        "type": "bool"
+      },
+      {
+        "name": "right.user_id",
+        "nullable": false,
+        "type": "i64"
+      },
+      {
+        "name": "right.tier",
+        "nullable": true,
+        "type": "string"
+      }
+    ],
+    "order": [],
+    "rows": {
+      "max": 1000,
+      "min": 0
+    },
+    "unique_keys": []
+  },
+  "schema_version": "qry.bounds.v0.1"
+}

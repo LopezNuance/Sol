@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-019",
+  "description": "The average fiction: AVG over an inexact relation is labeled with a scalar lower_bound without a registered interval rule.",
+  "expected_diagnostics": [
+    "QV5-06",
+    "QV5-12"
+  ]
+}

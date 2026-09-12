@@ -1,0 +1,147 @@
+{
+  "query_id": "QGOLD-003",
+  "root": "f",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "sol:bound/least_fixpoint/v1",
+        "source:edges",
+        "source:roots"
+      ],
+      "evidence": [
+        "source:edges",
+        "source:roots"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/least_fixpoint/v1",
+    "guarantee": "exact",
+    "intervals": [],
+    "lower": {
+      "fields": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    "lower_object": "object:sha256:3a46da9cb0b273481f9351bb97a07d086a070018fe9853fa05fcf2d137de599b",
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            6
+          ]
+        },
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            1
+          ]
+        },
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            2
+          ]
+        },
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            5
+          ]
+        },
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            3
+          ]
+        },
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            4
+          ]
+        }
+      ],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [
+          "object:sha256:8669a5dc594a3f034c9dd6350678c2b8cc7b363e3adba66608e7d1c918e1b87c",
+          "object:sha256:c1034cca2c5916dbf1d8db5a931c8d4d05997dff383e6dec95624815f9dd6080"
+        ],
+        "rewrites": [],
+        "rule_id": "sol:bound/least_fixpoint/v1",
+        "sources": [
+          "source:edges",
+          "source:roots"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": "object:sha256:3a46da9cb0b273481f9351bb97a07d086a070018fe9853fa05fcf2d137de599b",
+    "upper": {
+      "fields": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ],
+        [
+          5
+        ],
+        [
+          6
+        ]
+      ]
+    },
+    "upper_object": "object:sha256:3a46da9cb0b273481f9351bb97a07d086a070018fe9853fa05fcf2d137de599b"
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

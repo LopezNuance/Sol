@@ -1,10 +1,15 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "sol:schemas/diagnostic/v0.1",
+  "$id": "sol:schemas/diagnostic/v0.2",
+  "title": "Sol diagnostic (RFC-SOL-0001, published v0.2)",
+  "description": "Normative diagnostic schema. Diagnostics carry stable rule IDs so they remain diffable across validator versions (RFC Appendix A). Committed diagnostics (Level 2) are stored in diagnostics.json in the exploded representation.",
   "type": "object",
   "required": ["rule_id", "category", "severity", "target", "message"],
   "properties": {
-    "rule_id": {"type": "string"},
+    "rule_id": {
+      "type": "string",
+      "pattern": "^V[0-9]-[0-9]{2}$"
+    },
     "category": {"type": "string"},
     "severity": {"enum": ["error", "warning", "info"]},
     "target": {"type": "string"},

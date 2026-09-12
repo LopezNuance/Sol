@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-021",
+  "description": "A policy-boundary rewrite with an explicit accepted disclosure proof is applied and recorded.",
+  "expected_diagnostics": []
+}

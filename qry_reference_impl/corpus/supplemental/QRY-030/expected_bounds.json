@@ -1,0 +1,115 @@
+{
+  "node_bounds": {
+    "p": {
+      "fields": [
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "unique_keys": []
+    },
+    "r": {
+      "fields": [
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "active",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "id"
+        ]
+      ]
+    },
+    "u": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "active",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "id"
+        ]
+      ]
+    }
+  },
+  "query_id": "QRY-030",
+  "root": "p",
+  "root_bound": {
+    "fields": [
+      {
+        "name": "user_id",
+        "nullable": false,
+        "type": "i64"
+      },
+      {
+        "name": "country",
+        "nullable": true,
+        "type": "string"
+      }
+    ],
+    "order": [],
+    "rows": {
+      "max": 1000,
+      "min": 0
+    },
+    "unique_keys": []
+  },
+  "schema_version": "qry.bounds.v0.1"
+}

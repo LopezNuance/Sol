@@ -1,0 +1,109 @@
+{
+  "node_bounds": {
+    "f": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "active",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 500,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "id"
+        ]
+      ]
+    },
+    "u": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "active",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "id"
+        ]
+      ]
+    }
+  },
+  "query_id": "QRY-004",
+  "root": "f",
+  "root_bound": {
+    "fields": [
+      {
+        "name": "id",
+        "nullable": false,
+        "type": "i64"
+      },
+      {
+        "name": "name",
+        "nullable": false,
+        "type": "string"
+      },
+      {
+        "name": "country",
+        "nullable": true,
+        "type": "string"
+      },
+      {
+        "name": "active",
+        "nullable": false,
+        "type": "bool"
+      }
+    ],
+    "order": [],
+    "rows": {
+      "max": 500,
+      "min": 0
+    },
+    "unique_keys": [
+      [
+        "id"
+      ]
+    ]
+  },
+  "schema_version": "qry.bounds.v0.1"
+}

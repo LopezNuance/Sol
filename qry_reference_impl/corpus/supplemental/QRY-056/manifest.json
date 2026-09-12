@@ -1,0 +1,7 @@
+{
+  "case_id": "QRY-056",
+  "description": "unknown op",
+  "expected_diagnostics": [
+    "QRY-SEM-010"
+  ]
+}

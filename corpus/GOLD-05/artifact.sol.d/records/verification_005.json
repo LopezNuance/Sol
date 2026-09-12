@@ -1,0 +1,23 @@
+{
+  "concordance": {
+    "metric": "eos_rate_delta",
+    "tolerance": 0.001,
+    "type": "tolerance"
+  },
+  "created_at": "2026-01-01T00:10:00Z",
+  "evidence": [
+    "run:run_008",
+    "object:sha256:04e8bd270c0c885f199658780837b8be5bba7de37a3e8701ffd33c3e0b3127a3"
+  ],
+  "method": "sol:verify/reexecution",
+  "performed_by": "tool:sol_executor",
+  "record_id": "verification_005",
+  "record_type": "sol:record/verification",
+  "result": "passed",
+  "status": {
+    "lifecycle": "active",
+    "staleness": "current",
+    "verification": "unverified"
+  },
+  "target": "record:claim_007"
+}

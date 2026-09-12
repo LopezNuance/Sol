@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-002",
+  "description": "The semantic equality forgery: vector similarity is substituted for exact `=`.",
+  "expected_diagnostics": [
+    "QINV-04",
+    "QV6-04"
+  ]
+}

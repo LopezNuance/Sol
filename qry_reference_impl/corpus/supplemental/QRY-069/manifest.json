@@ -1,0 +1,7 @@
+{
+  "case_id": "QRY-069",
+  "description": "missing certificate",
+  "expected_diagnostics": [
+    "QRY-CERT-000"
+  ]
+}

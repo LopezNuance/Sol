@@ -1,0 +1,57 @@
+{
+  "description": "The open-world negation: exact NOT EXISTS is used against externally incomplete evidence.",
+  "nodes": [
+    {
+      "id": "rl",
+      "op": "read",
+      "source": "left"
+    },
+    {
+      "id": "rr",
+      "op": "read",
+      "source": "right"
+    },
+    {
+      "id": "d",
+      "inputs": [
+        "rl",
+        "rr"
+      ],
+      "op": "difference"
+    }
+  ],
+  "query_id": "QPATH-004",
+  "root": "d",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "left": {
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ]
+      ]
+    },
+    "right": {
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ]
+    }
+  }
+}

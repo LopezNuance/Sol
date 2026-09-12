@@ -1,5 +1,5 @@
 {
-  "comment": "accepted",
+  "comment": "Accepted. Rerun downstream plots after applying.",
   "created_at": "2026-01-01T00:00:00Z",
   "proposal_id": "record:proposal_003",
   "record_id": "review_004",
@@ -10,5 +10,6 @@
     "lifecycle": "active",
     "staleness": "current",
     "verification": "unverified"
-  }
+  },
+  "summary": "Review of proposal_003."
 }

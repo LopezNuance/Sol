@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-021",
+  "description": "The unregistered rewrite: optimizer applies a transformation with no rule ID.",
+  "expected_diagnostics": [
+    "QV7-01"
+  ]
+}

@@ -1,0 +1,4 @@
+{
+  "location": "node:p",
+  "rule_id": "sol:rewrite/prune_exact_projection/v1"
+}

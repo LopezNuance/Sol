@@ -1,0 +1,109 @@
+{
+  "node_bounds": {
+    "c": {
+      "fields": [
+        {
+          "name": "country",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "region",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 250,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "country"
+        ]
+      ]
+    },
+    "l": {
+      "fields": [
+        {
+          "name": "country",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "region",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "order": [
+        "region"
+      ],
+      "rows": {
+        "max": 100,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "country"
+        ]
+      ]
+    },
+    "s": {
+      "fields": [
+        {
+          "name": "country",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "region",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "order": [
+        "region"
+      ],
+      "rows": {
+        "max": 250,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "country"
+        ]
+      ]
+    }
+  },
+  "query_id": "QRY-029",
+  "root": "l",
+  "root_bound": {
+    "fields": [
+      {
+        "name": "country",
+        "nullable": false,
+        "type": "string"
+      },
+      {
+        "name": "region",
+        "nullable": false,
+        "type": "string"
+      }
+    ],
+    "order": [
+      "region"
+    ],
+    "rows": {
+      "max": 100,
+      "min": 0
+    },
+    "unique_keys": [
+      [
+        "country"
+      ]
+    ]
+  },
+  "schema_version": "qry.bounds.v0.1"
+}

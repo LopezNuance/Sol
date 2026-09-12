@@ -1,0 +1,44 @@
+{
+  "description": "The unordered top ten: LIMIT 10 is committed without deterministic ordering.",
+  "nodes": [
+    {
+      "id": "rv",
+      "op": "read",
+      "source": "vals"
+    },
+    {
+      "id": "l",
+      "input": "rv",
+      "limit": 10,
+      "op": "limit"
+    }
+  ],
+  "query_id": "QPATH-006",
+  "root": "l",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "vals": {
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ],
+        [
+          3
+        ],
+        [
+          4
+        ]
+      ]
+    }
+  }
+}

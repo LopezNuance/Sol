@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-045",
+  "description": "The unpartitionable reassociation: the outer join's on-condition names a field of the right input, so the conditions do not partition over the inner join.",
+  "expected_diagnostics": [
+    "QV7-02"
+  ]
+}

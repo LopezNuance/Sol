@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-006",
+  "description": "Bounded union with correctly propagated lower and upper relations.",
+  "expected_diagnostics": []
+}

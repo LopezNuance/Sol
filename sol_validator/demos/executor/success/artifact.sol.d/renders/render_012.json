@@ -1,0 +1,11 @@
+{
+  "created_at": "2026-01-01T00:10:00Z",
+  "includes_records": [
+    "record:claim_007"
+  ],
+  "output_object": "object:sha256:440084ecec608ee504983c736a1126c36fbccdd3efa377e27f6edf883f7b1fa8",
+  "render_id": "render_012",
+  "source_commit": "commit:commit_042",
+  "stale_disclosures": [],
+  "target": "html"
+}

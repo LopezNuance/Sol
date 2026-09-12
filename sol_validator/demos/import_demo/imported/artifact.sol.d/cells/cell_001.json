@@ -1,0 +1,9 @@
+{
+  "actor_id": "human:alice",
+  "cell_id": "cell_001",
+  "cell_type": "sol:cell/prose",
+  "source": "# Checkpoint comparison\nInitial analysis (imported from Jupyter).",
+  "source_hash": "digest:sha256:012ec4d02f5373f46803053d8a3acb0ef6defaa11419aa856ee98e09dde4bd1d",
+  "summary": "Imported markdown cell 1 from sample.ipynb (provenance incomplete).",
+  "title": "Imported cell 1"
+}

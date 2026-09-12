@@ -1,0 +1,113 @@
+{
+  "query_id": "QGOLD-014",
+  "root": "e1",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "sol:bound/structural_containment/v1",
+        "source:users"
+      ],
+      "evidence": [
+        "source:users"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/structural_containment/v1",
+    "guarantee": "bounded",
+    "intervals": [],
+    "lower": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          3,
+          "c"
+        ]
+      ]
+    },
+    "lower_object": "object:sha256:4eeea268579e5c90876907469af75c4be4b561e6fdc3ba342e034ad5c1299102",
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            3,
+            "c"
+          ]
+        },
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            1,
+            "a"
+          ]
+        }
+      ],
+      "upper_derivation": {
+        "evaluators": [
+          "sol:evaluator/positive_classifier/v1"
+        ],
+        "input_relations": [
+          "object:sha256:9fbe511977a778ee39d74fedf17ed1e6070bd19b322856493b9e2fe3bb757772"
+        ],
+        "rewrites": [],
+        "rule_id": "sol:bound/structural_containment/v1",
+        "sources": [
+          "source:users"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": null,
+    "upper": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ],
+        [
+          3,
+          "c"
+        ]
+      ]
+    },
+    "upper_object": "object:sha256:9fbe511977a778ee39d74fedf17ed1e6070bd19b322856493b9e2fe3bb757772"
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

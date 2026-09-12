@@ -1,0 +1,12 @@
+{
+  "actor_id": "human:alice",
+  "cell_id": "cell_010",
+  "cell_type": "sol:cell/config",
+  "depends_on": [
+    "cell:cell_001"
+  ],
+  "source": "delta_tie = 0.02",
+  "source_hash": "digest:sha256:8c386e8a598092c5d11d1834419ebfd44df45a48c4da27b2a86468282f9c9f06",
+  "summary": "Defines evaluation thresholds.",
+  "title": "Config"
+}

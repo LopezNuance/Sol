@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-006",
+  "description": "The unordered top ten: LIMIT 10 is committed without deterministic ordering.",
+  "expected_diagnostics": [
+    "QV3-04"
+  ]
+}

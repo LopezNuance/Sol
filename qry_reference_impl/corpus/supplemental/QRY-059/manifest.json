@@ -1,0 +1,7 @@
+{
+  "case_id": "QRY-059",
+  "description": "expected bounds wrong",
+  "expected_diagnostics": [
+    "QRY-BOUND-001"
+  ]
+}

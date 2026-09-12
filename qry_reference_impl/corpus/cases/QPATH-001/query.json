@@ -1,0 +1,30 @@
+{
+  "description": "The moving branch: query begins on branch main but records no resolved commit.",
+  "nodes": [
+    {
+      "id": "ru",
+      "op": "read",
+      "source": "users"
+    }
+  ],
+  "query_id": "QPATH-001",
+  "root": "ru",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "users": {
+      "branch": "main",
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ]
+    }
+  }
+}

@@ -35,6 +35,8 @@ class Artifact:
     runs: dict[str, dict[str, Any]] = field(default_factory=dict)
     commits: dict[str, dict[str, Any]] = field(default_factory=dict)
     renders: dict[str, dict[str, Any]] = field(default_factory=dict)
+    diagnostics: list[dict[str, Any]] = field(default_factory=list)
+    object_records: dict[str, dict[str, Any]] = field(default_factory=dict)
     expected: dict[str, Any] = field(default_factory=dict)
 
     @classmethod
@@ -53,6 +55,17 @@ class Artifact:
         art.runs = _load_json_dir(root / "runs", "run_id")
         art.commits = _load_json_dir(root / "commits", "commit_id")
         art.renders = _load_json_dir(root / "renders", "render_id")
+        diag_path = root / "diagnostics.json"
+        if diag_path.exists():
+            loaded = _load_json_file(diag_path)
+            art.diagnostics = loaded if isinstance(loaded, list) else []
+        orec_dir = root / "objects" / "records"
+        if orec_dir.exists():
+            for p in sorted(orec_dir.glob("*.json")):
+                obj = _load_json_file(p)
+                if isinstance(obj, dict) and isinstance(obj.get("object_id"), str):
+                    digest = obj["object_id"].rsplit(":", 1)[-1]
+                    art.object_records[digest] = obj
         exp_path = root / "expected_diagnostics.json"
         if exp_path.exists():
             art.expected = _load_json_file(exp_path)

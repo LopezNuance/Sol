@@ -1,0 +1,81 @@
+{
+  "node_bounds": {
+    "a": {
+      "fields": [
+        {
+          "name": "total",
+          "nullable": true,
+          "type": "decimal"
+        },
+        {
+          "name": "n",
+          "nullable": true,
+          "type": "i64"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1,
+        "min": 1
+      },
+      "unique_keys": []
+    },
+    "o": {
+      "fields": [
+        {
+          "name": "order_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "amount",
+          "nullable": false,
+          "type": "decimal"
+        },
+        {
+          "name": "status",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 5000,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "order_id"
+        ]
+      ]
+    }
+  },
+  "query_id": "QRY-038",
+  "root": "a",
+  "root_bound": {
+    "fields": [
+      {
+        "name": "total",
+        "nullable": true,
+        "type": "decimal"
+      },
+      {
+        "name": "n",
+        "nullable": true,
+        "type": "i64"
+      }
+    ],
+    "order": [],
+    "rows": {
+      "max": 1,
+      "min": 1
+    },
+    "unique_keys": []
+  },
+  "schema_version": "qry.bounds.v0.1"
+}

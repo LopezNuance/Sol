@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/qry/schemas/qry_certificate.schema.json",
+  "title": "QRY Proof Certificate v0.1",
+  "type": "object",
+  "required": ["schema_version", "query_id", "root", "steps", "final_bound"],
+  "properties": {
+    "schema_version": {"const": "qry.certificate.v0.1"},
+    "query_id": {"type": "string"},
+    "case_id": {"type": ["string", "null"]},
+    "root": {"type": "string"},
+    "steps": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["node_id", "op", "rule", "input_nodes", "bound"],
+        "properties": {
+          "node_id": {"type": "string"},
+          "op": {"type": "string"},
+          "rule": {"type": "string"},
+          "input_nodes": {"type": "array", "items": {"type": "string"}},
+          "bound": {"type": "object"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "final_bound": {"type": "object"}
+  },
+  "additionalProperties": false
+}

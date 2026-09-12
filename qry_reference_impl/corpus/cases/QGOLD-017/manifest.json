@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-017",
+  "description": "Positive recursive lower and upper fixed points feed a stratified difference with correctly swapped negative sides.",
+  "expected_diagnostics": []
+}

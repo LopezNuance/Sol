@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-010",
+  "description": "The unresolved object masquerade: a named output is compared directly to an immutable object reference.",
+  "expected_diagnostics": [
+    "QV0-03"
+  ]
+}

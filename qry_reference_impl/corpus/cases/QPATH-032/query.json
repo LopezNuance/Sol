@@ -1,0 +1,67 @@
+{
+  "description": "The top-k certainty illusion: an upper-bounded input is sorted and limited without a position-certainty rule.",
+  "nodes": [
+    {
+      "id": "rv",
+      "op": "read",
+      "source": "vals"
+    },
+    {
+      "by": [
+        "v"
+      ],
+      "id": "s",
+      "input": "rv",
+      "op": "sort"
+    },
+    {
+      "id": "l",
+      "input": "s",
+      "limit": 2,
+      "op": "limit"
+    }
+  ],
+  "query_id": "QPATH-032",
+  "root": "l",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "vals": {
+      "lower": {
+        "tuples": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    }
+  }
+}

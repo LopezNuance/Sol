@@ -1,0 +1,7 @@
+{
+  "compression": "sol:compression/gzip",
+  "created_by": "human:alice",
+  "mime_type": "application/spdx+json",
+  "object_id": "object:sha256:ac1b5e1c2c9c09328bd49a3df5ae835be947501d5c9b81976fca0ef56da52208",
+  "size_bytes": 16
+}

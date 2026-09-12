@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-046",
+  "description": "The needless union normalization: a flat union of distinct inputs is claimed normalizable.",
+  "expected_diagnostics": [
+    "QV7-02"
+  ]
+}

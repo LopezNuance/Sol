@@ -1,0 +1,579 @@
+{
+  "$defs": {
+    "relation": {
+      "additionalProperties": false,
+      "properties": {
+        "commit": {
+          "description": "Commit the side relation was materialized from (QV1-05).",
+          "type": "string"
+        },
+        "tuples": {
+          "items": {
+            "type": "array"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "tuples"
+      ],
+      "type": "object"
+    }
+  },
+  "$id": "https://example.org/qry/schemas/qry_query.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "description": {
+      "type": "string"
+    },
+    "extensions": {
+      "items": {
+        "pattern": "^urn:qry:v0\\.[0-9]+:[a-z0-9-]+$",
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "leakage_policy": {
+      "additionalProperties": false,
+      "description": "The logical-disclosure and leakage policy the query executes under (32.1-32.6); part of the query identity (29.4).",
+      "properties": {
+        "count_buckets": {
+          "description": "Count-bucket partition for bucketed cardinality (32.4, 32.5): 'N', 'A-B', 'N+' or 'more_than_N'; must start at 0, be contiguous, and be open at the top.",
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        },
+        "logical_disclosure": {
+          "additionalProperties": false,
+          "properties": {
+            "cardinality": {
+              "enum": [
+                "disclosed",
+                "bucketed",
+                "suppressed"
+              ],
+              "type": "string"
+            },
+            "diagnostics": {
+              "enum": [
+                "uniform",
+                "visible"
+              ],
+              "type": "string"
+            },
+            "error_class": {
+              "enum": [
+                "uniform",
+                "visible"
+              ],
+              "type": "string"
+            },
+            "provenance": {
+              "enum": [
+                "visible",
+                "redacted",
+                "suppressed"
+              ],
+              "type": "string"
+            },
+            "semantic_assessment_visibility": {
+              "enum": [
+                "visible",
+                "suppressed"
+              ],
+              "type": "string"
+            },
+            "tuple_existence": {
+              "enum": [
+                "visible",
+                "no_disclosure"
+              ],
+              "type": "string"
+            },
+            "unauthorized_reference_behavior": {
+              "enum": [
+                "indistinguishable_from_missing",
+                "distinguishable"
+              ],
+              "type": "string"
+            },
+            "values": {
+              "enum": [
+                "visible",
+                "redacted",
+                "no_disclosure"
+              ],
+              "type": "string"
+            }
+          },
+          "required": [
+            "values",
+            "tuple_existence",
+            "cardinality",
+            "provenance",
+            "diagnostics",
+            "error_class",
+            "unauthorized_reference_behavior"
+          ],
+          "type": "object"
+        },
+        "non_inference_profile": {
+          "additionalProperties": false,
+          "description": "A conforming non-inference profile (32.6): adversary model, allowed query history, leakage channels, and verification method.",
+          "properties": {
+            "adversary_model": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "leakage_channels": {
+              "items": {
+                "type": "string"
+              },
+              "minItems": 1,
+              "type": "array"
+            },
+            "query_history": {
+              "minLength": 1,
+              "type": "string"
+            },
+            "verification_method": {
+              "minLength": 1,
+              "type": "string"
+            }
+          },
+          "required": [
+            "adversary_model",
+            "query_history",
+            "leakage_channels",
+            "verification_method"
+          ],
+          "type": "object"
+        },
+        "physical_side_channels": {
+          "additionalProperties": {
+            "enum": [
+              "suppressed",
+              "best_effort",
+              "visible",
+              "not_claimed"
+            ],
+            "type": "string"
+          },
+          "description": "Declared physical side-channel protection (32.3, 32.10); a logical rewrite never claims these (QV7-09/QV9-10).",
+          "type": "object"
+        },
+        "policy_id": {
+          "pattern": "^policy:[a-z0-9_]+$",
+          "type": "string"
+        },
+        "residual_risk": {
+          "items": {
+            "type": "string"
+          },
+          "type": "array"
+        }
+      },
+      "required": [
+        "policy_id",
+        "logical_disclosure"
+      ],
+      "type": "object"
+    },
+    "nodes": {
+      "items": {
+        "additionalProperties": true,
+        "properties": {
+          "aggregates": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "by": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "fields": {
+            "items": {
+              "additionalProperties": true,
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "group_by": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "id": {
+            "type": "string"
+          },
+          "input": {
+            "type": "string"
+          },
+          "inputs": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "join_type": {
+            "type": "string"
+          },
+          "keys": {
+            "items": {
+              "type": "string"
+            },
+            "type": "array"
+          },
+          "left": {
+            "type": "string"
+          },
+          "limit": {
+            "type": "integer"
+          },
+          "mapping": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "type": "object"
+          },
+          "on": {
+            "anyOf": [
+              {
+                "description": "Join conditions: a list of left/right field pairs.",
+                "items": {
+                  "additionalProperties": true,
+                  "type": "object"
+                },
+                "type": "array"
+              },
+              {
+                "additionalProperties": true,
+                "description": "Least-fixpoint edge orientation: a single left/right field pair.",
+                "type": "object"
+              }
+            ]
+          },
+          "op": {
+            "type": "string"
+          },
+          "predicate": {
+            "additionalProperties": true,
+            "properties": {
+              "expr": {
+                "type": "string"
+              },
+              "max_selectivity": {
+                "type": "number"
+              },
+              "min_selectivity": {
+                "type": "number"
+              }
+            },
+            "type": "object"
+          },
+          "relationship": {
+            "type": "string"
+          },
+          "right": {
+            "type": "string"
+          },
+          "source": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "id",
+          "op"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "query_id": {
+      "minLength": 1,
+      "type": "string"
+    },
+    "required_dimensions": {
+      "description": "Logical-equivalence dimensions the query requires of applied rewrites (27, 29.4).",
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    },
+    "root": {
+      "type": "string"
+    },
+    "schema_version": {
+      "enum": [
+        "qry.query.v0.1",
+        "qry.query.v0.3"
+      ]
+    },
+    "sources": {
+      "additionalProperties": {
+        "additionalProperties": false,
+        "properties": {
+          "approximate": {
+            "description": "Source is an approximate retrieval (QINV-06).",
+            "type": "boolean"
+          },
+          "artifact": {
+            "additionalProperties": false,
+            "properties": {
+              "digest": {
+                "pattern": "^object:sha256:[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "path": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "relation": {
+                "enum": [
+                  "actors",
+                  "cells",
+                  "commits",
+                  "records",
+                  "runs"
+                ]
+              }
+            },
+            "required": [
+              "path",
+              "relation",
+              "digest"
+            ],
+            "type": "object"
+          },
+          "assessment": {
+            "additionalProperties": false,
+            "description": "Materialized semantic assessment record (26.3, 26.7); the source is the immutable assessment relation.",
+            "properties": {
+              "assessment_policy": {
+                "pattern": "^policy:[a-z0-9_]+$"
+              },
+              "authorization_policy": {
+                "pattern": "^policy:[a-z0-9_]+$"
+              },
+              "configuration_digest": {
+                "pattern": "^digest:sha256:[0-9a-f]{64}$"
+              },
+              "created_by": {
+                "type": "string"
+              },
+              "evaluation_id": {
+                "type": "string"
+              },
+              "evaluator_id": {
+                "pattern": "^sol:evaluator/[a-z0-9_]+/v[0-9]+$"
+              },
+              "input_digests": {
+                "items": {
+                  "pattern": "^digest:sha256:[0-9a-f]{64}$"
+                },
+                "type": "array"
+              },
+              "leakage_policy": {
+                "pattern": "^policy:[a-z0-9_]+$"
+              },
+              "model_id": {
+                "type": "string"
+              },
+              "model_version": {
+                "type": "string"
+              },
+              "output_schema": {
+                "pattern": "^object:sha256:[0-9a-f]{64}$"
+              },
+              "result_object": {
+                "pattern": "^object:sha256:[0-9a-f]{64}$"
+              },
+              "source_commit": {
+                "type": "string"
+              },
+              "visibility_policy": {
+                "pattern": "^policy:[a-z0-9_]+$"
+              }
+            },
+            "required": [
+              "evaluation_id",
+              "evaluator_id",
+              "result_object",
+              "created_by"
+            ],
+            "type": "object"
+          },
+          "bag": {
+            "description": "Collection kind is bag; set semantics require an explicit Distinct (QV3-02).",
+            "type": "boolean"
+          },
+          "branch": {
+            "description": "Branch reference; must be resolved to a commit before evaluation (QV1-02).",
+            "type": "string"
+          },
+          "commit": {
+            "description": "Resolved commit pin for the source (QV1-01, QV1-02).",
+            "type": "string"
+          },
+          "latest": {
+            "additionalProperties": false,
+            "description": "Latest-commit selection on a branch (17.5): a branch or lineage, an ancestry relation, and a deterministic tie or conflict rule; wall-clock timestamp alone is not a valid commit resolution (QV1-02).",
+            "properties": {
+              "ancestry": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "branch": {
+                "minLength": 1,
+                "type": "string"
+              },
+              "tie_rule": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "branch"
+            ],
+            "type": "object"
+          },
+          "lower": {
+            "$ref": "#/$defs/relation"
+          },
+          "machine_summary": {
+            "additionalProperties": false,
+            "description": "The source is answered from a committed machine summary (28.3, 28.5); the substitution is recorded with the covering proof and the source-commit pin.",
+            "properties": {
+              "covering_proof": {
+                "pattern": "^object:sha256:[0-9a-f]{64}$",
+                "type": "string"
+              },
+              "source_commit": {
+                "minLength": 1,
+                "type": "string"
+              }
+            },
+            "required": [
+              "covering_proof",
+              "source_commit"
+            ],
+            "type": "object"
+          },
+          "restricted": {
+            "description": "Source is restricted: the query actor is not authorized for its values; the policy's redaction applies (32.5, 32.7).",
+            "type": "boolean"
+          },
+          "rows": {
+            "additionalProperties": false,
+            "properties": {
+              "max": {
+                "anyOf": [
+                  {
+                    "minimum": 0,
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ]
+              },
+              "min": {
+                "minimum": 0,
+                "type": "integer"
+              }
+            },
+            "required": [
+              "min",
+              "max"
+            ],
+            "type": "object"
+          },
+          "schema": {
+            "items": {
+              "additionalProperties": false,
+              "properties": {
+                "kind": {
+                  "description": "Field kind; truth_status fields carry verification status, not proposition truth (QINV-05).",
+                  "enum": [
+                    "truth_status"
+                  ],
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                },
+                "nullable": {
+                  "type": "boolean"
+                },
+                "path": {
+                  "description": "Dot-path into the source object for artifact scans; defaults to name.",
+                  "type": "string"
+                },
+                "type": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "name",
+                "type"
+              ],
+              "type": "object"
+            },
+            "type": "array"
+          },
+          "tuples": {
+            "items": {
+              "type": "array"
+            },
+            "type": "array"
+          },
+          "unbounded": {
+            "description": "Source generates values from an unbounded domain (QV2-05).",
+            "type": "boolean"
+          },
+          "unique_keys": {
+            "items": {
+              "items": {
+                "type": "string"
+              },
+              "type": "array"
+            },
+            "type": "array"
+          },
+          "upper": {
+            "$ref": "#/$defs/relation"
+          }
+        },
+        "required": [
+          "schema"
+        ],
+        "type": "object"
+      },
+      "type": "object"
+    },
+    "stale_dependencies": {
+      "items": {
+        "type": "string"
+      },
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "query_id",
+    "sources",
+    "nodes",
+    "root"
+  ],
+  "title": "QRY Query v0.1",
+  "type": "object"
+}

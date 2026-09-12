@@ -1,0 +1,426 @@
+{
+  "format": "sol-container-benchmark/v1",
+  "purpose": "RFC-SOL-0001 section 59 Q1: benchmark candidate physical containers against REQ-014.1..REQ-014.5",
+  "candidates": {
+    "exploded-dir": "plain directory tree (non-normative debug representation)",
+    "zip-flat": "single-file ZIP, STORED entries, layout mirrors artifact.sol.d",
+    "tar": "single-file tar (sequential; contrast candidate)"
+  },
+  "measurement": "bytes read from the container via counting wrappers; each operation opens the container fresh; amplification = bytes_read / artifact_bytes",
+  "inputs": [
+    {
+      "name": "GOLD-01",
+      "artifact": "sol_validator/corpus/GOLD-01/artifact.sol.d",
+      "synthetic": false,
+      "note": "real corpus artifact",
+      "total_bytes": 12327
+    },
+    {
+      "name": "GOLD-01+16MiB-synthetic",
+      "artifact": "../../../../tmp/solbench-34k9mtvk/artifact.sol.d",
+      "synthetic": true,
+      "note": "GOLD-01 plus a deterministic 16 MiB object (seed 20260907); not part of the corpus",
+      "total_bytes": 16789543
+    }
+  ],
+  "results": {
+    "GOLD-01": {
+      "artifact_bytes": 12327,
+      "file_count": 27,
+      "object_count": 6,
+      "largest_object": {
+        "path": "objects/sha256/d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31",
+        "bytes": 53
+      },
+      "smallest_object": {
+        "path": "objects/sha256/ac1b5e1c2c9c09328bd49a3df5ae835be947501d5c9b81976fca0ef56da52208",
+        "bytes": 16
+      },
+      "level_note": "level_3 equals level_2 byte-for-byte in the exploded representation: cell sources are inline in cell JSON",
+      "candidates": {
+        "exploded-dir": {
+          "REQ-014.1_manifest": {
+            "bytes_read": 1591,
+            "opens": 1,
+            "amplification": 0.1291,
+            "manifest_bytes": 1591
+          },
+          "REQ-014.2_index": {
+            "bytes_read": 1735,
+            "opens": 2,
+            "amplification": 0.1407
+          },
+          "REQ-014.3_object_worst_case": {
+            "object": "objects/sha256/d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31",
+            "object_bytes": 53,
+            "bytes_read": 53,
+            "opens": 1,
+            "amplification": 0.0043
+          },
+          "REQ-014.3_object_best_case": {
+            "object": "objects/sha256/ac1b5e1c2c9c09328bd49a3df5ae835be947501d5c9b81976fca0ef56da52208",
+            "object_bytes": 16,
+            "bytes_read": 16,
+            "opens": 1,
+            "amplification": 0.0013
+          },
+          "REQ-014.4_verify_largest": {
+            "object": "objects/sha256/d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31",
+            "bytes_read": 53,
+            "opens": 1,
+            "amplification": 0.0043,
+            "sha256_match": true
+          },
+          "REQ-014.5_progressive": {
+            "level_0": {
+              "cumulative_bytes": 1591,
+              "opens": 1,
+              "amplification": 0.1291
+            },
+            "level_1": {
+              "cumulative_bytes": 1735,
+              "opens": 2,
+              "amplification": 0.1407
+            },
+            "level_2": {
+              "cumulative_bytes": 11947,
+              "opens": 19,
+              "amplification": 0.9692
+            },
+            "level_3": {
+              "cumulative_bytes": 11947,
+              "opens": 19,
+              "amplification": 0.9692
+            },
+            "level_4": {
+              "cumulative_bytes": 12132,
+              "opens": 25,
+              "amplification": 0.9842
+            }
+          }
+        },
+        "zip-flat": {
+          "REQ-014.1_manifest": {
+            "bytes_read": 3868,
+            "opens": 1,
+            "amplification": 0.3138,
+            "manifest_bytes": 1591
+          },
+          "REQ-014.2_index": {
+            "bytes_read": 4066,
+            "opens": 1,
+            "amplification": 0.3298
+          },
+          "REQ-014.3_object_worst_case": {
+            "object": "objects/sha256/d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31",
+            "object_bytes": 53,
+            "bytes_read": 2396,
+            "opens": 1,
+            "amplification": 0.1944
+          },
+          "REQ-014.3_object_best_case": {
+            "object": "objects/sha256/ac1b5e1c2c9c09328bd49a3df5ae835be947501d5c9b81976fca0ef56da52208",
+            "object_bytes": 16,
+            "bytes_read": 2359,
+            "opens": 1,
+            "amplification": 0.1914
+          },
+          "REQ-014.4_verify_largest": {
+            "object": "objects/sha256/d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31",
+            "bytes_read": 2396,
+            "opens": 1,
+            "amplification": 0.1944,
+            "sha256_match": true
+          },
+          "REQ-014.5_progressive": {
+            "level_0": {
+              "cumulative_bytes": 3868,
+              "opens": 1,
+              "amplification": 0.3138
+            },
+            "level_1": {
+              "cumulative_bytes": 4066,
+              "opens": 1,
+              "amplification": 0.3298
+            },
+            "level_2": {
+              "cumulative_bytes": 15183,
+              "opens": 1,
+              "amplification": 1.2317
+            },
+            "level_3": {
+              "cumulative_bytes": 15183,
+              "opens": 1,
+              "amplification": 1.2317
+            },
+            "level_4": {
+              "cumulative_bytes": 16022,
+              "opens": 1,
+              "amplification": 1.2997
+            }
+          }
+        },
+        "tar": {
+          "REQ-014.1_manifest": {
+            "bytes_read": 258644,
+            "opens": 1,
+            "amplification": 20.9819,
+            "manifest_bytes": 1591
+          },
+          "REQ-014.2_index": {
+            "bytes_read": 258788,
+            "opens": 1,
+            "amplification": 20.9936
+          },
+          "REQ-014.3_object_worst_case": {
+            "object": "objects/sha256/d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31",
+            "object_bytes": 53,
+            "bytes_read": 257106,
+            "opens": 1,
+            "amplification": 20.8571
+          },
+          "REQ-014.3_object_best_case": {
+            "object": "objects/sha256/ac1b5e1c2c9c09328bd49a3df5ae835be947501d5c9b81976fca0ef56da52208",
+            "object_bytes": 16,
+            "bytes_read": 257069,
+            "opens": 1,
+            "amplification": 20.8541
+          },
+          "REQ-014.4_verify_largest": {
+            "object": "objects/sha256/d36e8fc345567dee67411d3c26a48bf2c03255ba84814d8219a051240866aa31",
+            "bytes_read": 257106,
+            "opens": 1,
+            "amplification": 20.8571,
+            "sha256_match": true
+          },
+          "REQ-014.5_progressive": {
+            "level_0": {
+              "cumulative_bytes": 258644,
+              "opens": 1,
+              "amplification": 20.9819
+            },
+            "level_1": {
+              "cumulative_bytes": 258788,
+              "opens": 1,
+              "amplification": 20.9936
+            },
+            "level_2": {
+              "cumulative_bytes": 269000,
+              "opens": 1,
+              "amplification": 21.822
+            },
+            "level_3": {
+              "cumulative_bytes": 269000,
+              "opens": 1,
+              "amplification": 21.822
+            },
+            "level_4": {
+              "cumulative_bytes": 269185,
+              "opens": 1,
+              "amplification": 21.837
+            }
+          }
+        }
+      }
+    },
+    "GOLD-01+16MiB-synthetic": {
+      "artifact_bytes": 16789543,
+      "file_count": 28,
+      "object_count": 7,
+      "largest_object": {
+        "path": "objects/sha256/5b7a7959d7c3837da2a6bcc8f87d7cc4c9d7b699e4771250890e19a0d0d0b329",
+        "bytes": 16777216
+      },
+      "smallest_object": {
+        "path": "objects/sha256/ac1b5e1c2c9c09328bd49a3df5ae835be947501d5c9b81976fca0ef56da52208",
+        "bytes": 16
+      },
+      "level_note": "level_3 equals level_2 byte-for-byte in the exploded representation: cell sources are inline in cell JSON",
+      "candidates": {
+        "exploded-dir": {
+          "REQ-014.1_manifest": {
+            "bytes_read": 1591,
+            "opens": 1,
+            "amplification": 0.0001,
+            "manifest_bytes": 1591
+          },
+          "REQ-014.2_index": {
+            "bytes_read": 1735,
+            "opens": 2,
+            "amplification": 0.0001
+          },
+          "REQ-014.3_object_worst_case": {
+            "object": "objects/sha256/5b7a7959d7c3837da2a6bcc8f87d7cc4c9d7b699e4771250890e19a0d0d0b329",
+            "object_bytes": 16777216,
+            "bytes_read": 16777216,
+            "opens": 1,
+            "amplification": 0.9993
+          },
+          "REQ-014.3_object_best_case": {
+            "object": "objects/sha256/ac1b5e1c2c9c09328bd49a3df5ae835be947501d5c9b81976fca0ef56da52208",
+            "object_bytes": 16,
+            "bytes_read": 16,
+            "opens": 1,
+            "amplification": 0.0
+          },
+          "REQ-014.4_verify_largest": {
+            "object": "objects/sha256/5b7a7959d7c3837da2a6bcc8f87d7cc4c9d7b699e4771250890e19a0d0d0b329",
+            "bytes_read": 16777216,
+            "opens": 1,
+            "amplification": 0.9993,
+            "sha256_match": true
+          },
+          "REQ-014.5_progressive": {
+            "level_0": {
+              "cumulative_bytes": 1591,
+              "opens": 1,
+              "amplification": 0.0001
+            },
+            "level_1": {
+              "cumulative_bytes": 1735,
+              "opens": 2,
+              "amplification": 0.0001
+            },
+            "level_2": {
+              "cumulative_bytes": 11947,
+              "opens": 19,
+              "amplification": 0.0007
+            },
+            "level_3": {
+              "cumulative_bytes": 11947,
+              "opens": 19,
+              "amplification": 0.0007
+            },
+            "level_4": {
+              "cumulative_bytes": 16789348,
+              "opens": 26,
+              "amplification": 1.0
+            }
+          }
+        },
+        "zip-flat": {
+          "REQ-014.1_manifest": {
+            "bytes_read": 3993,
+            "opens": 1,
+            "amplification": 0.0002,
+            "manifest_bytes": 1591
+          },
+          "REQ-014.2_index": {
+            "bytes_read": 4191,
+            "opens": 1,
+            "amplification": 0.0002
+          },
+          "REQ-014.3_object_worst_case": {
+            "object": "objects/sha256/5b7a7959d7c3837da2a6bcc8f87d7cc4c9d7b699e4771250890e19a0d0d0b329",
+            "object_bytes": 16777216,
+            "bytes_read": 16779684,
+            "opens": 1,
+            "amplification": 0.9994
+          },
+          "REQ-014.3_object_best_case": {
+            "object": "objects/sha256/ac1b5e1c2c9c09328bd49a3df5ae835be947501d5c9b81976fca0ef56da52208",
+            "object_bytes": 16,
+            "bytes_read": 2484,
+            "opens": 1,
+            "amplification": 0.0001
+          },
+          "REQ-014.4_verify_largest": {
+            "object": "objects/sha256/5b7a7959d7c3837da2a6bcc8f87d7cc4c9d7b699e4771250890e19a0d0d0b329",
+            "bytes_read": 16779684,
+            "opens": 1,
+            "amplification": 0.9994,
+            "sha256_match": true
+          },
+          "REQ-014.5_progressive": {
+            "level_0": {
+              "cumulative_bytes": 3993,
+              "opens": 1,
+              "amplification": 0.0002
+            },
+            "level_1": {
+              "cumulative_bytes": 4191,
+              "opens": 1,
+              "amplification": 0.0002
+            },
+            "level_2": {
+              "cumulative_bytes": 15308,
+              "opens": 1,
+              "amplification": 0.0009
+            },
+            "level_3": {
+              "cumulative_bytes": 15308,
+              "opens": 1,
+              "amplification": 0.0009
+            },
+            "level_4": {
+              "cumulative_bytes": 16793472,
+              "opens": 1,
+              "amplification": 1.0002
+            }
+          }
+        },
+        "tar": {
+          "REQ-014.1_manifest": {
+            "bytes_read": 438357,
+            "opens": 1,
+            "amplification": 0.0261,
+            "manifest_bytes": 1591
+          },
+          "REQ-014.2_index": {
+            "bytes_read": 438501,
+            "opens": 1,
+            "amplification": 0.0261
+          },
+          "REQ-014.3_object_worst_case": {
+            "object": "objects/sha256/5b7a7959d7c3837da2a6bcc8f87d7cc4c9d7b699e4771250890e19a0d0d0b329",
+            "object_bytes": 16777216,
+            "bytes_read": 17213982,
+            "opens": 1,
+            "amplification": 1.0253
+          },
+          "REQ-014.3_object_best_case": {
+            "object": "objects/sha256/ac1b5e1c2c9c09328bd49a3df5ae835be947501d5c9b81976fca0ef56da52208",
+            "object_bytes": 16,
+            "bytes_read": 436782,
+            "opens": 1,
+            "amplification": 0.026
+          },
+          "REQ-014.4_verify_largest": {
+            "object": "objects/sha256/5b7a7959d7c3837da2a6bcc8f87d7cc4c9d7b699e4771250890e19a0d0d0b329",
+            "bytes_read": 17213982,
+            "opens": 1,
+            "amplification": 1.0253,
+            "sha256_match": true
+          },
+          "REQ-014.5_progressive": {
+            "level_0": {
+              "cumulative_bytes": 438357,
+              "opens": 1,
+              "amplification": 0.0261
+            },
+            "level_1": {
+              "cumulative_bytes": 438501,
+              "opens": 1,
+              "amplification": 0.0261
+            },
+            "level_2": {
+              "cumulative_bytes": 448713,
+              "opens": 1,
+              "amplification": 0.0267
+            },
+            "level_3": {
+              "cumulative_bytes": 448713,
+              "opens": 1,
+              "amplification": 0.0267
+            },
+            "level_4": {
+              "cumulative_bytes": 17226114,
+              "opens": 1,
+              "amplification": 1.026
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "case_id": "QRY-043",
+  "final_bound": {
+    "fields": [
+      {
+        "name": "order_id",
+        "nullable": false,
+        "type": "i64"
+      },
+      {
+        "name": "status",
+        "nullable": false,
+        "type": "string"
+      }
+    ],
+    "order": [],
+    "rows": {
+      "max": 6000,
+      "min": 0
+    },
+    "unique_keys": []
+  },
+  "query_id": "QRY-043",
+  "root": "l",
+  "schema_version": "qry.certificate.v0.1",
+  "steps": [
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "order_id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "user_id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "amount",
+            "nullable": false,
+            "type": "decimal"
+          },
+          {
+            "name": "status",
+            "nullable": false,
+            "type": "string"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 5000,
+          "min": 0
+        },
+        "unique_keys": [
+          [
+            "order_id"
+          ]
+        ]
+      },
+      "input_nodes": [],
+      "node_id": "o",
+      "op": "read",
+      "rule": "qry.bound.read.v0"
+    },
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "order_id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "status",
+            "nullable": false,
+            "type": "string"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 5000,
+          "min": 0
+        },
+        "unique_keys": []
+      },
+      "input_nodes": [
+        "o"
+      ],
+      "node_id": "p1",
+      "op": "project",
+      "rule": "qry.bound.project.v0"
+    },
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "order_id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "user_id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "amount",
+            "nullable": false,
+            "type": "decimal"
+          },
+          {
+            "name": "status",
+            "nullable": false,
+            "type": "string"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 1000,
+          "min": 0
+        },
+        "unique_keys": [
+          [
+            "order_id"
+          ]
+        ]
+      },
+      "input_nodes": [
+        "o"
+      ],
+      "node_id": "f",
+      "op": "filter",
+      "rule": "qry.bound.filter.v0"
+    },
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "order_id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "status",
+            "nullable": false,
+            "type": "string"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 1000,
+          "min": 0
+        },
+        "unique_keys": []
+      },
+      "input_nodes": [
+        "f"
+      ],
+      "node_id": "p2",
+      "op": "project",
+      "rule": "qry.bound.project.v0"
+    },
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "order_id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "status",
+            "nullable": false,
+            "type": "string"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 6000,
+          "min": 0
+        },
+        "unique_keys": []
+      },
+      "input_nodes": [
+        "p1",
+        "p2"
+      ],
+      "node_id": "ua",
+      "op": "union_all",
+      "rule": "qry.bound.union_all.v0"
+    },
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "order_id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "status",
+            "nullable": false,
+            "type": "string"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 6000,
+          "min": 0
+        },
+        "unique_keys": []
+      },
+      "input_nodes": [
+        "ua"
+      ],
+      "node_id": "l",
+      "op": "limit",
+      "rule": "qry.bound.limit.v0"
+    }
+  ]
+}

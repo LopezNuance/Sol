@@ -1,0 +1,66 @@
+{
+  "description": "Difference with a heuristic right operand retains the certified upper of the left operand; typed empty lower (13.8).",
+  "nodes": [
+    {
+      "id": "a",
+      "op": "read",
+      "source": "users"
+    },
+    {
+      "id": "b",
+      "op": "read",
+      "source": "ghosts"
+    },
+    {
+      "id": "d1",
+      "inputs": [
+        "a",
+        "b"
+      ],
+      "op": "difference"
+    }
+  ],
+  "query_id": "QGOLD-016",
+  "root": "d1",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "ghosts": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ]
+    },
+    "users": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ]
+      ]
+    }
+  }
+}

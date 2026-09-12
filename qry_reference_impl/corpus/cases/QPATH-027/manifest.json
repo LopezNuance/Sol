@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-027",
+  "description": "The verbose denial: the error distinguishes nonexistent and unauthorized record IDs contrary to policy.",
+  "expected_diagnostics": [
+    "QV9-05"
+  ]
+}

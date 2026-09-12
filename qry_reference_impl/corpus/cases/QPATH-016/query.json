@@ -1,0 +1,92 @@
+{
+  "description": "The invalid lower difference: LA EXCEPT LB is reported as a lower bound for A EXCEPT B.",
+  "nodes": [
+    {
+      "id": "ra",
+      "op": "read",
+      "source": "a"
+    },
+    {
+      "id": "rb",
+      "op": "read",
+      "source": "b"
+    },
+    {
+      "id": "d",
+      "inputs": [
+        "ra",
+        "rb"
+      ],
+      "op": "difference"
+    }
+  ],
+  "query_id": "QPATH-016",
+  "root": "d",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "a": {
+      "lower": {
+        "tuples": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ],
+          [
+            4
+          ]
+        ]
+      }
+    },
+    "b": {
+      "lower": {
+        "tuples": [
+          [
+            2
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    }
+  }
+}

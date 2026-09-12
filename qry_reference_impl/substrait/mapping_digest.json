@@ -1,0 +1,7 @@
+{
+  "digest_algorithm": "sha256 of canonical JSON (sorted keys, compact separators) of the parsed YAML profile",
+  "mapping_digest": "sha256:7d30035d599048e685d46a660375eceff3bbfb304b1be5827af518ad0ec20493",
+  "note": "Gate condition 4 evidence: the mapping profile is documented in mapping.md and its content digest is recorded here. Any profile change requires re-recording the digest.",
+  "profile": "substrait/qry_substrait_profile.yaml",
+  "recorded": "2026-09-09T00:32:53Z"
+}

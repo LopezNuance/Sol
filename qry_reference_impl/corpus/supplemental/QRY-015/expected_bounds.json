@@ -1,0 +1,175 @@
+{
+  "node_bounds": {
+    "j": {
+      "fields": [
+        {
+          "name": "left.order_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "left.user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "left.amount",
+          "nullable": false,
+          "type": "decimal"
+        },
+        {
+          "name": "left.status",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "right.id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "right.name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "right.country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "right.active",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 5000,
+        "min": 0
+      },
+      "unique_keys": []
+    },
+    "o": {
+      "fields": [
+        {
+          "name": "order_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "amount",
+          "nullable": false,
+          "type": "decimal"
+        },
+        {
+          "name": "status",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 5000,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "order_id"
+        ]
+      ]
+    },
+    "u": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "active",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "order": [],
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "unique_keys": [
+        [
+          "id"
+        ]
+      ]
+    }
+  },
+  "query_id": "QRY-015",
+  "root": "j",
+  "root_bound": {
+    "fields": [
+      {
+        "name": "left.order_id",
+        "nullable": false,
+        "type": "i64"
+      },
+      {
+        "name": "left.user_id",
+        "nullable": false,
+        "type": "i64"
+      },
+      {
+        "name": "left.amount",
+        "nullable": false,
+        "type": "decimal"
+      },
+      {
+        "name": "left.status",
+        "nullable": false,
+        "type": "string"
+      },
+      {
+        "name": "right.id",
+        "nullable": false,
+        "type": "i64"
+      },
+      {
+        "name": "right.name",
+        "nullable": false,
+        "type": "string"
+      },
+      {
+        "name": "right.country",
+        "nullable": true,
+        "type": "string"
+      },
+      {
+        "name": "right.active",
+        "nullable": false,
+        "type": "bool"
+      }
+    ],
+    "order": [],
+    "rows": {
+      "max": 5000,
+      "min": 0
+    },
+    "unique_keys": []
+  },
+  "schema_version": "qry.bounds.v0.1"
+}

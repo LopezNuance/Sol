@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-011",
+  "description": "Leakage policy with redacted values and bucketed cardinality.",
+  "expected_diagnostics": []
+}

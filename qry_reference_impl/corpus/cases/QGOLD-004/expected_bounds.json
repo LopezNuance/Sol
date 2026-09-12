@@ -1,0 +1,96 @@
+{
+  "query_id": "QGOLD-004",
+  "root": "d",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "sol:bound/difference/v1",
+        "source:removed",
+        "source:users"
+      ],
+      "evidence": [
+        "source:removed",
+        "source:users"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/difference/v1",
+    "guarantee": "exact",
+    "intervals": [],
+    "lower": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ]
+      ]
+    },
+    "lower_object": "object:sha256:9a23aa2a5935b3fba4636e8028007b28a66c09cc2e0cffadb2173c8610688ef9",
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [
+        {
+          "cites": [],
+          "mode": "tuple",
+          "tuple": [
+            1,
+            "a"
+          ]
+        }
+      ],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [
+          "object:sha256:036ee4e6c9b217dc225e0732eeae7124787c233d8b2b63080f57a4198c132217",
+          "object:sha256:4b152a8f2e2e3f20adf139bed0b22c4caa48854ade5e06f2e277c3ae7e284626",
+          "object:sha256:9a23aa2a5935b3fba4636e8028007b28a66c09cc2e0cffadb2173c8610688ef9"
+        ],
+        "rewrites": [],
+        "rule_id": "sol:bound/difference/v1",
+        "sources": [
+          "source:removed",
+          "source:users"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": "object:sha256:9a23aa2a5935b3fba4636e8028007b28a66c09cc2e0cffadb2173c8610688ef9",
+    "upper": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ]
+      ]
+    },
+    "upper_object": "object:sha256:9a23aa2a5935b3fba4636e8028007b28a66c09cc2e0cffadb2173c8610688ef9"
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

@@ -1,17 +1,55 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "sol:schemas/run/v0.1",
+  "$id": "sol:schemas/run/v0.2",
+  "title": "Sol run record (RFC-SOL-0001, published v0.2)",
+  "description": "Normative run schema. status is restricted to the committed run vocabulary (RFC section 30); partial_uncommitted is transient executor state and must not appear (V2-04). environment_id is required per decision Q2 (run records reference the environment manifest).",
   "type": "object",
-  "required": ["run_id", "source_commit", "actor_id", "status", "cells_executed"],
+  "required": [
+    "run_id",
+    "source_commit",
+    "actor_id",
+    "status",
+    "cells_executed",
+    "environment_id"
+  ],
   "properties": {
     "run_id": {"type": "string"},
-    "source_commit": {"type": "string"},
-    "result_commit": {"type": "string"},
+    "source_commit": {
+      "type": "string",
+      "pattern": "^commit:[A-Za-z0-9_:-]+$"
+    },
+    "result_commit": {
+      "type": ["string", "null"],
+      "pattern": "^commit:[A-Za-z0-9_:-]+$"
+    },
     "actor_id": {"type": "string"},
     "task_ref": {"type": "string"},
     "entry_point": {"type": "string"},
-    "status": {"enum": ["success", "partial_success", "failure", "cancelled"]},
+    "status": {
+      "enum": ["success", "partial_success", "failure", "cancelled"],
+      "description": "Committed run statuses (RFC section 30); violations are V0-04."
+    },
     "cells_executed": {"type": "array", "items": {"type": "string"}},
-    "output_bindings": {"type": "array", "items": {"type": "object"}}
+    "environment_id": {"type": "string"},
+    "started_at": {"type": "string"},
+    "completed_at": {"type": "string"},
+    "output_bindings": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["named_output", "object_ref"],
+        "properties": {
+          "named_output": {"type": "string"},
+          "object_ref": {
+            "type": "string",
+            "pattern": "^object:sha256:[a-f0-9]{64}$"
+          },
+          "mime_type": {"type": "string"},
+          "status": {"enum": ["valid", "stale", "invalidated"]}
+        }
+      }
+    },
+    "resource_usage": {"type": "object"},
+    "dependency_hints": {"type": "array"}
   }
 }

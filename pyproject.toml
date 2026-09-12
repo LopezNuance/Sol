@@ -1,0 +1,149 @@
+[project]
+name = "sol"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "scott", email = "scott@procyon.here" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+sol = "sol:main"
+
+[build-system]
+requires = ["uv_build>=0.12.6,<0.13.0"]
+build-backend = "uv_build"
+
+[dependency-groups]
+dev = [
+    "bandit>=1.9.4",
+    "coverage>=7.16.0",
+    "deptry>=0.25.1",
+    "hypothesis>=6.168.0",
+    "pip-audit>=2.10.1",
+    "pre-commit>=4.6.2",
+    "pytest>=9.1.1",
+    "ruff>=0.16.6",
+    "ty>=0.0.79",
+    "vulture>=2.16",
+]
+
+# -----------------------------
+# Code evaluation, not formatting
+# -----------------------------
+
+[tool.ruff]
+line-length = 140
+src = ["."]
+target-version = "py312"
+exclude = [
+  ".git",
+  ".venv",
+  "venv",
+  "env",
+  ".tox",
+  ".nox",
+  "build",
+  "dist",
+  "reports",
+  "htmlcov",
+  "node_modules",
+]
+
+[tool.ruff.lint]
+select = [
+  "F",      # Pyflakes: undefined names, unused imports, etc.
+  "E4",     # pycodestyle import errors
+  "E7",     # pycodestyle statement errors
+  "E9",     # pycodestyle runtime/syntax-ish errors
+  "B",      # flake8-bugbear
+  "UP",     # pyupgrade
+  "SIM",    # simplification suggestions
+  "RUF",    # Ruff-specific correctness checks
+  "S",      # flake8-bandit-style security checks
+]
+ignore = [
+  "E501",   # line length is not a correctness rule
+  "COM812", # trailing-comma formatter conflict / style war
+  "ISC001", # implicit string concat formatter conflict / style war
+]
+
+[tool.ruff.lint.per-file-ignores]
+"test_*.py" = [
+  "S101",   # assert is normal in tests
+]
+"*_test.py" = [
+  "S101",   # assert is normal in tests
+]
+"tests/**/*.py" = [
+  "S101",   # assert is normal in tests
+]
+
+[tool.pytest.ini_options]
+addopts = [
+  "-ra",
+  "--strict-markers",
+  "--strict-config",
+]
+norecursedirs = [
+  ".git",
+  ".venv",
+  "venv",
+  "env",
+  ".tox",
+  ".nox",
+  "build",
+  "dist",
+  "reports",
+  "htmlcov",
+  "node_modules",
+]
+
+[tool.coverage.run]
+branch = true
+omit = [
+  ".venv/*",
+  "venv/*",
+  "env/*",
+  "build/*",
+  "dist/*",
+  "reports/*",
+  "htmlcov/*",
+  "node_modules/*",
+]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = true
+fail_under = 85
+exclude_also = [
+  "if TYPE_CHECKING:",
+  "if __name__ == .__main__.:",
+  "raise NotImplementedError",
+]
+
+[tool.bandit]
+exclude_dirs = [
+  ".venv",
+  "venv",
+  "env",
+  "build",
+  "dist",
+  "reports",
+  "htmlcov",
+  "node_modules",
+]
+
+[tool.deptry]
+extend_exclude = [
+  ".venv",
+  "venv",
+  "env",
+  "build",
+  "dist",
+  "reports",
+  "htmlcov",
+  "node_modules",
+]

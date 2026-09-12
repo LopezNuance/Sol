@@ -1,0 +1,57 @@
+{
+  "description": "The stale materialized view: a view from commit 41 answers a query pinned to commit 42.",
+  "nodes": [
+    {
+      "id": "rb",
+      "op": "read",
+      "source": "b"
+    },
+    {
+      "id": "f",
+      "input": "rb",
+      "op": "filter",
+      "predicate": {
+        "terms": [
+          {
+            "field": "val",
+            "op": "eq",
+            "value": 20
+          }
+        ]
+      }
+    }
+  ],
+  "query_id": "QPATH-008",
+  "root": "f",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "b": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "val",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          10
+        ],
+        [
+          2,
+          20
+        ],
+        [
+          4,
+          40
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-001",
+  "description": "The moving branch: query begins on branch main but records no resolved commit.",
+  "expected_diagnostics": [
+    "QV1-02",
+    "QV1-03"
+  ]
+}

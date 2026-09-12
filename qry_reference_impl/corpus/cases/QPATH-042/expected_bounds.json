@@ -1,0 +1,97 @@
+{
+  "query_id": "QPATH-042",
+  "root": "g1",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "source:amounts",
+        "sol:bound/avg_optional_prefix/v1"
+      ],
+      "evidence": [
+        "source:amounts"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/avg_optional_prefix/v1",
+    "guarantee": "bounded",
+    "intervals": [
+      {
+        "field": "avg_amount",
+        "group": [
+          1
+        ],
+        "lower": "11/2",
+        "may_be_empty": false,
+        "upper": "21/2"
+      },
+      {
+        "field": "avg_amount",
+        "group": [
+          2
+        ],
+        "lower": "7/1",
+        "may_be_empty": true,
+        "upper": "7/1"
+      }
+    ],
+    "lower": {
+      "fields": [
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    "lower_object": null,
+    "may_be_empty_groups": [
+      [
+        2
+      ]
+    ],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [],
+        "rewrites": [],
+        "rule_id": "sol:bound/avg_optional_prefix/v1",
+        "sources": [
+          "source:amounts"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": null,
+    "upper": {
+      "fields": [
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    "upper_object": null
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

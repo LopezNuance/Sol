@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-029",
+  "description": "The timing promise: the service claims general non-inference while declaring timing protection only best-effort.",
+  "expected_diagnostics": [
+    "QV9-08"
+  ]
+}

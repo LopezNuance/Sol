@@ -1,0 +1,63 @@
+{
+  "description": "Semantic filter with certified positive classifications: lower = positives, upper = input (13.7.1).",
+  "extensions": [
+    "urn:qry:v0.3:semantic-evaluator-barrier"
+  ],
+  "nodes": [
+    {
+      "id": "u",
+      "op": "read",
+      "source": "users"
+    },
+    {
+      "evaluator": "sol:evaluator/positive_classifier/v1",
+      "id": "e1",
+      "input": "u",
+      "mode": "sound_positive",
+      "op": "evaluate",
+      "positives": [
+        [
+          1,
+          "a"
+        ],
+        [
+          3,
+          "c"
+        ]
+      ]
+    }
+  ],
+  "query_id": "QGOLD-014",
+  "root": "e1",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "users": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ],
+        [
+          3,
+          "c"
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "format": "solqry-covering-proof/v1",
+  "note": "QPATH-034: lossy summary - omits 'tag', which the query requires.",
+  "source_commit": "object:sha256:a5d9bc662b5b2b05a5cce9ffb88cfc10f2e6e94f1ea78caad2e0ed46aef0a95f",
+  "summary_fields": [
+    "id"
+  ],
+  "summary_levels": [
+    0,
+    1,
+    2
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "actor_id": "human:alice",
+  "cell_id": "cell_002",
+  "cell_type": "sol:cell/code",
+  "language": "python",
+  "metadata": {
+    "imported_outputs": [
+      {
+        "name": "output_1",
+        "object_ref": "object:sha256:2af6db99a708ed7daaacd32246d19f9bd52e89ee6c06cd0e21307cc916833696",
+        "staleness": "unknown",
+        "verification": "unverified"
+      }
+    ]
+  },
+  "source": "load_checkpoints()",
+  "source_hash": "digest:sha256:e5277abe50aefa84973929d8c9711e152de7855a171bd4d02bfff3ed4f8ae553",
+  "summary": "Imported code cell 2 from sample.ipynb (provenance incomplete).",
+  "title": "Imported cell 2"
+}

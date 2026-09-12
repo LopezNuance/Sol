@@ -1,0 +1,23 @@
+{
+  "base_commit": "commit:commit_041",
+  "changes": [
+    {
+      "op": "modify_cell",
+      "path": "/source",
+      "target": "cell:cell_014",
+      "value_ref": "object:sha256:5ddf69ab0df806ccf9c1dd250cda7f427a4b0c33eee0d26f28ea241858dff8b5"
+    }
+  ],
+  "created_by": "agent:eval_reviewer_001",
+  "predicted_invalidations": [
+    "record:claim_007"
+  ],
+  "rationale": "Break EOS rate out by prompt category.",
+  "record_id": "proposal_003",
+  "record_type": "sol:record/proposal",
+  "status": {
+    "lifecycle": "applied",
+    "staleness": "current",
+    "verification": "unverified"
+  }
+}

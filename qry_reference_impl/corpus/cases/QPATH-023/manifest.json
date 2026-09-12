@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-023",
+  "description": "The stale proof: the rule relies on a verification whose dependencies are stale.",
+  "expected_diagnostics": [
+    "QV5-10",
+    "QV7-04"
+  ]
+}

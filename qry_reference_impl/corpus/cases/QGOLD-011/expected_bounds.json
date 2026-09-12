@@ -1,0 +1,62 @@
+{
+  "cardinality_disclosure": {
+    "bucket": "10-19",
+    "mode": "bucketed"
+  },
+  "query_id": "QGOLD-011",
+  "root": "c",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "sol:bound/count_set/v1",
+        "source:r"
+      ],
+      "evidence": [
+        "source:r"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/count_set/v1",
+    "guarantee": "exact",
+    "intervals": [
+      {
+        "field": "n",
+        "group": [],
+        "lower": 15,
+        "may_be_empty": false,
+        "upper": 15
+      }
+    ],
+    "lower": {
+      "fields": [],
+      "tuples": [
+        []
+      ]
+    },
+    "lower_object": "object:sha256:94750b7046a53d831e27fc9c0cfd7364697dc4375fae14b842b558ca6a38d015",
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "none",
+      "lower_memberships": [],
+      "upper_derivation": {
+        "evaluators": [],
+        "input_relations": [],
+        "rewrites": [],
+        "rule_id": "sol:bound/count_set/v1",
+        "sources": [],
+        "view_substitutions": []
+      }
+    },
+    "result_object": "object:sha256:94750b7046a53d831e27fc9c0cfd7364697dc4375fae14b842b558ca6a38d015",
+    "upper": {
+      "fields": [],
+      "tuples": [
+        []
+      ]
+    },
+    "upper_object": "object:sha256:94750b7046a53d831e27fc9c0cfd7364697dc4375fae14b842b558ca6a38d015"
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

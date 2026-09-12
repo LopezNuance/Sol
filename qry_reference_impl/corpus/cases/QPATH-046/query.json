@@ -1,0 +1,84 @@
+{
+  "nodes": [
+    {
+      "id": "ra",
+      "op": "read",
+      "source": "a"
+    },
+    {
+      "id": "rb",
+      "op": "read",
+      "source": "b"
+    },
+    {
+      "id": "rc",
+      "op": "read",
+      "source": "c"
+    },
+    {
+      "id": "u",
+      "inputs": [
+        "ra",
+        "rb",
+        "rc"
+      ],
+      "op": "union_all"
+    }
+  ],
+  "query_id": "QPATH-046",
+  "root": "u",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "a": {
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    "b": {
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    },
+    "c": {
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "tuples": [
+        [
+          1
+        ],
+        [
+          2
+        ]
+      ]
+    }
+  }
+}

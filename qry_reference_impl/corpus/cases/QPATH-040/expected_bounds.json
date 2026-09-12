@@ -1,0 +1,84 @@
+{
+  "query_id": "QPATH-040",
+  "root": "e",
+  "root_bound": {
+    "assurance": {
+      "depends_on": [
+        "source:users",
+        "sol:bound/structural_containment/v1"
+      ],
+      "evidence": [
+        "source:users"
+      ],
+      "stale": false,
+      "status": "contract_asserted"
+    },
+    "bound_rule": "sol:bound/structural_containment/v1",
+    "guarantee": "bounded",
+    "lower": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": []
+    },
+    "lower_object": null,
+    "may_be_empty_groups": [],
+    "order": [],
+    "provenance": {
+      "lower_membership_mode": "tuple",
+      "lower_memberships": [],
+      "upper_derivation": {
+        "evaluators": [
+          "sol:evaluator/tuple_generator/v1"
+        ],
+        "input_relations": [],
+        "rewrites": [],
+        "rule_id": "sol:bound/structural_containment/v1",
+        "sources": [
+          "source:users"
+        ],
+        "view_substitutions": []
+      }
+    },
+    "result_object": null,
+    "upper": {
+      "fields": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ],
+        [
+          3,
+          "c"
+        ]
+      ]
+    },
+    "upper_object": null
+  },
+  "schema_version": "qry.bounds.v0.3"
+}

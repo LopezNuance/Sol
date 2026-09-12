@@ -6,7 +6,7 @@
   },
   "created_at": "2026-01-01T00:10:00Z",
   "evidence": [
-    "run:run_008",
+    "run:run_012",
     "object:sha256:04e8bd270c0c885f199658780837b8be5bba7de37a3e8701ffd33c3e0b3127a3"
   ],
   "method": "sol:verify/reexecution",
@@ -19,5 +19,6 @@
     "staleness": "current",
     "verification": "unverified"
   },
+  "summary": "Reexecution verification of claim_007.",
   "target": "record:claim_007"
 }

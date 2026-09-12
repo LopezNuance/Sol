@@ -1,0 +1,7 @@
+{
+  "case_id": "QPATH-041",
+  "description": "The prose theorem: a rewrite marks assurance as proven using only an unchecked prose reference.",
+  "expected_diagnostics": [
+    "QV7-08"
+  ]
+}

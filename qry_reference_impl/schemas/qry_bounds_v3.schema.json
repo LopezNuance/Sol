@@ -1,0 +1,352 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.org/qry/schemas/qry_bounds_v3.schema.json",
+  "title": "QRY Certified Bounds v0.3",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "query_id",
+    "root",
+    "root_bound"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "qry.bounds.v0.3"
+    },
+    "query_id": {
+      "type": "string"
+    },
+    "root": {
+      "type": "string"
+    },
+    "root_bound": {
+      "$ref": "#/$defs/certified_bound"
+    },
+    "cardinality_disclosure": {
+      "additionalProperties": false,
+      "description": "How the result discloses cardinality (32.5): the raw count, a policy-declared bucket, or suppression.",
+      "properties": {
+        "bucket": {
+          "type": "string"
+        },
+        "mode": {
+          "enum": [
+            "raw",
+            "bucketed",
+            "suppressed"
+          ],
+          "type": "string"
+        },
+        "value": {
+          "minimum": 0,
+          "type": "integer"
+        }
+      },
+      "required": [
+        "mode"
+      ],
+      "type": "object"
+    },
+    "error_behavior": {
+      "description": "Declared error behavior for unauthorized references (32.4, 32.5, QV9-05).",
+      "enum": [
+        "indistinguishable_from_missing",
+        "distinguished_from_missing"
+      ],
+      "type": "string"
+    },
+    "non_inference_claim": {
+      "description": "The result claims general non-inference; requires a conforming profile (32.6, QV9-08).",
+      "type": "boolean"
+    }
+  },
+  "$defs": {
+    "relation": {
+      "type": "object",
+      "required": [
+        "fields",
+        "tuples"
+      ],
+      "properties": {
+        "fields": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "name",
+              "type",
+              "nullable"
+            ],
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "type": {
+                "type": "string"
+              },
+              "nullable": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "tuples": {
+          "type": "array",
+          "items": {
+            "type": "array"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "assurance": {
+      "type": "object",
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "proven",
+            "validated",
+            "contract_asserted",
+            "tested",
+            "unaudited",
+            "unknown"
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "depends_on": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "stale": {
+          "type": "boolean"
+        }
+      },
+      "additionalProperties": false
+    },
+    "upper_derivation": {
+      "type": "object",
+      "properties": {
+        "rule_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "input_relations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "sources": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "evaluators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "rewrites": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "view_substitutions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "certified_bound": {
+      "type": "object",
+      "required": [
+        "guarantee",
+        "lower",
+        "upper",
+        "assurance",
+        "provenance"
+      ],
+      "properties": {
+        "guarantee": {
+          "enum": [
+            "exact",
+            "lower_bound",
+            "upper_bound",
+            "bounded",
+            "heuristic"
+          ]
+        },
+        "lower": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/relation"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "upper": {
+          "anyOf": [
+            {
+              "$ref": "#/$defs/relation"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "lower_object": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "upper_object": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "result_object": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "assurance": {
+          "$ref": "#/$defs/assurance"
+        },
+        "provenance": {
+          "type": "object",
+          "required": [
+            "lower_membership_mode"
+          ],
+          "properties": {
+            "lower_membership_mode": {
+              "enum": [
+                "none",
+                "tuple",
+                "why",
+                "how",
+                "full_graph"
+              ]
+            },
+            "lower_memberships": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": [
+                  "tuple",
+                  "mode"
+                ],
+                "properties": {
+                  "tuple": {
+                    "type": "array"
+                  },
+                  "mode": {
+                    "type": "string"
+                  },
+                  "cites": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "additionalProperties": false
+              }
+            },
+            "upper_derivation": {
+              "anyOf": [
+                {
+                  "$ref": "#/$defs/upper_derivation"
+                },
+                {
+                  "type": "null"
+                }
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "may_be_empty_groups": {
+          "type": "array",
+          "items": {
+            "type": "array"
+          }
+        },
+        "bound_rule": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "order": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "intervals": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "field",
+              "group",
+              "lower",
+              "upper",
+              "may_be_empty"
+            ],
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "group": {
+                "type": "array"
+              },
+              "lower": {
+                "type": [
+                  "string",
+                  "number"
+                ]
+              },
+              "upper": {
+                "type": [
+                  "string",
+                  "number"
+                ]
+              },
+              "may_be_empty": {
+                "type": "boolean"
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}

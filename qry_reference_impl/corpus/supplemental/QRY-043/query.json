@@ -1,0 +1,181 @@
+{
+  "description": "QRY-043",
+  "nodes": [
+    {
+      "id": "o",
+      "op": "read",
+      "source": "orders"
+    },
+    {
+      "fields": [
+        {
+          "expr": "order_id",
+          "name": "order_id"
+        },
+        {
+          "expr": "status",
+          "name": "status"
+        }
+      ],
+      "id": "p1",
+      "input": "o",
+      "op": "project"
+    },
+    {
+      "id": "f",
+      "input": "o",
+      "op": "filter",
+      "predicate": {
+        "expr": "pred",
+        "max_selectivity": 0.2,
+        "min_selectivity": 0
+      }
+    },
+    {
+      "fields": [
+        {
+          "expr": "order_id",
+          "name": "order_id"
+        },
+        {
+          "expr": "status",
+          "name": "status"
+        }
+      ],
+      "id": "p2",
+      "input": "f",
+      "op": "project"
+    },
+    {
+      "id": "ua",
+      "inputs": [
+        "p1",
+        "p2"
+      ],
+      "op": "union_all"
+    },
+    {
+      "id": "l",
+      "input": "ua",
+      "limit": 6000,
+      "op": "limit"
+    }
+  ],
+  "query_id": "QRY-043",
+  "root": "l",
+  "schema_version": "qry.query.v0.1",
+  "sources": {
+    "countries": {
+      "rows": {
+        "max": 250,
+        "min": 0
+      },
+      "schema": [
+        {
+          "name": "country",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "region",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "unique_keys": [
+        [
+          "country"
+        ]
+      ]
+    },
+    "orders": {
+      "rows": {
+        "max": 5000,
+        "min": 0
+      },
+      "schema": [
+        {
+          "name": "order_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "amount",
+          "nullable": false,
+          "type": "decimal"
+        },
+        {
+          "name": "status",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "unique_keys": [
+        [
+          "order_id"
+        ]
+      ]
+    },
+    "profiles": {
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "schema": [
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "tier",
+          "nullable": true,
+          "type": "string"
+        }
+      ],
+      "unique_keys": [
+        [
+          "user_id"
+        ]
+      ]
+    },
+    "users": {
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "active",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "unique_keys": [
+        [
+          "id"
+        ]
+      ]
+    }
+  }
+}

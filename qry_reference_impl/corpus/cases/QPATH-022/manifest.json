@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-022",
+  "description": "The unmet precondition: selection pushdown crosses a stochastic evaluator barrier.",
+  "expected_diagnostics": [
+    "QV7-02",
+    "QV6-05"
+  ]
+}

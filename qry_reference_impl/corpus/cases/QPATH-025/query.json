@@ -1,0 +1,71 @@
+{
+  "description": "The incomplete evaluation key: the prompt-template digest is omitted from a semantic evaluator key.",
+  "extensions": [
+    "urn:qry:v0.3:semantic-evaluator-barrier"
+  ],
+  "nodes": [
+    {
+      "id": "ru",
+      "op": "read",
+      "source": "users"
+    },
+    {
+      "evaluation_key": {
+        "assessment_policy": "policy:internal_assessment",
+        "authorization_policy": "policy:internal_authorized",
+        "configuration_digest": "digest:sha256:f7658225273f060d2706c6cd9eab9ae4d2e2a32d489d5e287dce036bd4dfba07",
+        "evaluator_id": "sol:evaluator/semantic_equivalence/v1",
+        "input_digests": [
+          "digest:sha256:646351ee1ddd222ff27d188167219b1cdff4fb55f59bcac7db386528d38ee2e6"
+        ],
+        "leakage_policy": "policy:internal_standard",
+        "model_id": "provider/model",
+        "model_version": "2026-07-01",
+        "output_schema": "object:sha256:cdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcdcd",
+        "random_seed": 48191,
+        "service_version": "v2026.07",
+        "source_commit": "commit:commit_042",
+        "tool_policy_digest": "digest:sha256:2e77d126aab839f43d79e0c75b33b72e9d250ff27b979f4641139f5214f0ec44",
+        "visibility_policy": "policy:internal_full"
+      },
+      "evaluator": "sol:evaluator/semantic_equivalence/v1",
+      "id": "e",
+      "input": "ru",
+      "mode": "heuristic",
+      "op": "evaluate"
+    }
+  ],
+  "query_id": "QPATH-025",
+  "root": "e",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "users": {
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "tuples": [
+        [
+          1,
+          "a"
+        ],
+        [
+          2,
+          "b"
+        ],
+        [
+          3,
+          "c"
+        ]
+      ]
+    }
+  }
+}

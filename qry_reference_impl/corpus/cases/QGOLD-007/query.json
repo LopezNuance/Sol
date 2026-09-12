@@ -1,0 +1,86 @@
+{
+  "description": "Bounded difference using L1\\U2 and U1\\L2.",
+  "nodes": [
+    {
+      "id": "ra",
+      "op": "read",
+      "source": "a"
+    },
+    {
+      "id": "rb",
+      "op": "read",
+      "source": "b"
+    },
+    {
+      "id": "d",
+      "inputs": [
+        "ra",
+        "rb"
+      ],
+      "op": "difference"
+    }
+  ],
+  "query_id": "QGOLD-007",
+  "root": "d",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "a": {
+      "lower": {
+        "tuples": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            1
+          ],
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    },
+    "b": {
+      "lower": {
+        "tuples": [
+          [
+            2
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            2
+          ],
+          [
+            3
+          ]
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "case_id": "QRY-066",
+  "description": "aggregate missing group field",
+  "expected_diagnostics": [
+    "QRY-SEM-006"
+  ]
+}

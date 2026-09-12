@@ -1,0 +1,5 @@
+{
+  "case_id": "QGOLD-003",
+  "description": "Positive recursive dependency closure.",
+  "expected_diagnostics": []
+}

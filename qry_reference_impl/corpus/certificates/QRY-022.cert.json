@@ -1,0 +1,146 @@
+{
+  "case_id": "QRY-022",
+  "final_bound": {
+    "fields": [
+      {
+        "name": "status",
+        "nullable": false,
+        "type": "string"
+      },
+      {
+        "name": "sum_amount",
+        "nullable": true,
+        "type": "decimal"
+      }
+    ],
+    "order": [],
+    "rows": {
+      "max": 500,
+      "min": 0
+    },
+    "unique_keys": [
+      [
+        "status"
+      ]
+    ]
+  },
+  "query_id": "QRY-022",
+  "root": "a",
+  "schema_version": "qry.certificate.v0.1",
+  "steps": [
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "order_id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "user_id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "amount",
+            "nullable": false,
+            "type": "decimal"
+          },
+          {
+            "name": "status",
+            "nullable": false,
+            "type": "string"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 5000,
+          "min": 0
+        },
+        "unique_keys": [
+          [
+            "order_id"
+          ]
+        ]
+      },
+      "input_nodes": [],
+      "node_id": "o",
+      "op": "read",
+      "rule": "qry.bound.read.v0"
+    },
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "order_id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "user_id",
+            "nullable": false,
+            "type": "i64"
+          },
+          {
+            "name": "amount",
+            "nullable": false,
+            "type": "decimal"
+          },
+          {
+            "name": "status",
+            "nullable": false,
+            "type": "string"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 500,
+          "min": 0
+        },
+        "unique_keys": [
+          [
+            "order_id"
+          ]
+        ]
+      },
+      "input_nodes": [
+        "o"
+      ],
+      "node_id": "f",
+      "op": "filter",
+      "rule": "qry.bound.filter.v0"
+    },
+    {
+      "bound": {
+        "fields": [
+          {
+            "name": "status",
+            "nullable": false,
+            "type": "string"
+          },
+          {
+            "name": "sum_amount",
+            "nullable": true,
+            "type": "decimal"
+          }
+        ],
+        "order": [],
+        "rows": {
+          "max": 500,
+          "min": 0
+        },
+        "unique_keys": [
+          [
+            "status"
+          ]
+        ]
+      },
+      "input_nodes": [
+        "f"
+      ],
+      "node_id": "a",
+      "op": "aggregate",
+      "rule": "qry.bound.aggregate.v0"
+    }
+  ]
+}

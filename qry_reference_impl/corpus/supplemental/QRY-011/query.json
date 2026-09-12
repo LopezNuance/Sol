@@ -1,0 +1,158 @@
+{
+  "description": "QRY-011",
+  "nodes": [
+    {
+      "id": "u",
+      "op": "read",
+      "source": "users"
+    },
+    {
+      "id": "f",
+      "input": "u",
+      "op": "filter",
+      "predicate": {
+        "expr": "pred",
+        "max_selectivity": 0.4,
+        "min_selectivity": 0.0
+      }
+    },
+    {
+      "fields": [
+        {
+          "expr": "id",
+          "name": "id"
+        },
+        {
+          "expr": "country",
+          "name": "country"
+        }
+      ],
+      "id": "p",
+      "input": "f",
+      "op": "project"
+    },
+    {
+      "id": "l",
+      "input": "p",
+      "limit": 25,
+      "op": "limit"
+    }
+  ],
+  "query_id": "QRY-011",
+  "root": "l",
+  "schema_version": "qry.query.v0.1",
+  "sources": {
+    "countries": {
+      "rows": {
+        "max": 250,
+        "min": 0
+      },
+      "schema": [
+        {
+          "name": "country",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "region",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "unique_keys": [
+        [
+          "country"
+        ]
+      ]
+    },
+    "orders": {
+      "rows": {
+        "max": 5000,
+        "min": 0
+      },
+      "schema": [
+        {
+          "name": "order_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "amount",
+          "nullable": false,
+          "type": "decimal"
+        },
+        {
+          "name": "status",
+          "nullable": false,
+          "type": "string"
+        }
+      ],
+      "unique_keys": [
+        [
+          "order_id"
+        ]
+      ]
+    },
+    "profiles": {
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "schema": [
+        {
+          "name": "user_id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "tier",
+          "nullable": true,
+          "type": "string"
+        }
+      ],
+      "unique_keys": [
+        [
+          "user_id"
+        ]
+      ]
+    },
+    "users": {
+      "rows": {
+        "max": 1000,
+        "min": 0
+      },
+      "schema": [
+        {
+          "name": "id",
+          "nullable": false,
+          "type": "i64"
+        },
+        {
+          "name": "name",
+          "nullable": false,
+          "type": "string"
+        },
+        {
+          "name": "country",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "active",
+          "nullable": false,
+          "type": "bool"
+        }
+      ],
+      "unique_keys": [
+        [
+          "id"
+        ]
+      ]
+    }
+  }
+}

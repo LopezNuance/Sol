@@ -9,5 +9,11 @@
   "record_type": "sol:record/failure",
   "retryable": true,
   "run_id": "run:run_008",
-  "source_commit": "commit:commit_042"
+  "source_commit": "commit:commit_042",
+  "status": {
+    "lifecycle": "active",
+    "staleness": "current",
+    "verification": "unverified"
+  },
+  "summary": "Execution failed before completion; see failure details."
 }

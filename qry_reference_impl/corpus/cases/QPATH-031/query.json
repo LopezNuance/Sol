@@ -1,0 +1,41 @@
+{
+  "description": "The inverted bounds: lower relation contains a tuple absent from the upper relation.",
+  "nodes": [
+    {
+      "id": "v",
+      "op": "read",
+      "source": "vals"
+    }
+  ],
+  "query_id": "QPATH-031",
+  "root": "v",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "vals": {
+      "lower": {
+        "tuples": [
+          [
+            1
+          ],
+          [
+            2
+          ]
+        ]
+      },
+      "schema": [
+        {
+          "name": "v",
+          "nullable": false,
+          "type": "i64"
+        }
+      ],
+      "upper": {
+        "tuples": [
+          [
+            1
+          ]
+        ]
+      }
+    }
+  }
+}

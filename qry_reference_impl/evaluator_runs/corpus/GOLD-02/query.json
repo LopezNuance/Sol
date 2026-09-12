@@ -1,0 +1,60 @@
+{
+  "description": "Exact evaluator census over the authoritative exploded representation (gate 8 evidence): scan all records, sorted by record_id.",
+  "nodes": [
+    {
+      "id": "r",
+      "op": "read",
+      "source": "records"
+    },
+    {
+      "by": [
+        "record_id"
+      ],
+      "id": "s",
+      "input": "r",
+      "op": "sort"
+    }
+  ],
+  "query_id": "solqry-record-census",
+  "root": "s",
+  "schema_version": "qry.query.v0.3",
+  "sources": {
+    "records": {
+      "artifact": {
+        "digest": "object:sha256:092f89e6c4797f4eaf6b7c7363c82e848f92886b1bf01b79ed13b1278716bba3",
+        "path": "corpus/GOLD-02/artifact.sol.d",
+        "relation": "records"
+      },
+      "schema": [
+        {
+          "name": "record_id",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "record_type",
+          "nullable": true,
+          "type": "string"
+        },
+        {
+          "name": "lifecycle",
+          "nullable": true,
+          "path": "status.lifecycle",
+          "type": "string"
+        },
+        {
+          "name": "staleness",
+          "nullable": true,
+          "path": "status.staleness",
+          "type": "string"
+        },
+        {
+          "name": "verification",
+          "nullable": true,
+          "path": "status.verification",
+          "type": "string"
+        }
+      ]
+    }
+  }
+}

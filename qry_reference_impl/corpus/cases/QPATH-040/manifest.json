@@ -1,0 +1,8 @@
+{
+  "case_id": "QPATH-040",
+  "description": "The fabricated selector: a tuple-generating LLM operator is modeled as Select and inherits the input relation as an upper bound.",
+  "expected_diagnostics": [
+    "QV5-09",
+    "QV6-07"
+  ]
+}

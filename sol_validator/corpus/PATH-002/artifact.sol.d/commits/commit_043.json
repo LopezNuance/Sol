@@ -1,0 +1,18 @@
+{
+  "author": "human:alice",
+  "branch": "branch_007",
+  "changes": [
+    {
+      "op": "modify_cell",
+      "path": "/source",
+      "target": "cell:cell_010",
+      "value_ref": "object:sha256:384680fdd9389d74f51fa0c78eebe478d97fa1d8e05e7ac90fea3b4abdf09d7d"
+    }
+  ],
+  "commit_id": "commit_043",
+  "created_at": "2026-01-01T00:05:00Z",
+  "message": "Try stricter tie threshold",
+  "parents": [
+    "commit:commit_042"
+  ]
+}
