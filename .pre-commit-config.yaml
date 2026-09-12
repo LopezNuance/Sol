@@ -5,7 +5,7 @@ repos:
     hooks:
       - id: quality-fast
         name: quality fast
-        entry: bash -c 'scripts/quality.sh  fast'
+        entry: bash -c 'QUALITY_REPORT_DIR=.git/quality/pre-commit QUALITY_UPDATE_LATEST=0 scripts/quality.sh fast'
         language: system
         pass_filenames: false
         always_run: true
@@ -13,7 +13,7 @@ repos:
 
       - id: quality-prepush
         name: quality prepush
-        entry: bash -c 'scripts/quality.sh  prepush'
+        entry: bash -c 'QUALITY_REPORT_DIR=.git/quality/pre-push QUALITY_UPDATE_LATEST=0 scripts/quality.sh prepush'
         language: system
         pass_filenames: false
         always_run: true

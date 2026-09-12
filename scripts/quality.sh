@@ -39,6 +39,7 @@ Environment:
   QUALITY_SCOPE=top|recursive
   QUALITY_REPORT_DIR=reports/quality/custom-run
   QUALITY_SUMMARY_LINES=160
+  QUALITY_UPDATE_LATEST=1 (0 skips updating the reports/quality/latest symlink)
 EOF
 }
 
@@ -457,12 +458,14 @@ append_summary() {
 finish_reports() {
   append_summary
 
-  if [ "$(dirname "$REPORT_DIR")" = "$REPORT_ROOT" ]; then
-    rm -f "$LATEST_DIR"
-    ln -s "$(basename "$REPORT_DIR")" "$LATEST_DIR" 2>/dev/null || true
-  else
-    rm -f "$LATEST_DIR"
-    ln -s "$PWD/$REPORT_DIR" "$LATEST_DIR" 2>/dev/null || true
+  if [ "${QUALITY_UPDATE_LATEST:-1}" = "1" ]; then
+    if [ "$(dirname "$REPORT_DIR")" = "$REPORT_ROOT" ]; then
+      rm -f "$LATEST_DIR"
+      ln -s "$(basename "$REPORT_DIR")" "$LATEST_DIR" 2>/dev/null || true
+    else
+      rm -f "$LATEST_DIR"
+      ln -s "$PWD/$REPORT_DIR" "$LATEST_DIR" 2>/dev/null || true
+    fi
   fi
 
   echo
