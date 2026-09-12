@@ -138,3 +138,6 @@ env/
 
 # container benchmark: regenerated packed test containers
 container_benchmark/work/
+
+# pre-commit quality hook scratch space (regenerated on every commit)
+reports/quality/hook-runs/
